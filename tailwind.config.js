@@ -42,7 +42,7 @@ module.exports = {
         '--lion-contents-content-tertiary': '#a6a6a6',
       },
       fontSize: {
-        '--lion-heading-medium': ['160px', '140%,', '700'],
+        '--lion-heading-medium': ['16px', '140%,', '700'],
         '--lion-heading-large': ['21.33px', '140%,', '700'],
         '--lion-heading-xl': ['28.43px', '140%,', '700'],
         '--lion-heading-xxl': ['37.9px', '140%,', '700'],
