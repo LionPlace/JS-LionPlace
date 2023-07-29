@@ -8,6 +8,7 @@
     <link rel="icon" href="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" type="image/xml+svg" />
     <link rel="stylesheet" href="../css/main.css" />
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=accaf5153a2184ffc44a8f6eae1fc86e"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=accaf5153a2184ffc44a8f6eae1fc86e&libraries=services,clusterer,drawing"></script>
     <script src="./../js/map/map.js" type="module"></script>
     <title>project</title>
 </head>
@@ -135,7 +136,13 @@
         </section>
     </div>
     
-    <div class="w-[90%] h-[208px] mx-auto rounded-xl" id="map"></div>
+    <!-- <div class="w-[90%] h-[400px] mx-auto" id="staticMap"></div> -->
+    <div class="relative">
+        <button class="absolute z-10 top-[10px] right-[30px] bg-cover">
+            <img src="./../assets/map/Icon/spread.svg" alt="" />
+        </button>
+        <div class="w-[90%] h-[400px] mx-auto rounded-xl" id="map"></div>
+    </div>
 </body>
 
 </html>
