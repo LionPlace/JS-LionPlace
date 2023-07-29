@@ -14,7 +14,62 @@
     <title>project</title>
   </head>
 
+
+  <!--
+
+    전체적인 화면 구성
+      1. 전체 크기 설정필요한가
+      2. 세로로 배치한거 flex 사용해서 해야하나요?
+      3. 회원가입 아래 임의로 화면설정? -> 현재 마지막 요소에 margin bottom 값을 주어 보기 편하게 해놓은 상태
+
+    아이디 찾기 비밀번호 찾기
+      1. 오른쪽 끝 칸 맞추는 방법 ( 전체 크기 설정때문에 이런건가?)
+      2. line height 맞추는 방법
+      3. #333333 색깔 테일윈드에서는 뭔지
+
+    폰트설정
+
+    이미지
+      1. 크기조절 임의값 지정해서 해줘도 되는지
+
+    짝수값 사용하자고 하신 게 모든 여백 및 패딩 마진 값을 짝수로 맞추자는 건가요?
+
+  -->
+
   <body>
-    <h2 class="text-indigo-500">login</h2>
+    
+    <div class="login-wrapper -bg--lion-primary w-[320px]">
+
+      <div class="pt-[62px] pl-[108px]">
+        <img class="w-[103px] h-auto" src="./assets/login/lion-place.png" alt="라이언 플레이스 로고" />
+      </div>
+      
+      <h1 class="-text--lion-label-xl -text--lion-white ml-[34px] mt-[100px] mb-[24px] mx-auto">로그인</h1>
+      <form class="" action="" method="">
+        <fieldset>
+          <div class="login-form-container w-full ml-[34px]">
+            <div class="user-id">
+              <label for="user-id" class="sr-only">아이디</label>
+              <input class="w-[250px] h-[43px] p-[12px] bg-transparent w-250 border -border--lion-white border-solid rounded mb-[12px]" type="text" id="user-id" placeholder="아이디를 입력해주세요"/>
+            </div>
+            <div class="user-password">
+              <label for="user-pw" class="sr-only">비밀번호</label>
+              <input class="w-[250px] h-[43px] p-[12px] bg-transparent w-250 border -border--lion-white border-solid rounded mb-[12px]" type="text" id="user-pw" placeholder="비밀번호를 입력해주세요"/>
+            </div>
+            <div class="find-wrapper flex justify-end -text--lion-white -text--lion-paragraph-small mb-[28px]">
+              <div class="find-id"><a href="#">아이디 찾기</a></div>
+              <div class="m-1 -text-lion-">|</div>
+              <div class="find-pw"><a href="#">비밀번호 찾기</a></div>
+            </div>
+            <button class="w-[250px] h-[54px] bg-white rounded mb-[12px]" type="button" onclick="">로그인</button>
+            <button class="w-[250px] h-[54px] bg-transparent rounded border -text--lion-white mb-32" type="button" onclick="">회원가입</button>
+          </div>
+        </fieldset>
+      </form>
+
+
+
+    </div>
+
   </body>
 </html>
