@@ -17,52 +17,63 @@
 
   <!--
 
+
+  
     전체적인 화면 구성
       1. 전체 크기 설정필요한가
       2. 세로로 배치한거 flex 사용해서 해야하나요?
       3. 회원가입 아래 임의로 화면설정? -> 현재 마지막 요소에 margin bottom 값을 주어 보기 편하게 해놓은 상태
+
+      -> 전체 화면 설정하니 input 의 길이는 위의 사이즈를 가져와서 width height 값 주지 않고 박스 사이즈를 맞출 수 있었다.
 
     아이디 찾기 비밀번호 찾기
       1. 오른쪽 끝 칸 맞추는 방법 ( 전체 크기 설정때문에 이런건가?)
       2. line height 맞추는 방법
       3. #333333 색깔 테일윈드에서는 뭔지
 
-    폰트설정
+    폰트설정 -> tailwind.css 맨 위에 폰트를 import 해오며 해결 !
 
     이미지
-      1. 크기조절 임의값 지정해서 해줘도 되는지
+      1. 크기조절 임의값 지정해서 해줘도 되는지 되나여??? -> 쌉 파써블 ( 반응형 아니라서 ㄱㅊ )
 
-    짝수값 사용하자고 하신 게 모든 여백 및 패딩 마진 값을 짝수로 맞추자는 건가요?
+    짝수값 사용하자고 하신 게 모든 여백 및 패딩 마진 값을 짝수로 맞추자는 건가요?  OOOOOOOOO
+
+    a 태그
+      1. 회원가입 텍스트 세로 가운데정렬 하는방법
+
 
   -->
 
-  <body>
-    
-    <div class="login-wrapper -bg--lion-primary w-[320px]">
+  <body class="-bg--lion-primary flex justify-center min-w-[320px] h-screen">
 
-      <div class="pt-[62px] pl-[108px]">
+    <div class="login-wrapper flex flex-col px-[36px] pt-[62px] items-center justify-center">
+
+      <div class="items-center">
         <img class="w-[103px] h-auto" src="./assets/login/lion-place.png" alt="라이언 플레이스 로고" />
       </div>
       
-      <h1 class="-text--lion-label-xl -text--lion-white ml-[34px] mt-[100px] mb-[24px] mx-auto">로그인</h1>
-      <form class="" action="" method="">
+      <h1 class="-text--lion-label-xl -text--lion-white block w-full mt-[100px]">로그인</h1>
+      <form action="#" method="POST">
         <fieldset>
-          <div class="login-form-container w-full ml-[34px]">
-            <div class="user-id">
+          <div class="mt-[24px] login-form-container flex flex-col gap-[12px]">
+           
               <label for="user-id" class="sr-only">아이디</label>
-              <input class="w-[250px] h-[43px] p-[12px] bg-transparent w-250 border -border--lion-white border-solid rounded mb-[12px]" type="text" id="user-id" placeholder="아이디를 입력해주세요"/>
-            </div>
-            <div class="user-password">
+              <input class="px-[20px] py-[12px] bg-transparent border -border--lion-white border-solid rounded -text--lion-white focus:outline-none" type="id" id="user-id" placeholder="아이디를 입력해주세요" minlength="3" autocomplete="off"/>
+            
               <label for="user-pw" class="sr-only">비밀번호</label>
-              <input class="w-[250px] h-[43px] p-[12px] bg-transparent w-250 border -border--lion-white border-solid rounded mb-[12px]" type="text" id="user-pw" placeholder="비밀번호를 입력해주세요"/>
-            </div>
+              <input class="px-[20px] py-[12px] bg-transparent border -border--lion-white border-solid rounded -text--lion-white focus:outline-none" type="password" id="user-pw" placeholder="비밀번호를 입력해주세요" minlength="8"/>
+
+            
             <div class="find-wrapper flex justify-end -text--lion-white -text--lion-paragraph-small mb-[28px]">
-              <div class="find-id"><a href="#">아이디 찾기</a></div>
-              <div class="m-1 -text-lion-">|</div>
+              <div class="find-id after:content-['|'] after:w-[1px] after:h-[10px] after:mx-[4px] after:text-[#c2c2c275]"><a href="#">아이디 찾기</a></div>
               <div class="find-pw"><a href="#">비밀번호 찾기</a></div>
             </div>
-            <button class="w-[250px] h-[54px] bg-white rounded mb-[12px]" type="button" onclick="">로그인</button>
-            <button class="w-[250px] h-[54px] bg-transparent rounded border -text--lion-white mb-32" type="button" onclick="">회원가입</button>
+
+            <button class="py-[18px] bg-white rounded -text--lion-paragraph-small" type="submit" onclick="">로그인</button>
+            <a class="py-[18px] block bg-transparent rounded border -text--lion-white text-center -text--lion-paragraph-small" href="./views/register.html">회원가입</a>
+
+        
+
           </div>
         </fieldset>
       </form>
