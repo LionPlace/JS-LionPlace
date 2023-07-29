@@ -26,7 +26,19 @@ const getStorInfo = async options => {
 
 function renderOverlay(map, storeData) {
   for (let i = 0; i < storeData.length; i += 1) {
-    const content = `<div style="margin-bottom: 110px; background: green; border-radius: 10px; padding-left:10px; padding-right:10px">${storeData[i].title}</div>`;
+    const content = `<div style="margin-bottom: 110px;   
+    display: inline-flex;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    border-width: 3px;
+    border-color: #AAC4FA;
+    background-color: #FFFFFF;
+    padding-right: 4px;
+    padding-left: 2px;">
+        <span style="margin-left:4px">${storeData[i].title}</span>
+    </div>`;
 
     const customOverlay = new kakao.maps.CustomOverlay({
       position: new kakao.maps.LatLng(storeData[i].lat, storeData[i].lng),
