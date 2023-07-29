@@ -14,6 +14,54 @@
         <title>project</title>
       </head>
 <body>
+
+  <!--
+
+    전체적인 화면구성은 login 페이지와 질문 같음
+
+    label 과 input 세로로 구성하는 방법
+      ( register-wrapper 에 가로값 320px 주니까 갑자기 세로 구성이 되었는데 이렇게 하면 화면이 늘어났을 때 안될것같아요, 찐 정석 방법을 알고싶어요.)
+
+    gap 으로 네 칸의 여백을 구성하려면 form 에 다섯개의 칸을 다 넣었는데 gap 사용하려면 로그인 버튼은 따로 구성해야하는지
+
+
+
+  -->
+
+  <div class="register-wrapper -bg--lion-primary w-[320px]">
+
+    <div class="pt-[62px] pl-[108px]">
+      <img class="w-[103px] h-auto" src="./../assets/login/lion-place.png" alt="라이언 플레이스 로고" />
+    </div>
     
+    <h1 class="-text--lion-label-xl -text--lion-white ml-[34px] mt-[100px] mb-[24px] mx-auto">회원가입</h1>
+    <form action="" method="">
+      <fieldset>
+        <div class="register-form-container ml-[34px]">
+          <div class="user-id mb-[10px]">
+            <label class="-text--lion-white -text--lion-paragraph-small" for="user-id">아이디</label>
+            <input class="w-[250px] h-[44px] rounded -text--lion-paragraph-small pl-5 pt-3 pr-5 pb-3 bg-transparent border" type="text" id="user-id" placeholder="영문 3자 이상" required/>
+          </div>
+          <div class="user-email mb-[10px]">
+            <label class="-text--lion-white -text--lion-paragraph-small" for="user-email">이메일</label>
+            <input class="w-[250px] h-[44px] rounded -text--lion-paragraph-small pl-5 pt-3 pr-5 pb-3 bg-transparent border" type="text" id="user-email" placeholder="인증 가능한 이메일 주소" required />
+          </div>
+          <div class="user-pw mb-[10px]">
+            <label class="-text--lion-white -text--lion-paragraph-small" for="user-pw">비밀번호</label>
+            <input class="w-[250px] h-[44px] rounded -text--lion-paragraph-small pl-5 pt-3 pr-5 pb-3 bg-transparent border" type="text" id="user-pw" placeholder="8문자 이상, 특수 문자 포함" required/>
+          </div>
+          <div class="user-pw-confirm mb-[10px]">
+            <label class="-text--lion-white -text--lion-paragraph-small" for="user-pw-confirm">비밀번호 확인</label>
+            <input class="w-[250px] h-[44px] rounded -text--lion-paragraph-small pl-5 pt-3 pr-5 pb-3 bg-transparent border" type="text" id="user-pw-confirm" placeholder="8문자 이상, 특수 문자 포함" required/>
+          </div>
+    
+          <button class="w-[250px] h-[54px] bg-white rounded -text--lion-paragraph-small mt-16 mb-32" type="button" onclick="">로그인</button>
+        </div> <!-- register-form-container end -->
+      </fieldset>
+    </form>
+
+  </div> <!-- register-wrapper end -->
+
 </body>
+
 </html>
