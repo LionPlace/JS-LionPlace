@@ -642,6 +642,11 @@ html{
   margin-bottom: 0.5rem;
 }
 
+.mx-4{
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .mb-2{
   margin-bottom: 0.5rem;
 }
@@ -917,6 +922,10 @@ html{
   border-style: dashed;
 }
 
+.border-none{
+  border-style: none;
+}
+
 .-border--lion-lightblue-400{
   --tw-border-opacity: 1;
   border-color: rgb(141 176 249 / var(--tw-border-opacity));
@@ -965,6 +974,10 @@ html{
 .bg-green-500{
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+}
+
+.bg-transparent{
+  background-color: transparent;
 }
 
 .bg-\[url\(\'\.\/\.\.\/assets\/map\/reviewPost\.png\'\)\]{
@@ -1189,6 +1202,31 @@ html{
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.placeholder-white::-moz-placeholder{
+  --tw-placeholder-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-placeholder-opacity));
+}
+
+.placeholder-white::placeholder{
+  --tw-placeholder-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-placeholder-opacity));
+}
+
+.-placeholder--lion-white::-moz-placeholder{
+  --tw-placeholder-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-placeholder-opacity));
+}
+
+.-placeholder--lion-white::placeholder{
+  --tw-placeholder-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-placeholder-opacity));
+}
+
+.outline-none{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 .drop-shadow-lg{
   --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1199,7 +1237,17 @@ html{
   margin-left: 0.25rem;
 }
 
+.after\:text-\[12px\]::after{
+  content: var(--tw-content);
+  font-size: 12px;
+}
+
 .after\:content-\[\'\|\'\]::after{
   --tw-content: '|';
+  content: var(--tw-content);
+}
+
+.after\:content-\[\'\D544\C218\'\]::after{
+  --tw-content: '필수';
   content: var(--tw-content);
 }
