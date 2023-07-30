@@ -116,19 +116,19 @@ expandButton.addEventListener('click', test);
 //* 지도 확장 버튼
 
 //* 스크롤 내리기 버튼
-const mapButton = getNode('.map-button');
+// const mapButton = getNode('.map-button');
 
-function moveScrollBottom() {
-  window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
-}
+// function moveScrollBottom() {
+//   window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+// }
 
-mapButton.addEventListener('click', moveScrollBottom);
+// mapButton.addEventListener('click', moveScrollBottom);
 
-//* 스크롤 내리기 버튼
+// //* 스크롤 내리기 버튼
 
 //* themeEnroll 2page 랜더링
 
-//* 템플릿 생성 함수
+//* 리뷰 카드 템플릿 생성 함수
 let i = 0;
 function createReviewCard({
   photo,
@@ -140,7 +140,8 @@ function createReviewCard({
   keyword,
   title,
   totalReview,
-  address,
+  state,
+  town,
 }) {
   const template = /* html */ `
     <div>
@@ -190,7 +191,7 @@ function createReviewCard({
             >리뷰 ${totalReview}</span
           >
           <span class="-text--lion-label-small -text--lion-contents-content-secondary"
-            >${(address[0], address[1])}</span
+            >${state} ${town}</span
           >
         </div>
           </section>
@@ -200,7 +201,7 @@ function createReviewCard({
   return template;
 }
 
-//* 템플릿 렌더 함수
+//* 리뷰카드 렌더링 함수
 function renderReviewCard(target, data) {
   insertLast(target, createReviewCard(data));
 }
@@ -235,7 +236,8 @@ async function renderReview() {
         keyword,
         title: placeName,
         totalReview: 5,
-        address: [state, town],
+        state,
+        town,
       };
       renderReviewCard(reviewCardInner, data);
     }
@@ -243,3 +245,56 @@ async function renderReview() {
 }
 
 renderReview();
+
+//* 리뷰카드 렌더링 렌더링 함수
+
+//* 테마 제목 및 설명 템플릿 함수
+
+function createThemeTitle({title, description}) {
+  const template = /* html */ `
+    <section class=" bg-[url('./../assets/map/reviewPost.png')] bg-cover bg-center pb-8 -z-10">
+      <div class="flex flex-row justify-between px-[10px] py-[14px]">
+        <button>
+          <img src="./../assets/map/Icon/left.png" alt="뒤로가기" />
+        </button>
+        <button class="flex flex-row rounded-[50px] -bg--lion-lightblue-300 px-3">
+          <img class="py-2" src="./../assets/map/Icon/check.png" alt="등록" />
+          <span class="py-3 -text--lion-label-small text-white">등록</span>
+        </button>
+      </div>
+      <div class="flex flex-col">
+        <span class="ml-4 mt-[10px] -text--lion-label-xl text-white">${title}</span>
+        <h2 class="ml-4 mt-[14px] -text--lion-label-small text-white">${description}</h2>
+        <button
+          class="map-button mr-[22px] mt-[88px] flex gap-1 self-end rounded-[50px] border-[1px] border-white px-4 py-2">
+          <img class="my-[4px]" src="./../assets/map/Icon/subway.png" alt="지도" />
+          <span class="text-white">지도</span>
+        </button>
+      </div>
+    </section>
+    `;
+
+  return template;
+}
+
+//* 테마 제목 및 설명 렌더링 함수
+function renderThemeTitle(target, data) {
+  insertLast(target, createThemeTitle(data));
+}
+
+const themeTitleInner = getNode('.theme-title-inner');
+async function renderTheme() {
+  const URL = 'http://localhost:3000/lion';
+  const response = await getInfo({url: URL});
+  const themeData = response.data;
+  const [title, description, url] = [
+    themeData.theme[0].title,
+    themeData.theme[0].list,
+    themeData.theme[0].coverimg,
+  ];
+  const data = {title, description, url};
+  renderThemeTitle(themeTitleInner, data);
+  //   console.log(title, description, url);
+}
+
+renderTheme();
