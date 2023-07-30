@@ -1,7 +1,7 @@
-import {getNode} from '../../lib/index.js';
+import {getNode, insertLast} from '../../lib/index.js';
 
 // * 카카오 지도 API
-const getStoreInfo = async options => {
+const getInfo = async options => {
   const defaultOptions = {
     method: 'GET',
     body: null,
@@ -98,7 +98,7 @@ function renderMap(storeData) {
 
 (async function render() {
   const URL = 'http://localhost:3000/lion';
-  const response = await getStoreInfo({url: URL});
+  const response = await getInfo({url: URL});
   const storeData = response.data;
   renderMap(storeData);
 })();
@@ -125,3 +125,121 @@ function moveScrollBottom() {
 mapButton.addEventListener('click', moveScrollBottom);
 
 //* 스크롤 내리기 버튼
+
+//* themeEnroll 2page 랜더링
+
+//* 템플릿 생성 함수
+let i = 0;
+function createReviewCard({
+  photo,
+  year,
+  month,
+  day,
+  date,
+  content,
+  keyword,
+  title,
+  totalReview,
+  address,
+}) {
+  const template = /* html */ `
+    <div>
+        <figure class="ml-4 py-9 flex items-center">
+        <div class="mr-[6px] rounded-[50%] -bg--lion-lightblue-400 p-2">
+          <img src="./../assets/map/Icon/Group.png" alt="" />
+        </div>
+        <figcaption class="-text--lion-label-small -text--lion-lightblue-400">NO.${(i += 1)}</figcaption>
+          </figure>
+          <section class="mt-3 bg-white">
+        <img class="w-full" src=${photo} alt="" />
+        <div class="my-6 flex flex-col px-[38px] text-center">
+          <div class="flex flex-row justify-center">
+            <time
+              class="mr-[2px] -text--lion-label-small -text--lion-lightblue-400"
+              datetime="2022-11-04"
+            >
+              ${year.toString().slice(2)}.${month}.${day}${date.slice(2)}
+            </time>
+            <span
+              class="mb-2 rounded-[4px] border-[1px] border-solid -border--lion-lightblue-400 px-1 -text--lion-paragraph-small -text--lion-lightblue-400"
+              >방문</span
+            >
+          </div>
+          <p class="line-clamp-3 text-justify -text--lion-paragraph-small">
+            ${content}
+          </p>
+          <div class="mt-2 flex justify-center gap-1">
+            <figure class="flex rounded bg-gray-50 px-1 py-[2px]">
+              <img src="./../assets/map/Icon/clock.png" alt="시계" />
+              <figcaption
+                class="ml-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >
+                ${keyword[0]}
+              </figcaption>
+            </figure>
+            <span
+              class="rounded bg-gray-50 px-2 py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >+${keyword.length}</span
+            >
+          </div>
+        </div>
+        <div class="border-t border-dashed px-5 py-3 -text--lion-label-medium">
+          <h2>${title}</h2>
+          <span
+            class="-text--lion-label-small -text--lion-contents-content-secondary after:ml-1 after:content-['|']"
+            >리뷰 ${totalReview}</span
+          >
+          <span class="-text--lion-label-small -text--lion-contents-content-secondary"
+            >${(address[0], address[1])}</span
+          >
+        </div>
+          </section>
+    </div>
+    `;
+
+  return template;
+}
+
+//* 템플릿 렌더 함수
+function renderReviewCard(target, data) {
+  insertLast(target, createReviewCard(data));
+}
+const reviewCardInner = getNode('.review-card-inner');
+
+async function renderReview() {
+  const URL = 'http://localhost:3000/lion';
+  const response = await getInfo({url: URL});
+  const userData = response.data;
+  //   console.log(userData.visited[0]);
+  userData.visited.forEach(visitedPlace => {
+    const placeName = Object.keys(visitedPlace)[0];
+    if (visitedPlace[placeName].theme.toString() === userData.theme[0].title) {
+      const [photo, year, month, day, date, content, keyword, state, town] = [
+        visitedPlace[placeName].phto,
+        visitedPlace[placeName].visited.year,
+        visitedPlace[placeName].visited.month,
+        visitedPlace[placeName].visited.day,
+        visitedPlace[placeName].visited.date,
+        visitedPlace[placeName].reviews[0].content,
+        visitedPlace[placeName].reviews[0].keyword,
+        visitedPlace[placeName].location.region.state,
+        visitedPlace[placeName].location.region.town,
+      ];
+      const data = {
+        photo,
+        year,
+        month,
+        day,
+        date,
+        content,
+        keyword,
+        title: placeName,
+        totalReview: 5,
+        address: [state, town],
+      };
+      renderReviewCard(reviewCardInner, data);
+    }
+  });
+}
+
+renderReview();

@@ -660,10 +660,6 @@ html{
   margin-top: 0.75rem;
 }
 
-.mt-4{
-  margin-top: 1rem;
-}
-
 .mt-\[10px\]{
   margin-top: 10px;
 }
@@ -690,6 +686,10 @@ html{
 
 .mt-\[88px\]{
   margin-top: 88px;
+}
+
+.mb-5{
+  margin-bottom: 1.25rem;
 }
 
 .line-clamp-3{
@@ -781,6 +781,10 @@ html{
 
 .gap-2{
   gap: 0.5rem;
+}
+
+.gap-5{
+  gap: 1.25rem;
 }
 
 .self-end{
@@ -991,6 +995,10 @@ html{
 
 .pt-4{
   padding-top: 1rem;
+}
+
+.pt-5{
+  padding-top: 1.25rem;
 }
 
 .text-center{
