@@ -14,20 +14,6 @@
         <title>project</title>
       </head>
 
-
-  <!--
-
-    전체적인 화면구성은 login 페이지와 질문 같음
-
-    label 과 input 세로로 구성하는 방법
-      ( register-wrapper 에 가로값 320px 주니까 갑자기 세로 구성이 되었는데 이렇게 하면 화면이 늘어났을 때 안될것같아요, 찐 정석 방법을 알고싶어요.)
-
-    gap 으로 네 칸의 여백을 구성하려면 form 에 다섯개의 칸을 다 넣었는데 gap 사용하려면 로그인 버튼은 따로 구성해야하는지
-
-
-
-  -->
-
 <body class="-bg--lion-primary flex justify-center min-w-[320px] h-screen">
 
   <div class="register-wrapper px-[36px] flex flex-col items-center">
@@ -37,34 +23,32 @@
     </div>
  
     <h1 class="-text--lion-label-xl -text--lion-white mt-[100px] block w-full">회원가입</h1>
-    <!-- 주소창을 통해서 정보를 보내면 GET, 암호화된 것은 POST 회원가입, 이메일, 비밀번호는 주소창에 남기면 안되기 때문에 POST 로 / action 은 주소를 보낼 서버정보
-    -->
     
     <form action="#" method="POST">
       <fieldset>
         <div class="register-form-container mt-[22px] flex flex-col gap-[12px] -text--lion-white">
           <div class="flex flex-col">
             <label class="-text--lion-white -text--lion-paragraph-small" for="user-id">아이디</label>
-            <input class="w-[250px] h-[44px] rounded -text--lion-paragraph-small pl-5 pt-3 pr-5 pb-3 bg-transparent border -text--lion-white focus:outline-none" type="id" id="user-id" placeholder="영문 3자 이상" required minlength="3" autocomplete="off"/>
+            <input class="register-user-id w-[250px] h-[44px] rounded -text--lion-paragraph-small pl-5 pt-3 pr-5 pb-3 bg-transparent border -text--lion-white focus:outline-none" type="id" id="user-id" placeholder="영문 3자 이상" required minlength="3" autocomplete="off"/>
           </div>
         
           <div class="flex flex-col">
             <label class="-text--lion-white -text--lion-paragraph-small" for="user-email">이메일</label>
-            <input class="w-[250px] h-[44px] rounded -text--lion-paragraph-small pl-5 pt-3 pr-5 pb-3 bg-transparent border -text--lion-white focus:outline-none" type="email" id="user-email" placeholder="인증 가능한 이메일 주소" required autocomplete="off"/>
+            <input class="register-user-email w-[250px] h-[44px] rounded -text--lion-paragraph-small pl-5 pt-3 pr-5 pb-3 bg-transparent border -text--lion-white focus:outline-none" type="email" id="user-email" placeholder="인증 가능한 이메일 주소" required autocomplete="off"/>
           </div>
 
           <div class="flex flex-col">
             <label class="-text--lion-white -text--lion-paragraph-small" for="user-pw">비밀번호</label>
-            <input class="w-[250px] h-[44px] rounded -text--lion-paragraph-small pl-5 pt-3 pr-5 pb-3 bg-transparent border -text--lion-white focus:outline-none" type="password" id="user-pw" placeholder="8문자 이상, 특수 문자 포함" required minlength="8"/>
+            <input class="register-user-pw w-[250px] h-[44px] rounded -text--lion-paragraph-small pl-5 pt-3 pr-5 pb-3 bg-transparent border -text--lion-white focus:outline-none" type="password" id="user-pw" placeholder="8문자 이상, 특수 문자 포함" required minlength="8"/>
           </div>
 
           <div class="flex flex-col">
             <label class="-text--lion-white -text--lion-paragraph-small" for="user-pw-confirm">비밀번호 확인</label>
-            <input class="w-[250px] h-[44px] rounded -text--lion-paragraph-small pl-5 pt-3 pr-5 pb-3 bg-transparent border focus:outline-none" type="password" id="user-pw-confirm" placeholder="8문자 이상, 특수 문자 포함" required minlength="8"/>
+            <input class="register-user-pw-confirm w-[250px] h-[44px] rounded -text--lion-paragraph-small pl-5 pt-3 pr-5 pb-3 bg-transparent border focus:outline-none" type="password" id="user-pw-confirm" placeholder="8문자 이상, 특수 문자 포함" required minlength="8"/>
           </div>
 
     
-          <button class=" bg-white rounded py-[18px] -text--lion-paragraph-small mt-16 -text--lion-black" type="submit" onclick="">로그인</button>
+          <button class="register-login-btn bg-white rounded py-[18px] -text--lion-paragraph-small mt-16 -text--lion-black" type="submit" onclick="">로그인</button>
         </div> <!-- register-form-container end -->
       </fieldset>
     </form>
