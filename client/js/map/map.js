@@ -30,29 +30,31 @@ const getStoreInfo = async options => {
 function renderOverlay(map, storeData) {
   storeData.visited.forEach(visitedPlace => {
     const placeName = Object.keys(visitedPlace)[0];
-    const [latitude, longitude] = [
-      visitedPlace[placeName].location.latitude,
-      visitedPlace[placeName].location.longitude,
-    ];
-    const content = `<div style="margin-bottom: 110px;   
-    display: inline-flex;
-    font-size: 12px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 2rem;
-    border-width: 3px;
-    border-color: #AAC4FA;
-    background-color: #FFFFFF;
-    padding-right: 4px;
-    padding-left: 2px;">
-        <span style="margin-left:4px">${placeName}</span>
-    </div>`;
+    if (visitedPlace[placeName].theme.toString() === storeData.theme[0].title) {
+      const [latitude, longitude] = [
+        visitedPlace[placeName].location.latitude,
+        visitedPlace[placeName].location.longitude,
+      ];
+      const content = `<div style="margin-bottom: 110px;   
+            display: inline-flex;
+            font-size: 12px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2rem;
+            border-width: 3px;
+            border-color: #AAC4FA;
+            background-color: #FFFFFF;
+            padding-right: 4px;
+            padding-left: 2px;">
+                <span style="margin-left:4px">${placeName}</span>
+            </div>`;
 
-    const customOverlay = new kakao.maps.CustomOverlay({
-      position: new kakao.maps.LatLng(latitude, longitude),
-      content,
-    });
-    customOverlay.setMap(map);
+      const customOverlay = new kakao.maps.CustomOverlay({
+        position: new kakao.maps.LatLng(latitude, longitude),
+        content,
+      });
+      customOverlay.setMap(map);
+    }
   });
 }
 
@@ -60,17 +62,19 @@ function setBounds(map, storeData) {
   const bounds = new kakao.maps.LatLngBounds();
   storeData.visited.forEach(visitedPlace => {
     const placeName = Object.keys(visitedPlace)[0];
-    const [latitude, longitude] = [
-      visitedPlace[placeName].location.latitude,
-      visitedPlace[placeName].location.longitude,
-    ];
-    const position = new kakao.maps.LatLng(latitude, longitude);
-    const marker = new kakao.maps.Marker({
-      position,
-      title: placeName,
-    });
-    marker.setMap(map);
-    bounds.extend(position);
+    if (visitedPlace[placeName].theme.toString() === storeData.theme[0].title) {
+      const [latitude, longitude] = [
+        visitedPlace[placeName].location.latitude,
+        visitedPlace[placeName].location.longitude,
+      ];
+      const position = new kakao.maps.LatLng(latitude, longitude);
+      const marker = new kakao.maps.Marker({
+        position,
+        title: placeName,
+      });
+      marker.setMap(map);
+      bounds.extend(position);
+    }
   });
   map.setBounds(bounds);
 }
