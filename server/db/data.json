@@ -1,22 +1,118 @@
 {
-  "info": [
-    {
-      "id": 1,
-      "title": "HOT MESS",
-      "lat": 37.56257523917533,
-      "lng": 126.92282822957732
-    },
-    {
-      "id": 2,
-      "title": "허밍벨라",
-      "lat": 37.561503649820686,
-      "lng": 126.92374611306943
-    },
-    {
-      "id": 3,
-      "title": "스시노백쉐프",
-      "lat": 37.56137805739259,
-      "lng": 126.924997937203
-    }
-  ]
+  "lion": {
+    "email": "lion@email.com",
+    "password": "lion123!@#",
+    "uniqueID": "희소님 함수 값",
+    "theme": [
+      {
+        "title": "연남 합정 데이트",
+        "list": "데이트 코스 모음",
+        "coverimg": "https://cdn.thescoop.co.kr/news/photo/201909/36658_48383_542.jpg"
+      }
+    ],
+    "visited": [
+      {
+        "HOT MESS": {
+          "id": 1,
+          "location": {
+            "latitude": 37.56257523917533,
+            "longitude": 126.92282822957732,
+            "region": {
+              "state": "서울시",
+              "country": "마포구",
+              "town": "연남동"
+            }
+          },
+          "bookmark": false,
+          "buy": [
+            {"item": "프렌치 토스트", "price": 11000},
+            {"item": "아메리카노", "price": 5000}
+          ],
+          "reviews": [
+            {
+              "like": true,
+              "content": "친절한 사장님. 시크한 인테리어와 아이러니한 캐릭터 매칭이 독특한 인상을 줌. 프렌치토스트와 다양한 디저트 라인업. 나쁘지 않음. 경의선 숲길 라인 중에는 늦게까지 영업해서 자주 찾게 됨",
+              "keyword": ["친절해요", "트렌디해요"]
+            }
+          ],
+          "phto": "https://gangseotongsin.com/site/wp-content/uploads/2023/01/img_0287.jpg",
+          "product": "커피, 디저트",
+          "visited": {
+            "year": 2023,
+            "month": 3,
+            "day": 3,
+            "date": "금요일"
+          },
+          "theme": ["연남 합정 데이트"]
+        }
+      },
+      {
+        "허밍벨라": {
+          "id": 2,
+          "location": {
+            "latitude": 37.561503649820686,
+            "longitude": 126.92374611306943,
+            "region": {
+              "state": "서울시",
+              "country": "마포구",
+              "town": "서교동"
+            }
+          },
+          "bookmark": false,
+          "buy": [
+            {"item": "리치캐모마일 티", "price": 6500},
+            {"item": "슈크림 크로와상", "price": 6000}
+          ],
+          "reviews": [
+            {
+              "like": true,
+              "content": "홍대에서 카페 어디갈까 찾는 사람들에게 추천해 주고 싶은 카페였다.",
+              "keyword": ["친절해요", "분위기가 좋아요"]
+            }
+          ],
+          "phto": "https://gangseotongsin.com/site/wp-content/uploads/2023/01/img_0287.jpg",
+          "product": "커피, 디저트",
+          "visited": {
+            "year": 2023,
+            "month": 7,
+            "day": 3,
+            "date": "원요일"
+          },
+          "theme": []
+        }
+      },
+      {
+        "스시노백쉐프": {
+          "id": 3,
+          "location": {
+            "latitude": 37.56137805739259,
+            "longitude": 126.924997937203,
+            "region": {
+              "state": "서울시",
+              "country": "마포구",
+              "town": "연남동"
+            }
+          },
+          "bookmark": false,
+          "buy": [{"item": "시그니처 라인", "price": 39500}],
+          "reviews": [],
+          "phto": "https://mblogthumb-phinf.pstatic.net/MjAyMDAyMThfMjI3/MDAxNTgyMDI5MjcyOTkw.ZeIA3SaspJ6JWpakDAKZx0AliWLXKo3e91AkjHCSJ0Yg.XV7L-hBAPiJlkJYCu3lVJJqZ86G_g70lfuZchDyH09Qg.JPEG.nahe0904/DSC04856.JPG?type=w800",
+          "product": "초밥, 롤",
+          "visited": {
+            "year": 2023,
+            "month": 7,
+            "day": 3,
+            "date": "원요일"
+          },
+          "theme": []
+        }
+      }
+    ]
+  },
+
+  "kare": {
+    "email": "lion@email.com",
+    "password": "lion123!@#",
+    "uniqueID": "희소님 함수 값"
+  }
 }
