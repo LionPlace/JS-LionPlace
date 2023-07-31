@@ -145,7 +145,7 @@ function createReviewCard({
 }) {
   const template = /* html */ `
     <div>
-        <figure class="ml-4 py-9 flex items-center">
+        <figure class="flex items-center">
         <div class="mr-[6px] rounded-[50%] -bg--lion-lightblue-400 p-2">
           <img src="./../assets/map/Icon/Group.png" alt="" />
         </div>
@@ -266,7 +266,7 @@ function createThemeTitle({title, description}) {
         <span class="ml-4 mt-[10px] -text--lion-label-xl text-white">${title}</span>
         <h2 class="ml-4 mt-[14px] -text--lion-label-small text-white">${description}</h2>
         <button
-          class="map-button mr-[22px] mt-[88px] flex gap-1 self-end rounded-[50px] border-[1px] border-white px-4 py-2">
+          class="map-button mr-[22px] mt-[100px] flex gap-1 self-end rounded-[50px] border-[1px] border-white px-4 py-2">
           <img class="my-[4px]" src="./../assets/map/Icon/subway.png" alt="지도" />
           <span class="text-white">지도</span>
         </button>
@@ -298,3 +298,59 @@ async function renderTheme() {
 }
 
 renderTheme();
+
+//* 수정하기 버튼 클릭
+
+//* 수정하기 버튼 숨기기
+const editButton = getNode('.edit-button');
+
+function hideButton() {
+  editButton.remove();
+}
+editButton.addEventListener('click', hideButton);
+
+//* 유저 프로필 영역 숨기기
+const userProfile = getNode('.user-profile-area');
+
+function hideUserProfile() {
+  userProfile.remove();
+}
+
+editButton.addEventListener('click', hideUserProfile);
+
+// * 리뷰 데이터 렌더링
+
+function createReviewData() {
+  const template = /* html */ `
+  <div class="ml-4 mr-7 mt-[18px] flex items-center justify-between">
+    <div class="flex items-center gap-1 text-center">
+        <h2 class="-text--lion-label-medium">리뷰</h2>
+        <span class="-text--lion-label-medium -text--lion-info-error">2<span
+        class="-text--lion-contents-content-tertiary">/10</span></span>
+    </div>
+    <ul class="flex gap-1 pt-1 -text--lion-label-small -text--lion-contents-content-secondary">
+        <li class="after:ml-1 after:content-['|']">임시저장</li>
+        <li class="after:ml-1 after:content-['|']">순서변경</li>
+        <li>전체삭제</li>
+    </ul>
+</div>
+    `;
+
+  return template;
+}
+
+function renderReviewData(target, data) {
+  insertLast(target, createReviewData(data));
+}
+
+function renderData() {
+  const reviewDataInner = getNode('.review-data-inner');
+  renderReviewData(reviewDataInner);
+}
+
+editButton.addEventListener('click', renderData);
+
+// //* 지도 버튼 숨기기
+// const mapButton = gteNode('.map-button');
+
+// function hideMapButton() {}
