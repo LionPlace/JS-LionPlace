@@ -1,4 +1,6 @@
-import {getNode, insertLast} from '../../lib/index.js';
+import {getNode, getNodes, insertLast, toggleClass} from '../../lib/index.js';
+
+const editButton = getNode('.edit-button');
 
 // * 카카오 지도 API
 const getInfo = async options => {
@@ -144,15 +146,16 @@ function createReviewCard({
   town,
 }) {
   const template = /* html */ `
-    <div>
+    <div class="relative parent">
         <figure class="flex items-center">
         <div class="mr-[6px] rounded-[50%] -bg--lion-lightblue-400 p-2">
           <img src="./../assets/map/Icon/Group.png" alt="" />
         </div>
         <figcaption class="-text--lion-label-small -text--lion-lightblue-400">NO.${(i += 1)}</figcaption>
           </figure>
-          <section class="mt-3 bg-white">
-        <img class="w-full" src=${photo} alt="" />
+          <section class="relative mt-3 bg-white">
+        <img class="w-full  " src=${photo} alt="가게 사진" />
+        <img class="delete-button absolute right-[-8px] top-[-6px] hidden" src="./../assets/map/Icon/close.png" alt="삭제 버튼" />
         <div class="my-6 flex flex-col px-[38px] text-center">
           <div class="flex flex-row justify-center">
             <time
@@ -242,17 +245,32 @@ async function renderReview() {
       renderReviewCard(reviewCardInner, data);
     }
   });
+  //* 삭제 버튼 토글
+  const deleteButton = getNodes('.delete-button');
+  function toggleDeleteButton() {
+    deleteButton.forEach(button => {
+      toggleClass(button, 'hidden');
+    });
+  }
+  editButton.addEventListener('click', toggleDeleteButton);
+  //* 리뷰 클릭시 삭제
+  function deleteReview() {
+    const parentElement = this.closest('.parent');
+    parentElement.remove();
+  }
+  deleteButton.forEach(button => {
+    button.addEventListener('click', deleteReview);
+  });
 }
-
 renderReview();
 
 //* 리뷰카드 렌더링 렌더링 함수
 
 //* 테마 제목 및 설명 템플릿 함수
 
-function createThemeTitle({title, description}) {
+function createThemeTitle({title, description, url}) {
   const template = /* html */ `
-    <section class=" bg-[url('./../assets/map/reviewPost.png')] bg-cover bg-center pb-8 -z-10">
+    <section class="header-inner flex flex-col bg-[url('${url}')] bg-cover bg-center pb-8 -z-10">
       <div class="flex flex-row justify-between px-[10px] py-[14px]">
         <button>
           <img src="./../assets/map/Icon/left.png" alt="뒤로가기" />
@@ -262,15 +280,17 @@ function createThemeTitle({title, description}) {
           <span class="py-3 -text--lion-label-small text-white">등록</span>
         </button>
       </div>
-      <div class="flex flex-col">
-        <span class="ml-4 mt-[10px] -text--lion-label-xl text-white">${title}</span>
-        <h2 class="ml-4 mt-[14px] -text--lion-label-small text-white">${description}</h2>
-        <button
-          class="map-button mr-[22px] mt-[100px] flex gap-1 self-end rounded-[50px] border-[1px] border-white px-4 py-2">
-          <img class="my-[4px]" src="./../assets/map/Icon/subway.png" alt="지도" />
-          <span class="text-white">지도</span>
-        </button>
+      <div class="theme-summary flex flex-col">
+          <div class="theme-title flex flex-col">
+            <span class="ml-4 mt-[10px] -text--lion-label-xl text-white">${title}</span>
+            <h2 class="ml-4 mt-[14px] -text--lion-label-small text-white">${description}</h2>
+          </div>
       </div>
+      <button
+      class="map-button mr-[22px] mt-[82px] flex gap-1 rounded-[50px] self-end border-[1px] border-white px-4 py-2">
+      <img class="my-[4px]" src="./../assets/map/Icon/subway.png" alt="지도" />
+      <span class="text-white">지도</span>
+    </button>
     </section>
     `;
 
@@ -283,6 +303,7 @@ function renderThemeTitle(target, data) {
 }
 
 const themeTitleInner = getNode('.theme-title-inner');
+
 async function renderTheme() {
   const URL = 'http://localhost:3000/lion';
   const response = await getInfo({url: URL});
@@ -294,15 +315,82 @@ async function renderTheme() {
   ];
   const data = {title, description, url};
   renderThemeTitle(themeTitleInner, data);
-  //   console.log(title, description, url);
+
+  //* 맵 버튼 제거
+  const mapButton = getNode('.map-button');
+  function hideMapButton() {
+    mapButton.remove();
+  }
+  editButton.addEventListener('click', hideMapButton);
+
+  //* 커버 변경 버튼 렌더링
+  const headerInner = getNode('.header-inner');
+  function renderCoverChangeButton(target) {
+    const template = /* html */ `
+              <button class="mx-auto mt-[82px] flex rounded-[50px] border-[1px] bg-inherit border-white px-3 py-2 z-10">
+                  <img src="./../assets/map/Icon/photo.png" alt="" />
+                  <span class="ml-1 mt-[2px] text-white">커버변경</span>
+              </button>
+          `;
+    insertLast(target, template);
+  }
+
+  function renderCoverChange() {
+    renderCoverChangeButton(headerInner);
+  }
+
+  editButton.addEventListener('click', renderCoverChange);
+  //* 제목, 설명 input 태그로 변경
+  //* 기존 제목, 설명 제거
+  function removeThemeTitle() {
+    const ThemeTitle = getNode('.theme-title');
+    ThemeTitle.remove();
+  }
+  editButton.addEventListener('click', removeThemeTitle);
+
+  //* input 태그 넣기
+  const themeSummary = getNode('.theme-summary');
+  function createThemeSummary(target) {
+    const template = /* html */ `
+                <input
+                    class="input-title bg-transparent mx-4 mt-[10px] -text--lion-label-xl text-white -placeholder--lion-white border-none outline-none"
+                    minlength="1" maxlength="20" type="text" placeholder="제목을 입력해 주세요" />
+                <span
+                    class="mr-[22px] self-end -text--lion-label-small text-black"><span
+                        class="render-title-length -text--lion-label-small text-white">11</span>/20</span>
+                <input
+                        class="input-description bg-transparent mx-4 mt-[14px] -text--lion-label-small text-white -placeholder--lion-white border-none outline-none"
+                        minlength="1" maxlength="100" type="text" placeholder="어떤 리스트인지 설명 해주세요" />
+                <span
+                        class="mr-[22px] mt-3 self-end -text--lion-label-small text-black"><span
+                            class="render-description-length -text--lion-label-small text-white">16</span> /100</span>
+      `;
+    insertLast(target, template);
+  }
+  function renderThemeSummary() {
+    createThemeSummary(themeSummary);
+    //* input 태그 글자수 세기
+    const titleInput = getNode('.input-title');
+    const renderTitleLength = getNode('.render-title-length');
+    function countTitle() {
+      const titleLength = titleInput.value.length;
+      renderTitleLength.textContent = titleLength;
+    }
+    const descriptionInput = getNode('.input-description');
+    const renderDescriptionLength = getNode('.render-description-length');
+    function countDescription() {
+      const DescriptionLength = descriptionInput.value.length;
+      renderDescriptionLength.textContent = DescriptionLength;
+    }
+    titleInput.addEventListener('input', countTitle);
+    descriptionInput.addEventListener('input', countDescription);
+  }
+  editButton.addEventListener('click', renderThemeSummary);
 }
 
 renderTheme();
 
-//* 수정하기 버튼 클릭
-
 //* 수정하기 버튼 숨기기
-const editButton = getNode('.edit-button');
 
 function hideButton() {
   editButton.remove();
@@ -350,7 +438,11 @@ function renderData() {
 
 editButton.addEventListener('click', renderData);
 
-// //* 지도 버튼 숨기기
-// const mapButton = gteNode('.map-button');
+//* 수정하기 클릭 시 지도 삭제
+const map = getNode('.map');
 
-// function hideMapButton() {}
+function removeMap() {
+  map.remove();
+}
+
+editButton.addEventListener('click', removeMap);
