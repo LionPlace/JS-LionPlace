@@ -440,6 +440,10 @@ html{
   font-family: Pretendard, sans-serif;
 }
 
+body.login .is--invalid + .error-message {
+  display:block;
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -583,6 +587,10 @@ html{
 
 .flex{
   display: flex;
+}
+
+.hidden{
+  display: none;
 }
 
 .h-\[41px\]{
@@ -763,6 +771,11 @@ html{
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.-text--lion-info-error{
+  --tw-text-opacity: 1;
+  color: rgb(240 63 64 / var(--tw-text-opacity));
+}
+
 .-text--lion-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -770,15 +783,6 @@ html{
 
 .text-transparent{
   color: transparent;
-}
-
-.outline-none{
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.outline{
-  outline-style: solid;
 }
 
 .drop-shadow-lg{
