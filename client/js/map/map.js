@@ -154,16 +154,54 @@ function createReviewCard({
     </div>
     `;
 
+  // const deleteButton = getNodes('.deleteButton');
   return template;
 }
 
-//* 리뷰카드 렌더링 함수
+//* 리뷰 카드 DOM 삽입 함수
 function insertReviewCard(target, data) {
   insertLast(target, createReviewCard(data));
 }
-const reviewCardInner = getNode('.review-card-inner');
 
-async function renderReviewCard() {
+//* 삭제 버튼 토글
+function toggleDeleteButton(deleteButton) {
+  deleteButton.forEach(button => {
+    toggleClass(button, 'hidden');
+  });
+}
+
+//* 수정 버튼 클릭 시 이벤트리스너 등록
+function clickEditButton(func) {
+  const changeButton = getNode('.edit-button');
+  changeButton.addEventListener('click', func);
+}
+
+//* 삭제 버튼 클릭 시 리뷰 제거
+function deleteReview() {
+  const parentElement = this.closest('.parent');
+  parentElement.remove();
+}
+
+function ClickDeleteButton(deleteButton) {
+  deleteButton.forEach(button => {
+    button.addEventListener('click', deleteReview);
+  });
+}
+//* 리뷰 순서 변경
+function editReviewCard() {
+  const reviewCard = getNodes('.review-card');
+  reviewCard.forEach(card => {
+    new Sortable(card, {
+      group: 'shared',
+      animation: 150,
+      ghostClass: 'blue-background-class',
+    });
+  });
+}
+
+// * 리뷰카드 랜더링 함수
+(async function renderReviewCard() {
+  const reviewCardInner = getNode('.review-card-inner');
   const URL = 'http://localhost:3000/data';
   const response = await tiger({url: URL});
   const userData = response.data;
@@ -198,41 +236,20 @@ async function renderReviewCard() {
       insertReviewCard(reviewCardInner, data);
     }
   });
-  //* 삭제 버튼 토글
   const deleteButton = getNodes('.delete-button');
-  function toggleDeleteButton() {
-    deleteButton.forEach(button => {
-      toggleClass(button, 'hidden');
-    });
+
+  function toggleButton() {
+    toggleDeleteButton(deleteButton);
   }
-  editButton.addEventListener('click', toggleDeleteButton);
+
+  clickEditButton(toggleButton);
+
   //* 리뷰 클릭시 삭제
-  function deleteReview() {
-    const parentElement = this.closest('.parent');
-    const changeTheme = {
-      theme: [],
-    };
-    parentElement.remove();
-    // tiger.put('http://localhost:3000/data/1', {...userData, ...changeTheme});
-    // console.log(userData);
-  }
-  deleteButton.forEach(button => {
-    button.addEventListener('click', deleteReview);
-  });
+  ClickDeleteButton(deleteButton);
+
   //* 리뷰 순서 변경
-  function editReviewCard() {
-    const reviewCard = getNodes('.review-card');
-    reviewCard.forEach(card => {
-      new Sortable(card, {
-        group: 'shared',
-        animation: 150,
-        ghostClass: 'blue-background-class',
-      });
-    });
-  }
-  editButton.addEventListener('click', editReviewCard);
-}
-renderReviewCard();
+  clickEditButton(editReviewCard);
+})();
 
 //* 리뷰카드 렌더링 렌더링 함수
 
