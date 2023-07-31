@@ -57,7 +57,6 @@ function setBounds(map, userData) {
 
 function renderMap(userData) {
   const container = document.getElementById('map');
-
   const centerPlace = userData[0].visited[0];
   const placeName = Object.keys(userData[0].visited[0])[0];
   const [latitude, longitude] = [
@@ -79,29 +78,6 @@ function renderMap(userData) {
   const userData = response.data;
   renderMap(userData);
 })();
-
-//* 카카오 지도 API
-
-//* 지도 확장 버튼
-const expandButton = getNode('.expand-button');
-
-function test() {
-  console.log('test');
-}
-
-expandButton.addEventListener('click', test);
-//* 지도 확장 버튼
-
-//* 스크롤 내리기 버튼
-// const mapButton = getNode('.map-button');
-
-// function moveScrollBottom() {
-//   window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
-// }
-
-// mapButton.addEventListener('click', moveScrollBottom);
-
-// //* 스크롤 내리기 버튼
 
 //* themeEnroll 2page 랜더링
 
@@ -159,7 +135,7 @@ function createReviewCard({
             </figure>
             <span
               class="rounded bg-gray-50 px-2 py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
-              >+${keyword.length}</span
+              >+${keyword.length - 1}</span
             >
           </div>
         </div>
@@ -182,12 +158,12 @@ function createReviewCard({
 }
 
 //* 리뷰카드 렌더링 함수
-function renderReviewCard(target, data) {
+function insertReviewCard(target, data) {
   insertLast(target, createReviewCard(data));
 }
 const reviewCardInner = getNode('.review-card-inner');
 
-async function renderReview() {
+async function renderReviewCard() {
   const URL = 'http://localhost:3000/data';
   const response = await tiger({url: URL});
   const userData = response.data;
@@ -219,7 +195,7 @@ async function renderReview() {
         state,
         town,
       };
-      renderReviewCard(reviewCardInner, data);
+      insertReviewCard(reviewCardInner, data);
     }
   });
   //* 삭제 버튼 토글
@@ -256,7 +232,7 @@ async function renderReview() {
   }
   editButton.addEventListener('click', editReviewCard);
 }
-renderReview();
+renderReviewCard();
 
 //* 리뷰카드 렌더링 렌더링 함수
 
