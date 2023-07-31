@@ -1,38 +1,12 @@
-import {getNode, getNodes, insertLast, toggleClass} from '../../lib/index.js';
+import {getNode, getNodes, insertLast, tiger, toggleClass} from '../../lib/index.js';
 
 const editButton = getNode('.edit-button');
 
 // * 카카오 지도 API
-const getInfo = async options => {
-  const defaultOptions = {
-    method: 'GET',
-    body: null,
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-    },
-  };
-  const {url, ...restOptions} = {
-    ...defaultOptions,
-    ...options,
-    headers: {
-      ...defaultOptions.headers,
-      ...options.headers,
-    },
-  };
-  const response = await fetch(url, restOptions);
-
-  if (response.ok) {
-    response.data = await response.json();
-  }
-
-  return response;
-};
-
-function renderOverlay(map, storeData) {
-  storeData.visited.forEach(visitedPlace => {
+function renderOverlay(map, userData) {
+  userData[0].visited.forEach(visitedPlace => {
     const placeName = Object.keys(visitedPlace)[0];
-    if (visitedPlace[placeName].theme.toString() === storeData.theme[0].title) {
+    if (visitedPlace[placeName].theme.toString() === userData[0].theme[0].title) {
       const [latitude, longitude] = [
         visitedPlace[placeName].location.latitude,
         visitedPlace[placeName].location.longitude,
@@ -60,11 +34,11 @@ function renderOverlay(map, storeData) {
   });
 }
 
-function setBounds(map, storeData) {
+function setBounds(map, userData) {
   const bounds = new kakao.maps.LatLngBounds();
-  storeData.visited.forEach(visitedPlace => {
+  userData[0].visited.forEach(visitedPlace => {
     const placeName = Object.keys(visitedPlace)[0];
-    if (visitedPlace[placeName].theme.toString() === storeData.theme[0].title) {
+    if (visitedPlace[placeName].theme.toString() === userData[0].theme[0].title) {
       const [latitude, longitude] = [
         visitedPlace[placeName].location.latitude,
         visitedPlace[placeName].location.longitude,
@@ -81,10 +55,11 @@ function setBounds(map, storeData) {
   map.setBounds(bounds);
 }
 
-function renderMap(storeData) {
+function renderMap(userData) {
   const container = document.getElementById('map');
-  const centerPlace = storeData.visited[0];
-  const placeName = Object.keys(storeData.visited[0])[0];
+
+  const centerPlace = userData[0].visited[0];
+  const placeName = Object.keys(userData[0].visited[0])[0];
   const [latitude, longitude] = [
     centerPlace[placeName].location.latitude,
     centerPlace[placeName].location.longitude,
@@ -94,15 +69,15 @@ function renderMap(storeData) {
     level: 3,
   };
   const map = new kakao.maps.Map(container, options);
-  setBounds(map, storeData);
-  renderOverlay(map, storeData);
+  setBounds(map, userData);
+  renderOverlay(map, userData);
 }
 
-(async function render() {
-  const URL = 'http://localhost:3000/lion';
-  const response = await getInfo({url: URL});
-  const storeData = response.data;
-  renderMap(storeData);
+(async function getUserInfo() {
+  const URL = 'http://localhost:3000/data';
+  const response = await tiger({url: URL});
+  const userData = response.data;
+  renderMap(userData);
 })();
 
 //* 카카오 지도 API
@@ -213,13 +188,13 @@ function renderReviewCard(target, data) {
 const reviewCardInner = getNode('.review-card-inner');
 
 async function renderReview() {
-  const URL = 'http://localhost:3000/lion';
-  const response = await getInfo({url: URL});
+  const URL = 'http://localhost:3000/data';
+  const response = await tiger({url: URL});
   const userData = response.data;
   //   console.log(userData.visited[0]);
-  userData.visited.forEach(visitedPlace => {
+  userData[0].visited.forEach(visitedPlace => {
     const placeName = Object.keys(visitedPlace)[0];
-    if (visitedPlace[placeName].theme.toString() === userData.theme[0].title) {
+    if (visitedPlace[placeName].theme.toString() === userData[0].theme[0].title) {
       const [photo, year, month, day, date, content, keyword, state, town] = [
         visitedPlace[placeName].phto,
         visitedPlace[placeName].visited.year,
@@ -258,7 +233,12 @@ async function renderReview() {
   //* 리뷰 클릭시 삭제
   function deleteReview() {
     const parentElement = this.closest('.parent');
+    const changeTheme = {
+      theme: [],
+    };
     parentElement.remove();
+    // tiger.put('http://localhost:3000/data/1', {...userData, ...changeTheme});
+    // console.log(userData);
   }
   deleteButton.forEach(button => {
     button.addEventListener('click', deleteReview);
@@ -319,19 +299,28 @@ function renderThemeTitle(target, data) {
 const themeTitleInner = getNode('.theme-title-inner');
 
 async function renderTheme() {
-  const URL = 'http://localhost:3000/lion';
-  const response = await getInfo({url: URL});
+  const URL = 'http://localhost:3000/data';
+  const response = await tiger({url: URL});
   const themeData = response.data;
   const [title, description, url] = [
-    themeData.theme[0].title,
-    themeData.theme[0].list,
-    themeData.theme[0].coverimg,
+    themeData[0].theme[0].title,
+    themeData[0].theme[0].list,
+    themeData[0].theme[0].coverimg,
   ];
   const data = {title, description, url};
   renderThemeTitle(themeTitleInner, data);
 
-  //* 맵 버튼 제거
+  //* 지도 바로가기
   const mapButton = getNode('.map-button');
+
+  function moveScrollBottom() {
+    window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+  }
+
+  mapButton.addEventListener('click', moveScrollBottom);
+
+  //* 맵 버튼 제거
+
   function hideMapButton() {
     mapButton.remove();
   }
@@ -459,3 +448,7 @@ function removeMap() {
 }
 
 editButton.addEventListener('click', removeMap);
+
+// console.log(user)
+// tiger.put('http://localhost:3000/data/1', {...userData, ...changeTheme});
+// console.log(userData);
