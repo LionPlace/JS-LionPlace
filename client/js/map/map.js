@@ -146,7 +146,8 @@ function createReviewCard({
   town,
 }) {
   const template = /* html */ `
-    <div class="relative parent">
+  <div class='review-card'>
+    <div class="relative parent mb-5">
         <figure class="flex items-center">
         <div class="mr-[6px] rounded-[50%] -bg--lion-lightblue-400 p-2">
           <img src="./../assets/map/Icon/Group.png" alt="" />
@@ -198,6 +199,7 @@ function createReviewCard({
           >
         </div>
           </section>
+    </div>
     </div>
     `;
 
@@ -261,6 +263,18 @@ async function renderReview() {
   deleteButton.forEach(button => {
     button.addEventListener('click', deleteReview);
   });
+  //* 리뷰 순서 변경
+  function editReviewCard() {
+    const reviewCard = getNodes('.review-card');
+    reviewCard.forEach(card => {
+      new Sortable(card, {
+        group: 'shared',
+        animation: 150,
+        ghostClass: 'blue-background-class',
+      });
+    });
+  }
+  editButton.addEventListener('click', editReviewCard);
 }
 renderReview();
 
@@ -276,8 +290,8 @@ function createThemeTitle({title, description, url}) {
           <img src="./../assets/map/Icon/left.png" alt="뒤로가기" />
         </button>
         <button class="flex flex-row rounded-[50px] -bg--lion-lightblue-300 px-3">
-          <img class="py-2" src="./../assets/map/Icon/check.png" alt="등록" />
-          <span class="py-3 -text--lion-label-small text-white">등록</span>
+          <img class="py-2" src="./../assets/map/Icon/check.png" alt="저장" />
+          <span class="py-3 -text--lion-label-small text-white">저장</span>
         </button>
       </div>
       <div class="theme-summary flex flex-col">
@@ -418,7 +432,6 @@ function createReviewData() {
     </div>
     <ul class="flex gap-1 pt-1 -text--lion-label-small -text--lion-contents-content-secondary">
         <li class="after:ml-1 after:content-['|']">임시저장</li>
-        <li class="after:ml-1 after:content-['|']">순서변경</li>
         <li>전체삭제</li>
     </ul>
 </div>
