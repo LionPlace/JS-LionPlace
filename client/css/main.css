@@ -1178,10 +1178,6 @@ html {
   padding-left: 1rem;
 }
 
-.pl-8 {
-  padding-left: 2rem;
-}
-
 .pr-4 {
   padding-right: 1rem;
 }
@@ -1241,6 +1237,10 @@ html {
 
 .font-bold {
   font-weight: 700;
+}
+
+.font-normal {
+  font-weight: 400;
 }
 
 .-text--lion-black {
