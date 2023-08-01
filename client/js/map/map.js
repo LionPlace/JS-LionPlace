@@ -266,11 +266,11 @@ function createThemeHeader({title, description, url}) {
       <div class="theme-summary flex flex-col">
           <div class="theme-title flex flex-col">
             <span class="ml-4 mt-[10px] -text--lion-label-xl text-white">${title}</span>
-            <h2 class="ml-4 mt-[14px] -text--lion-label-small text-white">${description}</h2>
+            <h2 class="ml-4 mt-[30px] -text--lion-label-small text-white">${description}</h2>
           </div>
       </div>
       <button
-      class="map-button mr-[22px] mt-[82px] flex gap-1 rounded-[50px] self-end border-[1px] border-white px-4 py-2">
+      class="map-button mr-[22px] mt-[104px] flex gap-1 rounded-[50px] self-end border-[1px] border-white px-4 py-2">
       <img class="my-[4px]" src="./../assets/map/Icon/subway.png" alt="지도" />
       <span class="text-white">지도</span>
     </button>
@@ -374,7 +374,7 @@ async function renderThemeHeader() {
                         class="input-description bg-transparent mx-4 mt-[14px] -text--lion-label-small text-white -placeholder--lion-white border-none outline-none"
                         minlength="1" maxlength="100" type="text" placeholder="어떤 리스트인지 설명 해주세요" />
                 <span
-                        class="mr-[22px] mt-3 self-end -text--lion-label-small text-black"><span
+                        class="mr-[22px] self-end -text--lion-label-small text-black"><span
                             class="render-description-length -text--lion-label-small text-white">16</span> /100</span>
       `;
     return template;
