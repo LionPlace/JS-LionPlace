@@ -6,6 +6,7 @@
       "email": "lion@email.com",
       "password": "lion123!@#",
       "uniqueID": "asdfQWERTY",
+      "img": "https://cdn.inflearn.com/public/users/thumbnails/170506/fc3d4883-71b8-4c64-8647-7f79a4499461",
       "theme": [
         {
           "title": "연남 합정 데이트",
@@ -16,6 +17,7 @@
       "visited": [
         {
           "HOT MESS": {
+            "visitedId": 1,
             "location": {
               "latitude": 37.56257523917533,
               "longitude": 126.92282822957732,
@@ -40,11 +42,48 @@
               {
                 "like": true,
                 "content": "친절한 사장님. 시크한 인테리어와 아이러니한 캐릭터 매칭이 독특한 인상을 줌. 프렌치토스트와 다양한 디저트 라인업. 나쁘지 않음. 경의선 숲길 라인 중에는 늦게까지 영업해서 자주 찾게 됨",
-                "keyword": ["친절해요", "트렌디해요"]
+                "keyword": [
+                  {
+                    "💚 원하는 스타일로 잘해줘요": false
+                  },
+                  {
+                    "💇‍♀️ 스타일 추천을 잘해줘요": false
+                  },
+                  {
+                    "🌹 고급스러워요": false
+                  },
+                  {
+                    "😎 트랜디해요": true
+                  },
+                  {
+                    "🔍 시술이 꼼꼼해요": true
+                  },
+                  {
+                    "💆‍♀️ 관리법을 잘 알려줘요": true
+                  },
+                  {
+                    "💆‍♀️ 관리법을 잘 알려줘요": false
+                  },
+                  {
+                    "😀 친절해요": true
+                  },
+                  {
+                    "💰 가격이 합리적이에요": true
+                  },
+                  {
+                    "💵 비싼 만큼 가치가 있어요": false
+                  },
+                  {
+                    "👍 좋은 제품을 사용해요": true
+                  },
+                  {
+                    "🚗 주차하기 편해요": false
+                  }
+                ]
               }
             ],
             "theme": ["연남 합정 데이트"],
-            "phto": "https://gangseotongsin.com/site/wp-content/uploads/2023/01/img_0287.jpg",
+            "photo": ["https://gangseotongsin.com/site/wp-content/uploads/2023/01/img_0287.jpg"],
             "product": "커피, 디저트",
             "visited": {
               "year": 2023,
@@ -56,9 +95,10 @@
         },
         {
           "허밍벨라": {
+            "visitedId": 2,
             "location": {
               "latitude": 37.561503649820686,
-              "longitude": 26.92374611306943,
+              "longitude": 126.92374611306943,
               "region": {
                 "state": "서울시",
                 "country": "마포구",
@@ -78,13 +118,50 @@
             ],
             "reviews": [
               {
-                "like": true,
+                "like": false,
                 "content": "홍대에서 카페 어디갈까 찾는 사람들에게 추천해 주고 싶은 카페였다.",
-                "keyword": ["친절해요", "분위기가 좋아요"]
+                "keyword": [
+                  {
+                    "💚 원하는 스타일로 잘해줘요": true
+                  },
+                  {
+                    "💇‍♀️ 스타일 추천을 잘해줘요": true
+                  },
+                  {
+                    "🌹 고급스러워요": true
+                  },
+                  {
+                    "😎 트랜디해요": true
+                  },
+                  {
+                    "🔍 시술이 꼼꼼해요": true
+                  },
+                  {
+                    "💆‍♀️ 관리법을 잘 알려줘요": true
+                  },
+                  {
+                    "💆‍♀️ 관리법을 잘 알려줘요": false
+                  },
+                  {
+                    "😀 친절해요": true
+                  },
+                  {
+                    "💰 가격이 합리적이에요": true
+                  },
+                  {
+                    "💵 비싼 만큼 가치가 있어요": false
+                  },
+                  {
+                    "👍 좋은 제품을 사용해요": true
+                  },
+                  {
+                    "🚗 주차하기 편해요": false
+                  }
+                ]
               }
             ],
             "theme": ["연남 합정 데이트"],
-            "phto": "https://blog.kakaocdn.net/dn/o8RGr/btqDDvWT77F/wjg8suieH6VOYnZdHfCS21/img.jpg",
+            "photo": ["https://blog.kakaocdn.net/dn/o8RGr/btqDDvWT77F/wjg8suieH6VOYnZdHfCS21/img.jpg"],
             "product": "커피, 디저트",
             "visited": {
               "year": 2023,
@@ -96,6 +173,7 @@
         },
         {
           "스시노백쉐프": {
+            "visitedId": 3,
             "location": {
               "latitude": 37.56137805739259,
               "longitude": 126.924997937203,
@@ -110,11 +188,17 @@
               {
                 "item": "시그니처 라인",
                 "price": 39500
+              },
+              {
+                "item": "프리미엄 라인",
+                "price": 59500
               }
             ],
             "reviews": [],
-            "theme": ["연남 합정 데이트"],
-            "phto": "https://mblogthumb-phinf.pstatic.net/MjAyMDAyMThfMjI3/MDAxNTgyMDI5MjcyOTkw.ZeIA3SaspJ6JWpakDAKZx0AliWLXKo3e91AkjHCSJ0Yg.XV7L-hBAPiJlkJYCu3lVJJqZ86G_g70lfuZchDyH09Qg.JPEG.nahe0904/DSC04856.JPG?type=w800",
+            "theme": [],
+            "photo": [
+              "https://mblogthumb-phinf.pstatic.net/MjAyMDAyMThfMjI3/MDAxNTgyMDI5MjcyOTkw.ZeIA3SaspJ6JWpakDAKZx0AliWLXKo3e91AkjHCSJ0Yg.XV7L-hBAPiJlkJYCu3lVJJqZ86G_g70lfuZchDyH09Qg.JPEG.nahe0904/DSC04856.JPG?type=w800"
+            ],
             "product": "초밥, 롤",
             "visited": {
               "year": 2023,
@@ -126,6 +210,7 @@
         },
         {
           "하이디라오": {
+            "visitedId": 4,
             "location": {
               "latitude": 37.55711206891357,
               "longitude": 126.92496156998747,
@@ -142,9 +227,52 @@
                 "price": 22000
               }
             ],
-            "reviews": [],
-            "theme": [""],
-            "phto": "https://blog.kakaocdn.net/dn/th2CL/btrHpEQeFm2/aUB1k7TsSwzSdKxy3TsL91/img.jpg",
+            "reviews": [
+              {
+                "like": true,
+                "content": "aaaaaaa",
+                "keyword": [
+                  {
+                    "💚 원하는 스타일로 잘해줘요": false
+                  },
+                  {
+                    "💇‍♀️ 스타일 추천을 잘해줘요": true
+                  },
+                  {
+                    "🌹 고급스러워요": false
+                  },
+                  {
+                    "😎 트랜디해요": false
+                  },
+                  {
+                    "🔍 시술이 꼼꼼해요": false
+                  },
+                  {
+                    "💆‍♀️ 관리법을 잘 알려줘요": false
+                  },
+                  {
+                    "💆‍♀️ 관리법을 잘 알려줘요": false
+                  },
+                  {
+                    "😀 친절해요": true
+                  },
+                  {
+                    "💰 가격이 합리적이에요": false
+                  },
+                  {
+                    "💵 비싼 만큼 가치가 있어요": false
+                  },
+                  {
+                    "👍 좋은 제품을 사용해요": false
+                  },
+                  {
+                    "🚗 주차하기 편해요": false
+                  }
+                ]
+              }
+            ],
+            "theme": [],
+            "photo": ["https://blog.kakaocdn.net/dn/th2CL/btrHpEQeFm2/aUB1k7TsSwzSdKxy3TsL91/img.jpg"],
             "product": "훠궈",
             "visited": {
               "year": 2023,
@@ -156,6 +284,7 @@
         },
         {
           "야키토리 나루토": {
+            "visitedId": 5,
             "location": {
               "latitude": 37.55711206891357,
               "longitude": 126.92496156998747,
@@ -173,8 +302,8 @@
               }
             ],
             "reviews": [],
-            "theme": ["연남 합정 데이트"],
-            "phto": "https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Fmystore%2FDFE2D897D61C406F9F1F5F03949EDD48",
+            "theme": [],
+            "photo": ["https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Fmystore%2FDFE2D897D61C406F9F1F5F03949EDD48"],
             "product": "야키토리",
             "visited": {
               "year": 2023,
@@ -193,6 +322,7 @@
       "email": "kare@email.com",
       "password": "kare123!@#",
       "uniqueID": "jGahERhaeyx",
+      "img": null,
       "theme": [
         {
           "title": "맛집 목록",
@@ -203,6 +333,7 @@
       "visited": [
         {
           "진주집": {
+            "visitedId": 1,
             "location": {
               "latitude": 37.52083030630503,
               "longitude": 126.92737063319447,
@@ -226,12 +357,49 @@
             "reviews": [
               {
                 "like": true,
-                "content": "친절한 사장님. 시크한 인테리어와 아이러니한 캐릭터 매칭이 독특한 인상을 줌. 프렌치토스트와 다양한 디저트 라인업. 나쁘지 않음. 경의선 숲길 라인 중에는 늦게까지 영업해서 자주 찾게 됨",
-                "keyword": ["친절해요", "트렌디해요"]
+                "content": "맛있는 프렌치 토스트",
+                "keyword": [
+                  {
+                    "💚 원하는 스타일로 잘해줘요": false
+                  },
+                  {
+                    "💇‍♀️ 스타일 추천을 잘해줘요": false
+                  },
+                  {
+                    "🌹 고급스러워요": false
+                  },
+                  {
+                    "😎 트랜디해요": true
+                  },
+                  {
+                    "🔍 시술이 꼼꼼해요": false
+                  },
+                  {
+                    "💆‍♀️ 관리법을 잘 알려줘요": true
+                  },
+                  {
+                    "💆‍♀️ 관리법을 잘 알려줘요": false
+                  },
+                  {
+                    "😀 친절해요": false
+                  },
+                  {
+                    "💰 가격이 합리적이에요": false
+                  },
+                  {
+                    "💵 비싼 만큼 가치가 있어요": true
+                  },
+                  {
+                    "👍 좋은 제품을 사용해요": false
+                  },
+                  {
+                    "🚗 주차하기 편해요": true
+                  }
+                ]
               }
             ],
             "theme": ["맛집 목록"],
-            "phto": "https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flocal%2FkakaomapPhoto%2Freview%2F0fef38c8c20b7505d7998b1b5c11c505f068ac17%3Foriginal",
+            "photo": ["https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flocal%2FkakaomapPhoto%2Freview%2F0fef38c8c20b7505d7998b1b5c11c505f068ac17%3Foriginal"],
             "product": "커피, 디저트",
             "visited": {
               "year": 2023,
@@ -243,6 +411,7 @@
         },
         {
           "바스버거": {
+            "visitedId": 2,
             "location": {
               "latitude": 37.52083030630503,
               "longitude": 126.92737063319447,
@@ -267,11 +436,45 @@
               {
                 "like": true,
                 "content": "친절한 사장님. 시크한 인테리어와 아이러니한 캐릭터 매칭이 독특한 인상을 줌. 프렌치토스트와 다양한 디저트 라인업. 나쁘지 않음. 경의선 숲길 라인 중에는 늦게까지 영업해서 자주 찾게 됨",
-                "keyword": ["친절해요", "트렌디해요"]
+                "keyword": [
+                  {
+                    "원하는 스타일로 잘해줘요": true
+                  },
+                  {
+                    "스타일 추천을 잘해줘요": true
+                  },
+                  {
+                    "고급스러워요": true
+                  },
+                  {
+                    "트랜디해요": true
+                  },
+                  {
+                    "분위기가 좋아요": true
+                  },
+                  {
+                    "원하는 스타일로 잘해줘요": false
+                  },
+                  {
+                    "손이 빨라요": true
+                  },
+                  {
+                    "가격이 합리적이에요": true
+                  },
+                  {
+                    "비싼 만큼 가치가 있어요": false
+                  },
+                  {
+                    "주차가 편해요": true
+                  },
+                  {
+                    "대중교통 접근이 편해요": false
+                  }
+                ]
               }
             ],
             "theme": ["맛집 목록"],
-            "phto": "https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Fmystore%2F92DF565BB79048F29620A9A2FCCC016C",
+            "photo": ["https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Fmystore%2F92DF565BB79048F29620A9A2FCCC016C"],
             "product": "커피, 디저트",
             "visited": {
               "year": 2023,

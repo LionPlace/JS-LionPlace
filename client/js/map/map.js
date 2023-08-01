@@ -72,15 +72,17 @@ function renderMap(userData) {
   renderOverlay(map, userData);
 }
 
-(async function getUserInfo() {
+async function fetching() {
   const URL = 'http://localhost:3000/data';
   const response = await tiger({url: URL});
   const userData = response.data;
   renderMap(userData);
-})();
+}
+
+fetching();
 
 //* 리뷰 카드 템플릿 생성 함수
-let i = 0;
+let j = 0;
 function createReviewCard({
   photo,
   year,
@@ -94,6 +96,12 @@ function createReviewCard({
   state,
   town,
 }) {
+  const trueKeyword = [];
+  for (let i = 0; i < keyword.length; i += 1) {
+    if (Object.values(keyword[i]).toString() === 'true') {
+      trueKeyword.push(keyword[i]);
+    }
+  }
   const template = /* html */ `
   <div class='review-card'>
     <div class="relative parent mb-5">
@@ -101,7 +109,7 @@ function createReviewCard({
         <div class="mr-[6px] rounded-[50%] -bg--lion-lightblue-400 p-2">
           <img src="./../assets/map/Icon/Group.png" alt="" />
         </div>
-        <figcaption class="-text--lion-label-small -text--lion-lightblue-400">NO.${(i += 1)}</figcaption>
+        <figcaption class="-text--lion-label-small -text--lion-lightblue-400">NO.${(j += 1)}</figcaption>
           </figure>
           <section class="relative mt-3 bg-white">
         <img class="w-full h-[250px]" src=${photo} alt="가게 사진" />
@@ -124,16 +132,15 @@ function createReviewCard({
           </p>
           <div class="mt-2 flex justify-center gap-1">
             <figure class="flex rounded bg-gray-50 px-1 py-[2px]">
-              <img src="./../assets/map/Icon/clock.png" alt="시계" />
               <figcaption
                 class="ml-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
               >
-                ${keyword[0]}
+                ${Object.keys(trueKeyword[0])}
               </figcaption>
             </figure>
             <span
               class="rounded bg-gray-50 px-2 py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
-              >+${keyword.length - 1}</span
+              >+${trueKeyword.length - 1}</span
             >
           </div>
         </div>
@@ -208,7 +215,7 @@ async function renderReviewCard() {
     const placeName = Object.keys(visitedPlace)[0];
     if (visitedPlace[placeName].theme.toString() === userData[0].theme[0].title) {
       const [photo, year, month, day, date, content, keyword, state, town] = [
-        visitedPlace[placeName].phto,
+        visitedPlace[placeName].photo,
         visitedPlace[placeName].visited.year,
         visitedPlace[placeName].visited.month,
         visitedPlace[placeName].visited.day,
@@ -412,7 +419,7 @@ async function renderEditReview() {
     const placeName = Object.keys(visitedPlace)[0];
     if (visitedPlace[placeName].theme.toString() === userData[0].theme[0].title) {
       const [photo, year, month, day, date, content, keyword, state, town] = [
-        visitedPlace[placeName].phto,
+        visitedPlace[placeName].photo,
         visitedPlace[placeName].visited.year,
         visitedPlace[placeName].visited.month,
         visitedPlace[placeName].visited.day,
@@ -643,9 +650,29 @@ function renderReviewNav() {
   function displayEditButton() {
     editButton.style.display = 'flex';
   }
+  const deleteButton = getNodes('.delete-button');
+  const reviewCard = getNodes('.review-card');
+
+  function renderEditReviewCard() {
+    reviewCard.forEach(card => {
+      card.remove();
+    });
+  }
+
   saveButton.addEventListener('click', removeReviewNav);
   saveButton.addEventListener('click', displayEditButton);
-  saveButton.addEventListener('click', toggleDeleteButton);
+  function toggleButton() {
+    toggleDeleteButton(deleteButton);
+  }
+
+  saveButton.addEventListener('click', toggleButton);
+  saveButton.addEventListener('click', renderEditReviewCard);
+  saveButton.addEventListener('click', fetching);
+  function toggleMap() {
+    const map = getNode('#map');
+    map.style.display = 'block';
+  }
+  saveButton.addEventListener('click', toggleMap);
 }
 
 clickEditButton(renderReviewNav);
@@ -653,8 +680,11 @@ clickEditButton(renderReviewNav);
 //* 수정하기 클릭 시 지도 삭제
 
 function removeMap() {
-  const map = getNode('.map');
-  map.remove();
+  const map = getNode('#map');
+  while (map.firstChild) {
+    map.removeChild(map.firstChild);
+  }
+  map.style.display = 'none';
 }
 
 clickEditButton(removeMap);
