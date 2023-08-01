@@ -1,0 +1,287 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "userId": "lion",
+      "email": "lion@email.com",
+      "password": "lion123!@#",
+      "uniqueID": "asdfQWERTY",
+      "theme": [
+        {
+          "title": "연남 합정 데이트",
+          "list": "데이트 코스 모음",
+          "coverimg": "https://cdn.thescoop.co.kr/news/photo/201909/36658_48383_542.jpg"
+        }
+      ],
+      "visited": [
+        {
+          "HOT MESS": {
+            "location": {
+              "latitude": 37.56257523917533,
+              "longitude": 126.92282822957732,
+              "region": {
+                "state": "서울시",
+                "country": "마포구",
+                "town": "연남동"
+              }
+            },
+            "bookmark": false,
+            "buy": [
+              {
+                "item": "프렌치 토스트",
+                "price": 11000
+              },
+              {
+                "item": "아메리카노",
+                "price": 5000
+              }
+            ],
+            "reviews": [
+              {
+                "like": true,
+                "content": "친절한 사장님. 시크한 인테리어와 아이러니한 캐릭터 매칭이 독특한 인상을 줌. 프렌치토스트와 다양한 디저트 라인업. 나쁘지 않음. 경의선 숲길 라인 중에는 늦게까지 영업해서 자주 찾게 됨",
+                "keyword": ["친절해요", "트렌디해요"]
+              }
+            ],
+            "theme": ["연남 합정 데이트"],
+            "photo": ["https://gangseotongsin.com/site/wp-content/uploads/2023/01/img_0287.jpg"],
+            "product": "커피, 디저트",
+            "visited": {
+              "year": 2023,
+              "month": 1,
+              "day": 25,
+              "date": "수요일"
+            }
+          }
+        },
+        {
+          "허밍벨라": {
+            "location": {
+              "latitude": 37.561503649820686,
+              "longitude": 26.92374611306943,
+              "region": {
+                "state": "서울시",
+                "country": "마포구",
+                "town": "서교동"
+              }
+            },
+            "bookmark": false,
+            "buy": [
+              {
+                "item": "리치캐모마일 티",
+                "price": 6500
+              },
+              {
+                "item": "슈크림 크로와상",
+                "price": 6000
+              }
+            ],
+            "reviews": [
+              {
+                "like": true,
+                "content": "홍대에서 카페 어디갈까 찾는 사람들에게 추천해 주고 싶은 카페였다.",
+                "keyword": ["친절해요", "분위기가 좋아요"]
+              }
+            ],
+            "theme": [],
+            "photo": ["https://blog.kakaocdn.net/dn/o8RGr/btqDDvWT77F/wjg8suieH6VOYnZdHfCS21/img.jpg"],
+            "product": "커피, 디저트",
+            "visited": {
+              "year": 2023,
+              "month": 2,
+              "day": 14,
+              "date": "화요일"
+            }
+          }
+        },
+        {
+          "스시노백쉐프": {
+            "location": {
+              "latitude": 37.56137805739259,
+              "longitude": 126.924997937203,
+              "region": {
+                "state": "서울시",
+                "country": "마포구",
+                "town": "연남동"
+              }
+            },
+            "bookmark": false,
+            "buy": [
+              {
+                "item": "시그니처 라인",
+                "price": 39500
+              }
+            ],
+            "reviews": [],
+            "theme": [],
+            "photo": ["https://mblogthumb-phinf.pstatic.net/MjAyMDAyMThfMjI3/MDAxNTgyMDI5MjcyOTkw.ZeIA3SaspJ6JWpakDAKZx0AliWLXKo3e91AkjHCSJ0Yg.XV7L-hBAPiJlkJYCu3lVJJqZ86G_g70lfuZchDyH09Qg.JPEG.nahe0904/DSC04856.JPG?type=w800"],
+            "product": "초밥, 롤",
+            "visited": {
+              "year": 2023,
+              "month": 3,
+              "day": 24,
+              "date": "금요일"
+            }
+          }
+        },
+        {
+          "하이디라오": {
+            "location": {
+              "latitude": 37.55711206891357,
+              "longitude": 126.92496156998747,
+              "region": {
+                "state": "서울시",
+                "country": "마포구",
+                "town": "동교동"
+              }
+            },
+            "bookmark": true,
+            "buy": [
+              {
+                "item": "해산물모듬",
+                "price": 22000
+              }
+            ],
+            "reviews": [],
+            "theme": [],
+            "photo": ["https://blog.kakaocdn.net/dn/th2CL/btrHpEQeFm2/aUB1k7TsSwzSdKxy3TsL91/img.jpg"],
+            "product": "훠궈",
+            "visited": {
+              "year": 2023,
+              "month": 4,
+              "day": 24,
+              "date": "월요일"
+            }
+          }
+        },
+        {
+          "야키토리 나루토": {
+            "location": {
+              "latitude": 37.55711206891357,
+              "longitude": 126.92496156998747,
+              "region": {
+                "state": "서울시",
+                "country": "마포구",
+                "town": "서교동"
+              }
+            },
+            "bookmark": true,
+            "buy": [
+              {
+                "item": "나루토 오마카세 7꼬치 쿠시코스",
+                "price": 21800
+              }
+            ],
+            "reviews": [],
+            "theme": [],
+            "photo": ["https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Fmystore%2FDFE2D897D61C406F9F1F5F03949EDD48"],
+            "product": "야키토리",
+            "visited": {
+              "year": 2023,
+              "month": 4,
+              "day": 25,
+              "date": "화요일"
+            }
+          }
+        }
+      ],
+      "interest": ["gyeongju", "jongro", "haeundae", "suwon"]
+    },
+    {
+      "id": 2,
+      "userId": "kare",
+      "email": "kare@email.com",
+      "password": "kare123!@#",
+      "uniqueID": "jGahERhaeyx",
+      "theme": [
+        {
+          "title": "맛집 목록",
+          "list": "맛있는!!!!!",
+          "coverimg": "https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2019/11/06/1399dc71022b42d0a330c541ebc30938_%EC%82%AC%EC%9D%B4%EC%A6%88.jpg"
+        }
+      ],
+      "visited": [
+        {
+          "진주집": {
+            "location": {
+              "latitude": 37.52083030630503,
+              "longitude": 126.92737063319447,
+              "region": {
+                "state": "서울시",
+                "country": "영등포구",
+                "town": "여의도동"
+              }
+            },
+            "bookmark": false,
+            "buy": [
+              {
+                "item": "프렌치 토스트",
+                "price": 11000
+              },
+              {
+                "item": "아메리카노",
+                "price": 5000
+              }
+            ],
+            "reviews": [
+              {
+                "like": true,
+                "content": "친절한 사장님. 시크한 인테리어와 아이러니한 캐릭터 매칭이 독특한 인상을 줌. 프렌치토스트와 다양한 디저트 라인업. 나쁘지 않음. 경의선 숲길 라인 중에는 늦게까지 영업해서 자주 찾게 됨",
+                "keyword": ["친절해요", "트렌디해요"]
+              }
+            ],
+            "theme": ["맛집 목록"],
+            "photo": ["https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flocal%2FkakaomapPhoto%2Freview%2F0fef38c8c20b7505d7998b1b5c11c505f068ac17%3Foriginal"],
+            "product": "커피, 디저트",
+            "visited": {
+              "year": 2023,
+              "month": 5,
+              "day": 5,
+              "date": "금요일"
+            }
+          }
+        },
+        {
+          "바스버거": {
+            "location": {
+              "latitude": 37.52083030630503,
+              "longitude": 126.92737063319447,
+              "region": {
+                "state": "서울시",
+                "country": "영등포구",
+                "town": "여의도동"
+              }
+            },
+            "bookmark": false,
+            "buy": [
+              {
+                "item": "프렌치 토스트",
+                "price": 11000
+              },
+              {
+                "item": "아메리카노",
+                "price": 5000
+              }
+            ],
+            "reviews": [
+              {
+                "like": true,
+                "content": "친절한 사장님. 시크한 인테리어와 아이러니한 캐릭터 매칭이 독특한 인상을 줌. 프렌치토스트와 다양한 디저트 라인업. 나쁘지 않음. 경의선 숲길 라인 중에는 늦게까지 영업해서 자주 찾게 됨",
+                "keyword": ["친절해요", "트렌디해요"]
+              }
+            ],
+            "theme": ["맛집 목록"],
+            "photo": ["https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Fmystore%2F92DF565BB79048F29620A9A2FCCC016C"],
+            "product": "커피, 디저트",
+            "visited": {
+              "year": 2023,
+              "month": 5,
+              "day": 8,
+              "date": "월요일"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
