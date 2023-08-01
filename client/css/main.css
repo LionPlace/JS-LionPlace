@@ -698,6 +698,10 @@ html{
   margin-top: 0.75rem;
 }
 
+.mt-\[104px\]{
+  margin-top: 104px;
+}
+
 .mt-\[10px\]{
   margin-top: 10px;
 }
@@ -714,24 +718,16 @@ html{
   margin-top: 2px;
 }
 
+.mt-\[30px\]{
+  margin-top: 30px;
+}
+
 .mt-\[34px\]{
   margin-top: 34px;
 }
 
 .mt-\[82px\]{
   margin-top: 82px;
-}
-
-.mt-\[30px\]{
-  margin-top: 30px;
-}
-
-.mt-\[100px\]{
-  margin-top: 100px;
-}
-
-.mt-\[104px\]{
-  margin-top: 104px;
 }
 
 .line-clamp-3{
@@ -761,6 +757,10 @@ html{
   height: 0.25rem;
 }
 
+.h-\[250px\]{
+  height: 250px;
+}
+
 .h-\[30px\]{
   height: 30px;
 }
@@ -771,10 +771,6 @@ html{
 
 .h-\[46px\]{
   height: 46px;
-}
-
-.h-\[250px\]{
-  height: 250px;
 }
 
 .w-1{
