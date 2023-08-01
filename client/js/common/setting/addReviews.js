@@ -11,7 +11,7 @@ import {
   removeClass,
   saveStorage,
   tiger,
-} from '../../lib/index.js';
+} from '../../../lib/index.js';
 
 async function fetching() {
   const user = tiger.get('http://localhost:3000/data');

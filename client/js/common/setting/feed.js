@@ -6,7 +6,7 @@ import {
   insertLast,
   saveStorage,
   tiger,
-} from '../../lib/index.js';
+} from '../../../lib/index.js';
 
 // ---------- 방문 페이지 ----------
 const user = tiger.get('http://localhost:3000/data/');
