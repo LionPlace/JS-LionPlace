@@ -11,6 +11,7 @@
       "visited": [
         {
           "HOT MESS": {
+            "visitedUser": "lion",
             "visitedId": 1,
             "location": {
               "latitude": 37.56257523917533,
@@ -89,6 +90,7 @@
         },
         {
           "허밍벨라": {
+            "visitedUser": "lion",
             "visitedId": 2,
             "location": {
               "latitude": 37.561503649820686,
@@ -167,6 +169,7 @@
         },
         {
           "스시노백쉐프": {
+            "visitedUser": "lion",
             "visitedId": 3,
             "location": {
               "latitude": 37.56137805739259,
@@ -204,6 +207,7 @@
         },
         {
           "하이디라오": {
+            "visitedUser": "lion",
             "visitedId": 4,
             "location": {
               "latitude": 37.55711206891357,
@@ -235,6 +239,7 @@
         },
         {
           "야키토리 나루토": {
+            "visitedUser": "lion",
             "visitedId": 5,
             "location": {
               "latitude": 37.55711206891357,
@@ -265,7 +270,7 @@
           }
         }
       ],
-      "interest": ["gyeongju", "jongro", "haeundae", "suwon"]
+      "interest": []
     },
     {
       "id": 2,
@@ -273,7 +278,7 @@
       "email": "kare@email.com",
       "password": "kare123!@#",
       "uniqueID": "jGahERhaeyx",
-      "img": null,
+      "img": "https://data.onnada.com/character/202301/thumb_2042390482_455e13d2_226759.jpg",
       "theme": [
         {
           "title": "맛집 목록",
@@ -284,6 +289,7 @@
       "visited": [
         {
           "진주집": {
+            "visitedUser": "kare",
             "visitedId": 1,
             "location": {
               "latitude": 37.52083030630503,
@@ -308,7 +314,7 @@
             "reviews": [
               {
                 "like": true,
-                "content": "맛있는 프렌치 토스트",
+                "content": "맛있어요~!@!!@$#^%&*(&^%$#@",
                 "keyword": [
                   {
                     "💚 원하는 스타일로 잘해줘요": false
@@ -362,6 +368,7 @@
         },
         {
           "바스버거": {
+            "visitedUser": "kare",
             "visitedId": 2,
             "location": {
               "latitude": 37.52083030630503,
@@ -386,7 +393,7 @@
             "reviews": [
               {
                 "like": true,
-                "content": "친절한 사장님. 시크한 인테리어와 아이러니한 캐릭터 매칭이 독특한 인상을 줌. 프렌치토스트와 다양한 디저트 라인업. 나쁘지 않음. 경의선 숲길 라인 중에는 늦게까지 영업해서 자주 찾게 됨",
+                "content": "분위기가 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요",
                 "keyword": [
                   {
                     "원하는 스타일로 잘해줘요": true

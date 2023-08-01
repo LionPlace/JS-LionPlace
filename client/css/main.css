@@ -1147,8 +1147,8 @@ html{
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\$\{randomImg\}\)\]{
-  background-image: url(${randomImg});
+.bg-\[url\(\.\.\/assets\/feed\/h1\.jpg\)\]{
+  background-image: url(../assets/feed/h1.jpg);
 }
 
 .bg-custom-gradient{

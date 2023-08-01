@@ -219,23 +219,23 @@ function renderLikeKeyword() {
 renderLikeKeyword();
 
 // 랜덤 이미지 추가
-function radomImg() {
-  return ['../assets/feed/h1.jpg'];
-}
+// function radomImg() {
+//   return ['../assets/feed/h1.jpg'];
+// }
 
 function renderBgImg() {
-  const imageArr = radomImg();
+  // const imageArr = radomImg();
   const reviewImgBox = getNode('.reviewBg');
   const reviewImgBtn = getNode('.reviewBg button');
 
-  const randomImg = imageArr[Math.floor(Math.random() * imageArr.length)];
+  // const randomImg = imageArr[Math.floor(Math.random() * imageArr.length)];
 
   reviewImgBtn.addEventListener('click', () => {
     addClass(reviewImgBox, 'h-[260px]');
-    addClass(reviewImgBox, `bg-[url(${randomImg})]`);
+    addClass(reviewImgBox, `bg-[url(../assets/feed/h1.jpg)]`);
   });
 
-  postReviewValue.visited[locationId - 1][clickedReview].photo[0] = randomImg;
+  postReviewValue.visited[locationId - 1][clickedReview].photo[0] = '../assets/feed/h1.jpg';
 }
 renderBgImg();
 // 포스트 등록하기
