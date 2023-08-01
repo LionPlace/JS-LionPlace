@@ -10,8 +10,9 @@
           type="image/xml+svg"
         />
         <link rel="stylesheet" href="../css/main.css" />
-        <script src="./js/main.js" type="module"></script>
+        <script src="./../js/main.js" type="module"></script>
         <script src="./../js/login/register.js" type="module"></script>
+        
         <title>회원가입</title>
       </head>
 
@@ -43,7 +44,7 @@
           <div class="flex flex-col">
             <label class="-text--lion-white -text--lion-paragraph-small" for="user-pw">비밀번호</label>
             <input class="register-user-pw w-[250px] h-[44px] rounded -text--lion-paragraph-small pl-5 pt-3 pr-5 pb-3 bg-transparent border -text--lion-white focus:outline-none" type="password" id="user-pw" placeholder="8문자 이상, 특수 문자 포함" required minlength="8"/>
-            <span class="error-message -text--lion-info-error -text--lion-paragraph-small hidden">비밀번호는 특수문자 포함 최소 8자이어야 합니다.</span>
+            <span class="error-message -text--lion-info-error -text--lion-paragraph-small hidden">비밀번호는 숫자, 특수문자를 포함한<br/>최소 8자의 영문입니다.</span>
           </div>
 
           <div class="flex flex-col">
