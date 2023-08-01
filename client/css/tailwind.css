@@ -9,5 +9,7 @@
   html {
     @apply -font--lion-family;
   }
-  body.login .is--invalid + .error-message {display:block;}
+  body.login .is--invalid + .error-message {
+    display: block;
+  }
 }
