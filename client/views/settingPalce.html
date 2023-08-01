@@ -10,7 +10,7 @@
       type="image/xml+svg"
     />
     <link rel="stylesheet" href="../css/main.css" />
-    <script src="../js/main.js" type="module"></script>
+    <script src="../js/common/settingPlace.js" type="module"></script>
     <title>feedMain</title>
   </head>
   <body class="mb-[100px]">
@@ -50,8 +50,8 @@
       </div>
 
       <div>
-        <ul>
-          <li>
+        <ul class="placeRenderBox">
+          <!-- <li>
             <button
               class="mb-[8px] flex w-full items-center justify-between rounded-[8px] -bg--lion-primary px-[12px] py-[14px] text-white"
             >
@@ -68,8 +68,8 @@
                   alt="삭제"
               /></span>
             </button>
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <button
               class="mb-[8px] flex w-full items-center justify-between rounded-[8px] -bg--lion-primary px-[12px] py-[14px] text-white"
             >
@@ -140,7 +140,7 @@
                   alt="삭제"
               /></span>
             </button>
-          </li>
+          </li> -->
         </ul>
       </div>
     </section>
@@ -154,10 +154,10 @@
         👍 요즘 많이 찾아봐요
       </p>
 
-      <div class="py-[8px]">
+      <div class="interest py-[8px]">
         <ul class="grid grid-cols-3 gap-[12px]">
-          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
-            <button class="flex h-full w-full flex-col items-center justify-center">
+          <li class="interestList relative flex h-[92px] w-[90px] rounded-[12px]">
+            <button class="interestBtn flex h-full w-full flex-col items-center justify-center">
               <span class="absolute right-[6px] top-[6px]"
                 ><img src="../assets/feed/icon-plus.png" alt="추가"
               /></span>
@@ -165,17 +165,17 @@
               <span class="-text--lion-label-small">제주도</span>
             </button>
           </li>
-          <li class="relative flex h-[92px] w-[90px] rounded-[12px] -bg--lion-blue-900">
-            <button class="flex h-full w-full flex-col items-center justify-center">
+          <li class="interestList relative flex h-[92px] w-[90px] rounded-[12px]">
+            <button class="interestBtn flex h-full w-full flex-col items-center justify-center">
               <span class="absolute right-[6px] top-[6px]"
-                ><img src="../assets/feed/icon-check.png" alt="제거"
+                ><img src="../assets/feed/icon-plus.png" alt="제거"
               /></span>
               <img class="mb-[4px]" src="../assets/feed/gyeongju.png" alt="경주시" />
-              <span class="-text--lion-label-small text-white">경주시</span>
+              <span class="-text--lion-label-small">경주시</span>
             </button>
           </li>
-          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
-            <button class="flex h-full w-full flex-col items-center justify-center">
+          <li class="interestList relative flex h-[92px] w-[90px] rounded-[12px]">
+            <button class="interestBtn flex h-full w-full flex-col items-center justify-center">
               <span class="absolute right-[6px] top-[6px]"
                 ><img src="../assets/feed/icon-plus.png" alt="추가"
               /></span>
@@ -183,26 +183,26 @@
               <span class="-text--lion-label-small">전주시</span>
             </button>
           </li>
-          <li class="relative flex h-[92px] w-[90px] rounded-[12px] -bg--lion-blue-900">
-            <button class="flex h-full w-full flex-col items-center justify-center">
+          <li class="interestList relative flex h-[92px] w-[90px] rounded-[12px]">
+            <button class="interestBtn flex h-full w-full flex-col items-center justify-center">
               <span class="absolute right-[6px] top-[6px]"
-                ><img src="../assets/feed/icon-check.png" alt="제거"
+                ><img src="../assets/feed/icon-plus.png" alt="제거"
               /></span>
               <img class="mb-[4px]" src="../assets/feed/jongro.png" alt="종로구" />
-              <span class="-text--lion-label-small text-white">종로구</span>
+              <span class="-text--lion-label-small">종로구</span>
             </button>
           </li>
-          <li class="relative flex h-[92px] w-[90px] rounded-[12px] -bg--lion-blue-900">
-            <button class="flex h-full w-full flex-col items-center justify-center">
+          <li class="interestList relative flex h-[92px] w-[90px] rounded-[12px]">
+            <button class="interestBtn flex h-full w-full flex-col items-center justify-center">
               <span class="absolute right-[6px] top-[6px]"
-                ><img src="../assets/feed/icon-check.png" alt="제거"
+                ><img src="../assets/feed/icon-plus.png" alt="제거"
               /></span>
               <img class="mb-[4px]" src="../assets/feed/haeundae.png" alt="해운대" />
-              <span class="-text--lion-label-small text-white">해운대</span>
+              <span class="-text--lion-label-small">해운대</span>
             </button>
           </li>
-          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
-            <button class="flex h-full w-full flex-col items-center justify-center">
+          <li class="interestList relative flex h-[92px] w-[90px] rounded-[12px]">
+            <button class="interestBtn flex h-full w-full flex-col items-center justify-center">
               <span class="absolute right-[6px] top-[6px]"
                 ><img src="../assets/feed/icon-plus.png" alt="추가"
               /></span>
@@ -210,8 +210,8 @@
               <span class="-text--lion-label-small">순천시</span>
             </button>
           </li>
-          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
-            <button class="flex h-full w-full flex-col items-center justify-center">
+          <li class="interestList relative flex h-[92px] w-[90px] rounded-[12px]">
+            <button class="interestBtn flex h-full w-full flex-col items-center justify-center">
               <span class="absolute right-[6px] top-[6px]"
                 ><img src="../assets/feed/icon-plus.png" alt="추가"
               /></span>
@@ -219,8 +219,8 @@
               <span class="-text--lion-label-small">강릉시</span>
             </button>
           </li>
-          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
-            <button class="flex h-full w-full flex-col items-center justify-center">
+          <li class="interestList relative flex h-[92px] w-[90px] rounded-[12px]">
+            <button class="interestBtn flex h-full w-full flex-col items-center justify-center">
               <span class="absolute right-[6px] top-[6px]"
                 ><img src="../assets/feed/icon-plus.png" alt="추가"
               /></span>
@@ -228,8 +228,8 @@
               <span class="-text--lion-label-small">광화문</span>
             </button>
           </li>
-          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
-            <button class="flex h-full w-full flex-col items-center justify-center">
+          <li class="interestList relative flex h-[92px] w-[90px] rounded-[12px]">
+            <button class="interestBtn flex h-full w-full flex-col items-center justify-center">
               <span class="absolute right-[6px] top-[6px]"
                 ><img src="../assets/feed/icon-plus.png" alt="추가"
               /></span>
@@ -237,8 +237,8 @@
               <span class="-text--lion-label-small">광교</span>
             </button>
           </li>
-          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
-            <button class="flex h-full w-full flex-col items-center justify-center">
+          <li class="interestList relative flex h-[92px] w-[90px] rounded-[12px]">
+            <button class="interestBtn flex h-full w-full flex-col items-center justify-center">
               <span class="absolute right-[6px] top-[6px]"
                 ><img src="../assets/feed/icon-plus.png" alt="추가"
               /></span>
@@ -246,8 +246,8 @@
               <span class="-text--lion-label-small">춘천시</span>
             </button>
           </li>
-          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
-            <button class="flex h-full w-full flex-col items-center justify-center">
+          <li class="interestList relative flex h-[92px] w-[90px] rounded-[12px]">
+            <button class="interestBtn flex h-full w-full flex-col items-center justify-center">
               <span class="absolute right-[6px] top-[6px]"
                 ><img src="../assets/feed/icon-plus.png" alt="추가"
               /></span>
@@ -255,13 +255,13 @@
               <span class="-text--lion-label-small">포항시</span>
             </button>
           </li>
-          <li class="relative flex h-[92px] w-[90px] rounded-[12px] -bg--lion-blue-900">
-            <button class="flex h-full w-full flex-col items-center justify-center">
+          <li class="interestList relative flex h-[92px] w-[90px] rounded-[12px]">
+            <button class="interestBtn flex h-full w-full flex-col items-center justify-center">
               <span class="absolute right-[6px] top-[6px]"
-                ><img src="../assets/feed/icon-check.png" alt="제거"
+                ><img src="../assets/feed/icon-plus.png" alt="제거"
               /></span>
               <img class="mb-[4px]" src="../assets/feed/suwon.png" alt="수원시" />
-              <span class="-text--lion-label-small text-white">수원시</span>
+              <span class="-text--lion-label-small">수원시</span>
             </button>
           </li>
         </ul>

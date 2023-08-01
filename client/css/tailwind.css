@@ -60,4 +60,11 @@
     width: 280px;
     text-align: center;
   }
+  .interest li {
+    @apply bg-gray-100;
+  }
+  .interest .is-active {
+    color: #fff;
+    @apply -bg--lion-blue-900;
+  }
 }

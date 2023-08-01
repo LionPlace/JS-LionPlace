@@ -504,6 +504,17 @@ html{
   text-align: center;
 }
 
+.interest li{
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.interest .is-active {
+  color: #fff;
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 20 51 / var(--tw-bg-opacity));
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -1102,11 +1113,6 @@ html{
   background-color: rgb(0 41 102 / var(--tw-bg-opacity));
 }
 
-.-bg--lion-blue-900{
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 20 51 / var(--tw-bg-opacity));
-}
-
 .-bg--lion-gray-100{
   --tw-bg-opacity: 1;
   background-color: rgb(225 225 225 / var(--tw-bg-opacity));
@@ -1135,11 +1141,6 @@ html{
 .bg-black{
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.bg-gray-100{
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
 .bg-white{
