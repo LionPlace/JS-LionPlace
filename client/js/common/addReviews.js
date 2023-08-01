@@ -99,6 +99,25 @@ const defaultReview = {
   ],
 };
 
+// 좋아요 추천인
+function recommendPeople() {
+  const recommendPeopleSection = getNode('.recommendPeople');
+  const template = /* html */ `
+  <a href="#" class="relative block h-[56px] w-[56px] rounded-full bg-white p-[4px]">
+    <img class="h-full w-full rounded-full" src="https://i.ibb.co/9Vpvp3f/karebbang.png" alt="사용자 이미지" />
+    <span class="w-full block text-center -text--lion-paragraph-small">카레빵</span>
+  </a>
+  `;
+  clearContents(recommendPeopleSection);
+  insertLast(recommendPeopleSection, template);
+  defaultReview.like = !defaultReview.like;
+}
+function renderRecommendPeople() {
+  const likeBtn = getNode('.likeBtn');
+  likeBtn.addEventListener('click', () => recommendPeople());
+}
+renderRecommendPeople();
+
 // 좋아요 키워드
 function likeKeywordTemplate() {
   const template = /* html */ `
@@ -182,30 +201,43 @@ function renderLikeKeyword() {
     e.addEventListener('click', () => {
       e.classList.toggle('is-active');
       defaultReview.keyword[index][e.textContent] = !defaultReview.keyword[index][e.textContent];
+      const likeBtn = defaultReview.keyword.filter(k => Object.values(k)[0] === true);
+      const warningText = getNode('.warningText');
+
+      if (likeBtn) {
+        removeClass(warningText, 'is-invalid');
+        warningText.textContent = '이 장소에 어울리는 키워드를 골라주세요.';
+      }
+
+      // if (likeBtn.length) {
+      //   removeClass(warningText, 'is-invalid');
+      //   warningText.textContent = 'asdf';
+      // }
     }),
   );
 }
 renderLikeKeyword();
 
-// 좋아요 추천인
-function recommendPeople() {
-  const recommendPeopleSection = getNode('.recommendPeople');
-  const template = /* html */ `
-  <a href="#" class="relative block h-[56px] w-[56px] rounded-full bg-white p-[4px]">
-    <img class="h-full w-full rounded-full" src="https://i.ibb.co/9Vpvp3f/karebbang.png" alt="사용자 이미지" />
-    <span class="w-full block text-center -text--lion-paragraph-small">카레빵</span>
-  </a>
-  `;
-  clearContents(recommendPeopleSection);
-  insertLast(recommendPeopleSection, template);
-  defaultReview.like = !defaultReview.like;
+// 랜덤 이미지 추가
+function radomImg() {
+  return ['../assets/feed/h1.jpg'];
 }
-function renderRecommendPeople() {
-  const likeBtn = getNode('.likeBtn');
-  likeBtn.addEventListener('click', () => recommendPeople());
-}
-renderRecommendPeople();
 
+function renderBgImg() {
+  const imageArr = radomImg();
+  const reviewImgBox = getNode('.reviewBg');
+  const reviewImgBtn = getNode('.reviewBg button');
+
+  const randomImg = imageArr[Math.floor(Math.random() * imageArr.length)];
+
+  reviewImgBtn.addEventListener('click', () => {
+    addClass(reviewImgBox, 'h-[260px]');
+    addClass(reviewImgBox, `bg-[url(${randomImg})]`);
+  });
+
+  postReviewValue.visited[locationId - 1][clickedReview].photo[0] = randomImg;
+}
+renderBgImg();
 // 포스트 등록하기
 function postReview() {
   const textatera = getNode('textarea');
@@ -214,7 +246,6 @@ function postReview() {
 
   textatera.addEventListener('input', () => {
     textLength.textContent = textatera.value.length;
-    console.log(textatera.value.length);
     if (textatera.value.length === 0) {
       addClass(submit, 'is-invalid');
     } else {
@@ -228,11 +259,19 @@ function postReview() {
     postReviewValue.visited[locationId - 1][clickedReview].reviews.push(defaultReview);
     postReviewValue.visited[locationId - 1][clickedReview].reviews[0].content = textatera.value;
 
-    tiger.put('http://localhost:3000/data/1', {...postReviewValue, ...authUser});
-
-    deleteStorage('visited');
-    deleteStorage('reivew');
-    window.location.href = './visited.html';
+    const likeBtn = defaultReview.keyword.filter(e => Object.values(e)[0] === true);
+    const warningText = getNode('.warningText');
+    if (!likeBtn.length) {
+      addClass(warningText, 'is-invalid');
+      warningText.textContent = '키워드는 최소 1개 이상 골라주세요!!!';
+    } else if (textatera.value.length === 0) {
+      alert('리뷰를 입력해주세요!!');
+    } else {
+      tiger.put('http://localhost:3000/data/1', {...authUser, ...postReviewValue});
+      deleteStorage('visited');
+      deleteStorage('reivew');
+      window.location.href = './visited.html';
+    }
   });
 }
 postReview();

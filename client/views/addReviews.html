@@ -63,7 +63,7 @@
       <h2 class="sr-only">좋았던 키워드</h2>
       <div class="flex flex-col items-center justify-center gap-[8px] px-[60px] py-[24px]">
         <p class="-text--lion-label-medium font-semibold">어떤 점이 좋았나요? (1개~5개)</p>
-        <span class="-text--lion-paragraph-small -text--lion-contents-content-tertiary"
+        <span class="warningText -text--lion-paragraph-small -text--lion-contents-content-tertiary"
           >이 장소에 어울리는 키워드를 골라주세요.</span
         >
       </div>
@@ -172,10 +172,12 @@
       <h2 class="sr-only">리뷰 작성</h2>
       <form action="#">
         <div class="flex flex-col items-center gap-[16px] px-[26px] py-[16px]">
-          <div><p class="-text--lion-label-medium font-semibold">리뷰를 남겨주세요</p></div>
           <div>
+            <p class="-text--lion-label-medium font-semibold">리뷰를 남겨주세요</p>
+          </div>
+          <div class="reviewBg flex w-full items-center justify-center bg-cover bg-center">
             <button
-              class="flex items-center gap-[4px] rounded-[4px] border-[0.5px] -border--lion-contents-content-primary p-[12px] -text--lion-label-small font-semibold"
+              class="flex h-[45px] items-center gap-[4px] rounded-[4px] border-[0.5px] -border--lion-contents-content-primary bg-white p-[12px] -text--lion-label-small font-semibold"
               type="button"
             >
               <img class="" src="../assets/feed/icon-photo.png" alt="사진" />

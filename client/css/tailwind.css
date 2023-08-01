@@ -51,6 +51,13 @@
 
   .is-invalid {
     background: rgb(164, 58, 58) !important;
-    cursor: not-allowed;
+  }
+  .warningText.is-invalid {
+    border-radius: 8px;
+    color: #fff;
+    padding: 20px 12px;
+    font-size: 16px;
+    width: 280px;
+    text-align: center;
   }
 }
