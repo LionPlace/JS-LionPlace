@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://tailwindui.com/img/logos/mark.png?color=indigo&shade=500"
+      type="image/xml+svg"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/main.js" type="module"></script>
+    <title>feedPost</title>
+  </head>
+  <body class="mb-[80px]">
+    <header class="relative -bg--lion-primary p-[22px] pt-[36px] text-white">
+      <h1 class="sr-only">다른 사용자 피드포스트 페이지</h1>
+      <a href="#" onclick="location.href='./feed.html'" class="absolute left-[5px] top-[5px]">
+        <img src="../assets/feed/icon-left-white.png" alt="뒤로가기" />
+      </a>
+      <div class="flex justify-center gap-[19px]">
+        <a href="#" class="relative block h-[56px] w-[56px] rounded-full bg-white p-[4px]">
+          <img
+            class="h-full w-full rounded-full filter"
+            src="../assets/feed/karebbang.png"
+            alt="사용자 이미지"
+          />
+          <div class="absolute bottom-0 right-0 h-[20px] w-[20px] rounded-full bg-white p-[4px]">
+            <img
+              class="h-full w-full"
+              src="../assets/feed/icon-pencil.png"
+              alt="프로필 이미지 수정"
+            />
+          </div>
+        </a>
+        <div>
+          <div>
+            <h2 class="sr-only">피드 페이지 사용자 프로필</h2>
+            <a href="#" class="flex -text--lion-label-medium font-semibold">
+              집보다는 카페지
+              <img
+                class="mb-[4px] ml-[4px] h-[18px] w-[18px]"
+                src="../assets/feed/icon-share-white.png"
+                alt="공유하기"
+              />
+            </a>
+          </div>
+          <ul class="flex">
+            <li>
+              <a href="#" class="flex flex-col items-center pr-[12px] text-center">
+                <span class="-text--lion-paragraph-small">리뷰</span
+                ><span class="-text--lion-label-small font-semibold">231</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex flex-col items-center border-l px-[12px] text-center">
+                <span class="-text--lion-paragraph-small">사진</span
+                ><span class="-text--lion-label-small font-semibold">121</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex flex-col items-center border-l px-[12px] text-center">
+                <span class="-text--lion-paragraph-small">팔로잉</span
+                ><span class="-text--lion-label-small font-semibold">496</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex flex-col items-center border-l px-[12px] text-center">
+                <span class="-text--lion-paragraph-small">팔로워</span
+                ><span class="-text--lion-label-small font-semibold">891</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-[8px] flex gap-[5px]">
+        <a
+          href="#"
+          class="flex flex-1 items-center justify-center gap-[8px] rounded-[8px] -bg--lion-lightblue-800 px-[58px] py-[6px] -text--lion-label-small"
+          >팔로잉
+        </a>
+        <a
+          href="#"
+          class="flex items-center gap-[8px] rounded-[8px] -bg--lion-lightblue-800 px-[18px] py-[6px] -text--lion-label-small"
+        >
+          <img src="../assets/feed/icon-more.png" alt="더보기" />
+        </a>
+      </div>
+    </header>
+
+    <nav class="feed-nav -bg--lion-primary -text--lion-lightblue-300">
+      <ul class="flex py-[4px] text-center">
+        <li class="is-active flex-1">
+          <button onclick="location.href='./feed.html'">피드</button>
+        </li>
+        <li class="flex-1"><button onclick="location.href='./visited.html'">방문</button></li>
+        <li class="flex-1"><button>리뷰</button></li>
+        <li class="flex-1"><button>예약·주문</button></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h2 class="sr-only">피드 정렬</h2>
+
+      <div
+        class="feedSort ml-[4px] flex justify-between px-[12px] py-[8px] -text--lion-label-small font-semibold"
+      >
+        <div class="flex gap-[8px]">
+          <button class="is-active flex items-center gap-[8px] opacity-50">
+            <img src="../assets/feed/icon-hamburger.png" alt="전체" />전체
+          </button>
+          <button class="flex items-center gap-[8px] opacity-50">
+            <img class="h-[18px]" src="../assets/feed/icon-photo.png" alt="사진" />사진
+          </button>
+        </div>
+
+        <div>
+          <form onchange="console.log(document.querySelector('select').value)" action="#">
+            <select
+              id="countries"
+              class="block w-full focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+            >
+              <option selected value="new">최신순</option>
+              <option value="old">오래된순</option>
+              <option value="hot">인기순</option>
+            </select>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-[18px] py-[8px] -text--lion-paragraph-small">
+      <h2 class="sr-only">테마</h2>
+      <ul class="feedtheme flex gap-[4px] overflow-scroll">
+        <li>
+          <button
+            class="is-active whitespace-nowrap rounded-[16px] border -border-r--lion-gray-100 px-[14px] py-[6px]"
+          >
+            한식
+          </button>
+        </li>
+        <li>
+          <button
+            class="whitespace-nowrap rounded-[16px] border -border-r--lion-gray-100 px-[14px] py-[6px]"
+          >
+            아이와 함께
+          </button>
+        </li>
+        <li>
+          <button
+            class="whitespace-nowrap rounded-[16px] border -border-r--lion-gray-100 px-[14px] py-[6px]"
+          >
+            중식
+          </button>
+        </li>
+        <li>
+          <button
+            class="whitespace-nowrap rounded-[16px] border -border-r--lion-gray-100 px-[14px] py-[6px]"
+          >
+            문화예술
+          </button>
+        </li>
+        <li>
+          <button
+            class="whitespace-nowrap rounded-[16px] border -border-r--lion-gray-100 px-[14px] py-[6px]"
+          >
+            일식
+          </button>
+        </li>
+        <li>
+          <button
+            class="whitespace-nowrap rounded-[16px] border -border-r--lion-gray-100 px-[14px] py-[6px]"
+          >
+            폭식
+          </button>
+        </li>
+      </ul>
+    </section>
+
+    <section class="feedContents px-[16px]">
+      <h2 class="sr-only">전체 피드 컨텐츠</h2>
+      <div
+        class="mb-[12px] mt-[4px] rounded-[8px] border border-[-border-r--lion-gray-100] p-[12px] -shadow--lion-below-low-box-shadow"
+      >
+        <div>
+          <span class="-text--lion-label-medium font-semibold">소박한이야기</span
+          ><span class="ml-[4px] -text--lion-paragraph-small -text--lion-contents-content-tertiary"
+            >서울시 서교동</span
+          >
+        </div>
+        <div class="flex gap-[16px]">
+          <div class="w-3/4">
+            <p
+              class="line-clamp-2 overflow-hidden -text--lion-paragraph-small -text--lion-contents-content-secondary"
+            >
+              진짜 맨날 근처오면 와서 4-5개씩은 사가는 곳입니다. 비건디저트 특유의 향이 안나서 더
+              좋아요!
+            </p>
+            <span
+              class="mt-[40px] rounded-[4px] -bg--lion-gray-50 px-[8px] py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >✨매장이 청결해요</span
+            >
+            <span
+              class="mt-[40px] rounded-[4px] -bg--lion-gray-50 px-[8px] py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >✨ +2</span
+            >
+          </div>
+          <div class="">
+            <img src="../assets/feed/imagefield-feed3.png" alt="소박한이야기" />
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="mb-[12px] mt-[4px] rounded-[8px] border border-[-border-r--lion-gray-100] p-[12px] -shadow--lion-below-low-box-shadow"
+      >
+        <div>
+          <span class="-text--lion-label-medium font-semibold">뼈탄집 시청점</span
+          ><span class="ml-[4px] -text--lion-paragraph-small -text--lion-contents-content-tertiary"
+            >서울시 북창동</span
+          >
+        </div>
+        <div class="flex gap-[16px]">
+          <div class="w-3/4">
+            <p
+              class="line-clamp-2 overflow-hidden -text--lion-paragraph-small -text--lion-contents-content-secondary"
+            >
+              진짜 맨날 근처오면 와서 4-5개씩은 사가는 곳입니다. 비건디저트 특유의 향이 안나서 더
+              좋아요!
+            </p>
+            <span
+              class="mt-[40px] rounded-[4px] -bg--lion-gray-50 px-[8px] py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >✨매장이 청결해요</span
+            >
+            <span
+              class="mt-[40px] rounded-[4px] -bg--lion-gray-50 px-[8px] py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >✨ +2</span
+            >
+          </div>
+          <div class="">
+            <img src="../assets/feed/imagefield-feed4.png" alt="뼈탄집 시청점" />
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="mb-[12px] mt-[4px] rounded-[8px] border border-[-border-r--lion-gray-100] p-[12px] -shadow--lion-below-low-box-shadow"
+      >
+        <div>
+          <span class="-text--lion-label-medium font-semibold">뼈탄집 시청점</span
+          ><span class="ml-[4px] -text--lion-paragraph-small -text--lion-contents-content-tertiary"
+            >서울시 북창동</span
+          >
+        </div>
+        <div class="flex gap-[16px]">
+          <div class="w-3/4">
+            <p
+              class="line-clamp-2 overflow-hidden -text--lion-paragraph-small -text--lion-contents-content-secondary"
+            >
+              진짜 맨날 근처오면 와서 4-5개씩은 사가는 곳입니다. 비건디저트 특유의 향이 안나서 더
+              좋아요!
+            </p>
+            <span
+              class="mt-[40px] rounded-[4px] -bg--lion-gray-50 px-[8px] py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >✨매장이 청결해요</span
+            >
+            <span
+              class="mt-[40px] rounded-[4px] -bg--lion-gray-50 px-[8px] py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >✨ +2</span
+            >
+          </div>
+          <div class="">
+            <img src="../assets/feed/imagefield-feed4.png" alt="뼈탄집 시청점" />
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="mb-[12px] mt-[4px] rounded-[8px] border border-[-border-r--lion-gray-100] p-[12px] -shadow--lion-below-low-box-shadow"
+      >
+        <div>
+          <span class="-text--lion-label-medium font-semibold">소박한이야기</span
+          ><span class="ml-[4px] -text--lion-paragraph-small -text--lion-contents-content-tertiary"
+            >서울시 서교동</span
+          >
+        </div>
+        <div class="flex gap-[16px]">
+          <div class="w-3/4">
+            <p
+              class="line-clamp-2 overflow-hidden -text--lion-paragraph-small -text--lion-contents-content-secondary"
+            >
+              진짜 맨날 근처오면 와서 4-5개씩은 사가는 곳입니다. 비건디저트 특유의 향이 안나서 더
+              좋아요!
+            </p>
+            <span
+              class="mt-[40px] rounded-[4px] -bg--lion-gray-50 px-[8px] py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >✨매장이 청결해요</span
+            >
+            <span
+              class="mt-[40px] rounded-[4px] -bg--lion-gray-50 px-[8px] py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >✨ +2</span
+            >
+          </div>
+          <div class="">
+            <img src="../assets/feed/imagefield-feed3.png" alt="소박한이야기" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feedContents hidden px-[16px]">
+      <h2 class="sr-only">사진 피드 컨텐츠</h2>
+      <div class="l grid grid-cols-2 gap-x-[4px] gap-y-[8px]">
+        <div class="relative w-full">
+          <img class="w-full" src="../assets/feed/imagefield-feed3.png" alt="소박한 이야기" />
+          <div class="absolute bottom-[6px] left-[8px] text-white">
+            <p class="-text--lion-label-small">서울시 서교동</p>
+            <p class="-text--lion-label-medium">소박한 이야기</p>
+          </div>
+          <div class="absolute right-[6px] top-[8px]">
+            <img src="../assets/feed/icon-bookmark.png" alt="북마크" />
+          </div>
+        </div>
+
+        <div class="relative w-full">
+          <img class="w-full" src="../assets/feed/imagefield-feed4.png" alt="뼈탄집 시청점" />
+          <div class="absolute bottom-[6px] left-[8px] text-white">
+            <p class="-text--lion-label-small">서울시 북창동</p>
+            <p class="-text--lion-label-medium">뼈탄집 시정첨</p>
+          </div>
+          <div class="absolute right-[6px] top-[8px]">
+            <img src="../assets/feed/icon-bookmark-white.png" alt="북마크" />
+          </div>
+        </div>
+
+        <div class="relative w-full">
+          <img class="w-full" src="../assets/feed/imagefield-feed4.png" alt="뼈탄집 시청점" />
+          <div class="absolute bottom-[6px] left-[8px] text-white">
+            <p class="-text--lion-label-small">서울시 북창동</p>
+            <p class="-text--lion-label-medium">뼈탄집 시정첨</p>
+          </div>
+          <div class="absolute right-[6px] top-[8px]">
+            <img src="../assets/feed/icon-bookmark-white.png" alt="북마크" />
+          </div>
+        </div>
+
+        <div class="relative w-full">
+          <img class="w-full" src="../assets/feed/imagefield-feed3.png" alt="소박한 이야기" />
+          <div class="absolute bottom-[6px] left-[8px] text-white">
+            <p class="-text--lion-label-small">서울시 서교동</p>
+            <p class="-text--lion-label-medium">소박한 이야기</p>
+          </div>
+          <div class="absolute right-[6px] top-[8px]">
+            <img src="../assets/feed/icon-bookmark.png" alt="북마크" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="feed-tabbar fixed bottom-0 w-full bg-white">
+      <ul class="flex justify-center">
+        <li class="px-[12px] py-[8px]">
+          <a href="#" class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-group.png" alt="지도" /><span
+              class="-text--lion-paragraph-small"
+              >지도</span
+            >
+          </a>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <a href="#" class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-save.png" alt="저장" /><span
+              class="-text--lion-paragraph-small"
+              >저장</span
+            >
+          </a>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <a href="#" class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-subway.png" alt="대중교통" /><span
+              class="-text--lion-paragraph-small"
+              >대중교통</span
+            >
+          </a>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <a href="#" class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-car.png" alt="내비게이션" /><span
+              class="-text--lion-paragraph-small"
+              >내비게이션</span
+            >
+          </a>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <a href="#" class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-my.png" alt="내정보" /><span
+              class="-text--lion-paragraph-small"
+              >내정보</span
+            >
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

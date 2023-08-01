@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://tailwindui.com/img/logos/mark.png?color=indigo&shade=500"
+      type="image/xml+svg"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <!-- <script src="../js/main.js" type="module"></script> -->
+    <script src="../js/common/visited.js" type="module"></script>
+    <title>feedMain</title>
+  </head>
+  <body class="mb-[80px] -bg--lion-gray-100">
+    <header class="relative -bg--lion-primary p-[22px] pt-[36px] text-white">
+      <h1 class="is-active sr-only">피드 페이지</h1>
+    </header>
+
+    <nav class="feed-nav -bg--lion-primary -text--lion-lightblue-300">
+      <ul class="flex py-[4px] text-center">
+        <li class="flex-1">
+          <button onclick="location.href='./feed.html'">피드</button>
+        </li>
+        <li class="is-active flex-1"><button>방문</button></li>
+        <li class="flex-1"><button>리뷰</button></li>
+        <li class="flex-1"><button>예약·주문</button></li>
+      </ul>
+    </nav>
+
+    <section class="visited px-[12px]">
+      <!-- <div>
+        <h3 class="mt-[16px] -text--lion-label-medium font-semibold">4월 방문</h3>
+        <div class="mt-[16px] rounded-[8px] bg-white p-[12px]">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="-text--lion-label-medium font-semibold">비건 베이커리 구떼</span>
+              <span class="-text--lion-paragraph-small -text--lion-contents-content-tertiary"
+                >3.8.수·1번째 방문</span
+              >
+            </div>
+            <div class="flex items-center">
+              <button>
+                <img class="h-[18[x] w-[18px]" src="../assets/feed/icon-heart.png" alt="좋아요" />
+              </button>
+              <button>
+                <img class="h-[18[x] w-[18px]" src="../assets/feed/icon-more.png" alt="더보기" />
+              </button>
+            </div>
+          </div>
+          <div>
+            <span class="-text--lion-paragraph-small -text--lion-contents-content-tertiary"
+              >파운드 외 2 · 12,300원</span
+            >
+          </div>
+          <div>
+            <button
+              onclick="location.href='./addReviews.html'"
+              class="mt-[4px] flex w-full items-center justify-center gap-[8px] rounded-[8px] -bg--lion-blue-800 py-[6px] -text--lion-label-small font-semibold text-white"
+            >
+              <img src="../assets/feed/icon-pencil-white.png" alt="연필" /> 리뷰쓰기
+            </button>
+          </div>
+        </div>
+      </div> -->
+
+      <div>
+        <!--<h3 class="mt-[16px] -text--lion-label-medium font-semibold">3월 방문</h3>
+         <div class="mt-[16px] rounded-[8px] bg-white p-[12px]">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="-text--lion-label-medium font-semibold">비건 베이커리 구떼</span>
+              <span class="-text--lion-paragraph-small -text--lion-contents-content-tertiary"
+                >3.8.수·1번째 방문</span
+              >
+            </div>
+            <div class="flex items-center">
+              <button>
+                <img class="h-[18[x] w-[18px]" src="../assets/feed/icon-heart.png" alt="좋아요" />
+              </button>
+              <button>
+                <img class="h-[18[x] w-[18px]" src="../assets/feed/icon-more.png" alt="더보기" />
+              </button>
+            </div>
+          </div>
+          <div class="mt-[6px] flex gap-[16px]">
+            <div>
+              <p
+                class="line-clamp-2 w-[168px] overflow-hidden -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >
+                진짜 맨날 근처오면 와서 4-5개씩은 사가는 곳입니다. 비건디저트 특유의 향이 안나서 더
+                좋아요!
+              </p>
+              <span
+                class="mt-[40px] rounded-[4px] -bg--lion-gray-50 px-[8px] py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+                >✨매장이 청결해요</span
+              >
+              <span
+                class="mt-[40px] rounded-[4px] -bg--lion-gray-50 px-[8px] py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+                >✨ +2</span
+              >
+            </div>
+            <img src="../assets/feed/imagefield-feed5.png" alt="비건 베이커리 구떼" />
+          </div>
+          <div>
+            <span class="-text--lion-paragraph-small -text--lion-contents-content-tertiary"
+              >파운드 외 2 · 12,300원</span
+            >
+          </div>
+        </div> -->
+      </div>
+
+      <!-- <div>
+        <h3 class="mt-[16px] -text--lion-label-medium font-semibold">2월 방문</h3>
+        <div class="mt-[16px] rounded-[8px] bg-white p-[12px]">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="-text--lion-label-medium font-semibold">비건 베이커리 구떼</span>
+              <span class="-text--lion-paragraph-small -text--lion-contents-content-tertiary"
+                >3.8.수·1번째 방문</span
+              >
+            </div>
+            <div class="flex items-center">
+              <button>
+                <img class="h-[18[x] w-[18px]" src="../assets/feed/icon-heart.png" alt="좋아요" />
+              </button>
+              <button>
+                <img class="h-[18[x] w-[18px]" src="../assets/feed/icon-more.png" alt="더보기" />
+              </button>
+            </div>
+          </div>
+          <div class="mt-[6px] flex gap-[16px]">
+            <div>
+              <p
+                class="line-clamp-2 w-[168px] overflow-hidden -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >
+                진짜 맨날 근처오면 와서 4-5개씩은 사가는 곳입니다. 비건디저트 특유의 향이 안나서 더
+                좋아요!
+              </p>
+              <span
+                class="mt-[40px] rounded-[4px] -bg--lion-gray-50 px-[8px] py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+                >✨매장이 청결해요</span
+              >
+              <span
+                class="mt-[40px] rounded-[4px] -bg--lion-gray-50 px-[8px] py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+                >✨ +2</span
+              >
+            </div>
+            <img src="../assets/feed/imagefield-feed6.png" alt="비건 베이커리 구떼" />
+          </div>
+          <div>
+            <span class="-text--lion-paragraph-small -text--lion-contents-content-tertiary"
+              >파운드 외 2 · 12,300원</span
+            >
+          </div>
+        </div>
+      </div> -->
+    </section>
+
+    <nav class="feed-tabbar fixed bottom-0 w-full bg-white">
+      <ul class="flex justify-center">
+        <li class="px-[12px] py-[8px]">
+          <a href="#" class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-group.png" alt="지도" /><span
+              class="-text--lion-paragraph-small"
+              >지도</span
+            >
+          </a>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <a href="#" class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-save.png" alt="저장" /><span
+              class="-text--lion-paragraph-small"
+              >저장</span
+            >
+          </a>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <a href="#" class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-subway.png" alt="대중교통" /><span
+              class="-text--lion-paragraph-small"
+              >대중교통</span
+            >
+          </a>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <a href="#" class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-car.png" alt="내비게이션" /><span
+              class="-text--lion-paragraph-small"
+              >내비게이션</span
+            >
+          </a>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <a href="#" class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-my.png" alt="내정보" /><span
+              class="-text--lion-paragraph-small"
+              >내정보</span
+            >
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

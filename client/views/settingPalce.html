@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://tailwindui.com/img/logos/mark.png?color=indigo&shade=500"
+      type="image/xml+svg"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/main.js" type="module"></script>
+    <title>feedMain</title>
+  </head>
+  <body class="mb-[100px]">
+    <header class="relative px-[18px] py-[24px]">
+      <h1 class="mb-[12px] -text--lion-label-large font-semibold">관심 지역을 설정해 주세요</h1>
+      <button onclick="location.href='./feed.html'" class="absolute right-[10px] top-[10px]">
+        <img src="../assets/feed/icon-close.png" alt="닫기" />
+      </button>
+
+      <form class="relative" action="#">
+        <label for="search"></label>
+        <input
+          class="after: w-full rounded-[8px] border-[0.5px] -border--lion-primary px-[12px] py-[8px] -text--lion-label-small -text--lion-contents-content-tertiary"
+          placeholder="원하는 지역을 검색해보세요"
+          type="search"
+          name="search"
+          id="search"
+          autocomplete="off"
+        />
+        <button type="button" class="absolute right-[12px] top-1/2 -translate-y-1/2">
+          <img src="../assets/feed/icon-search.png" alt="검색" />
+        </button>
+      </form>
+    </header>
+
+    <section class="p-[16px]">
+      <div class="mb-[24px]">
+        <h2 class="-text--lion-label-medium font-semibold">
+          관심지역 <span class="-text--lion-lightblue-400">5</span>
+        </h2>
+        <p
+          class="flex justify-between -text--lion-paragraph-small -text--lion-contents-content-tertiary"
+        >
+          <span>길게 눌러 순서를 변경할 수 있습니다.</span>
+          <button class="-text--lion-contents-content-secondary">전체삭제</button>
+        </p>
+      </div>
+
+      <div>
+        <ul>
+          <li>
+            <button
+              class="mb-[8px] flex w-full items-center justify-between rounded-[8px] -bg--lion-primary px-[12px] py-[14px] text-white"
+            >
+              <span class="flex items-center gap-[4px]"
+                ><img
+                  class="h-[14px] w-[10px]"
+                  src="../assets/feed/icon-group-white.png"
+                  alt="위치"
+                />경주시</span
+              >
+              <span class="flex gap-[8px]"
+                ><img src="../assets/feed/icon-triangle-white.png" alt="순서" /><img
+                  src="../assets/feed/icon-close-white.png"
+                  alt="삭제"
+              /></span>
+            </button>
+          </li>
+          <li>
+            <button
+              class="mb-[8px] flex w-full items-center justify-between rounded-[8px] -bg--lion-primary px-[12px] py-[14px] text-white"
+            >
+              <span class="flex items-center gap-[4px]"
+                ><img
+                  class="h-[14px] w-[10px]"
+                  src="../assets/feed/icon-group-white.png"
+                  alt="위치"
+                />종로구</span
+              >
+              <span class="flex gap-[8px]"
+                ><img src="../assets/feed/icon-triangle-white.png" alt="순서" /><img
+                  src="../assets/feed/icon-close-white.png"
+                  alt="삭제"
+              /></span>
+            </button>
+          </li>
+          <li>
+            <button
+              class="mb-[8px] flex w-full items-center justify-between rounded-[8px] -bg--lion-primary px-[12px] py-[14px] text-white"
+            >
+              <span class="flex items-center gap-[4px]"
+                ><img
+                  class="h-[14px] w-[10px]"
+                  src="../assets/feed/icon-group-white.png"
+                  alt="위치"
+                />해운대</span
+              >
+              <span class="flex gap-[8px]"
+                ><img src="../assets/feed/icon-triangle-white.png" alt="순서" /><img
+                  src="../assets/feed/icon-close-white.png"
+                  alt="삭제"
+              /></span>
+            </button>
+          </li>
+          <li>
+            <button
+              class="mb-[8px] flex w-full items-center justify-between rounded-[8px] -bg--lion-primary px-[12px] py-[14px] text-white"
+            >
+              <span class="flex items-center gap-[4px]"
+                ><img
+                  class="h-[14px] w-[10px]"
+                  src="../assets/feed/icon-group-white.png"
+                  alt="위치"
+                />수원시</span
+              >
+              <span class="flex gap-[8px]"
+                ><img src="../assets/feed/icon-triangle-white.png" alt="순서" /><img
+                  src="../assets/feed/icon-close-white.png"
+                  alt="삭제"
+              /></span>
+            </button>
+          </li>
+          <li>
+            <button
+              class="mb-[8px] flex w-full items-center justify-between rounded-[8px] -bg--lion-primary px-[12px] py-[14px] text-white"
+            >
+              <span class="flex items-center gap-[4px]"
+                ><img
+                  class="h-[14px] w-[10px]"
+                  src="../assets/feed/icon-group-white.png"
+                  alt="위치"
+                />홍익대</span
+              >
+              <span class="flex gap-[8px]"
+                ><img src="../assets/feed/icon-triangle-white.png" alt="순서" /><img
+                  src="../assets/feed/icon-close-white.png"
+                  alt="삭제"
+              /></span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="p-[16px]">
+      <h2 class="mb-[22px] -text--lion-label-medium font-semibold -text--lion-primary">
+        이런 지역 어때요
+      </h2>
+
+      <p class="mb-[12px] -text--lion-label-small -text--lion-contents-content-secondary">
+        👍 요즘 많이 찾아봐요
+      </p>
+
+      <div class="py-[8px]">
+        <ul class="grid grid-cols-3 gap-[12px]">
+          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
+            <button class="flex h-full w-full flex-col items-center justify-center">
+              <span class="absolute right-[6px] top-[6px]"
+                ><img src="../assets/feed/icon-plus.png" alt="추가"
+              /></span>
+              <img class="mb-[4px]" src="../assets/feed/jeju.png" alt="제주도" />
+              <span class="-text--lion-label-small">제주도</span>
+            </button>
+          </li>
+          <li class="relative flex h-[92px] w-[90px] rounded-[12px] -bg--lion-blue-900">
+            <button class="flex h-full w-full flex-col items-center justify-center">
+              <span class="absolute right-[6px] top-[6px]"
+                ><img src="../assets/feed/icon-check.png" alt="제거"
+              /></span>
+              <img class="mb-[4px]" src="../assets/feed/gyeongju.png" alt="경주시" />
+              <span class="-text--lion-label-small text-white">경주시</span>
+            </button>
+          </li>
+          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
+            <button class="flex h-full w-full flex-col items-center justify-center">
+              <span class="absolute right-[6px] top-[6px]"
+                ><img src="../assets/feed/icon-plus.png" alt="추가"
+              /></span>
+              <img class="mb-[4px]" src="../assets/feed/jeonju.png" alt="전주시" />
+              <span class="-text--lion-label-small">전주시</span>
+            </button>
+          </li>
+          <li class="relative flex h-[92px] w-[90px] rounded-[12px] -bg--lion-blue-900">
+            <button class="flex h-full w-full flex-col items-center justify-center">
+              <span class="absolute right-[6px] top-[6px]"
+                ><img src="../assets/feed/icon-check.png" alt="제거"
+              /></span>
+              <img class="mb-[4px]" src="../assets/feed/jongro.png" alt="종로구" />
+              <span class="-text--lion-label-small text-white">종로구</span>
+            </button>
+          </li>
+          <li class="relative flex h-[92px] w-[90px] rounded-[12px] -bg--lion-blue-900">
+            <button class="flex h-full w-full flex-col items-center justify-center">
+              <span class="absolute right-[6px] top-[6px]"
+                ><img src="../assets/feed/icon-check.png" alt="제거"
+              /></span>
+              <img class="mb-[4px]" src="../assets/feed/haeundae.png" alt="해운대" />
+              <span class="-text--lion-label-small text-white">해운대</span>
+            </button>
+          </li>
+          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
+            <button class="flex h-full w-full flex-col items-center justify-center">
+              <span class="absolute right-[6px] top-[6px]"
+                ><img src="../assets/feed/icon-plus.png" alt="추가"
+              /></span>
+              <img class="mb-[4px]" src="../assets/feed/suncheon.png" alt="순천시" />
+              <span class="-text--lion-label-small">순천시</span>
+            </button>
+          </li>
+          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
+            <button class="flex h-full w-full flex-col items-center justify-center">
+              <span class="absolute right-[6px] top-[6px]"
+                ><img src="../assets/feed/icon-plus.png" alt="추가"
+              /></span>
+              <img class="mb-[4px]" src="../assets/feed/gangneung.png" alt="강릉시" />
+              <span class="-text--lion-label-small">강릉시</span>
+            </button>
+          </li>
+          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
+            <button class="flex h-full w-full flex-col items-center justify-center">
+              <span class="absolute right-[6px] top-[6px]"
+                ><img src="../assets/feed/icon-plus.png" alt="추가"
+              /></span>
+              <img class="mb-[4px]" src="../assets/feed/gwanghwamun.png" alt="광화문" />
+              <span class="-text--lion-label-small">광화문</span>
+            </button>
+          </li>
+          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
+            <button class="flex h-full w-full flex-col items-center justify-center">
+              <span class="absolute right-[6px] top-[6px]"
+                ><img src="../assets/feed/icon-plus.png" alt="추가"
+              /></span>
+              <img class="mb-[4px]" src="../assets/feed/gwanggyo.png" alt="광교" />
+              <span class="-text--lion-label-small">광교</span>
+            </button>
+          </li>
+          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
+            <button class="flex h-full w-full flex-col items-center justify-center">
+              <span class="absolute right-[6px] top-[6px]"
+                ><img src="../assets/feed/icon-plus.png" alt="추가"
+              /></span>
+              <img class="mb-[4px]" src="../assets/feed/chuncheon.png" alt="춘천시" />
+              <span class="-text--lion-label-small">춘천시</span>
+            </button>
+          </li>
+          <li class="relative flex h-[92px] w-[90px] rounded-[12px] bg-gray-100">
+            <button class="flex h-full w-full flex-col items-center justify-center">
+              <span class="absolute right-[6px] top-[6px]"
+                ><img src="../assets/feed/icon-plus.png" alt="추가"
+              /></span>
+              <img class="mb-[4px]" src="../assets/feed/pohang.png" alt="포항시" />
+              <span class="-text--lion-label-small">포항시</span>
+            </button>
+          </li>
+          <li class="relative flex h-[92px] w-[90px] rounded-[12px] -bg--lion-blue-900">
+            <button class="flex h-full w-full flex-col items-center justify-center">
+              <span class="absolute right-[6px] top-[6px]"
+                ><img src="../assets/feed/icon-check.png" alt="제거"
+              /></span>
+              <img class="mb-[4px]" src="../assets/feed/suwon.png" alt="수원시" />
+              <span class="-text--lion-label-small text-white">수원시</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <button
+      class="fixed bottom-[70px] left-1/2 w-4/5 -translate-x-1/2 rounded-[8px] -bg--lion-primary py-[12px] -text--lion-label-small font-semibold text-white -shadow--lion-below-high-box-shadow"
+    >
+      이대로 저장할래요
+    </button>
+
+    <nav class="feed-tabbar fixed bottom-0 w-full bg-white">
+      <ul class="flex justify-center">
+        <li class="px-[12px] py-[8px]">
+          <button class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-group.png" alt="지도" /><span
+              class="-text--lion-paragraph-small"
+              >지도</span
+            >
+          </button>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <button class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-save.png" alt="저장" /><span
+              class="-text--lion-paragraph-small"
+              >저장</span
+            >
+          </button>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <button class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-subway.png" alt="대중교통" /><span
+              class="-text--lion-paragraph-small"
+              >대중교통</span
+            >
+          </button>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <button class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-car.png" alt="내비게이션" /><span
+              class="-text--lion-paragraph-small"
+              >내비게이션</span
+            >
+          </button>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <button class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-my.png" alt="내정보" /><span
+              class="-text--lion-paragraph-small"
+              >내정보</span
+            >
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
