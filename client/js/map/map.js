@@ -199,7 +199,7 @@ function editReviewCard() {
 }
 
 // * 리뷰카드 랜더링 함수
-(async function renderReviewCard() {
+async function renderReviewCard() {
   const reviewCardInner = getNode('.review-card-inner');
   const URL = 'http://localhost:3000/data';
   const response = await tiger({url: URL});
@@ -247,7 +247,8 @@ function editReviewCard() {
 
   //* 리뷰 순서 변경
   clickEditButton(editReviewCard);
-})();
+}
+renderReviewCard();
 
 //* 헤더 영역 템플릿 생성함수
 
@@ -258,7 +259,7 @@ function createThemeHeader({title, description, url}) {
         <button>
           <img src="./../assets/map/Icon/left.png" alt="뒤로가기" />
         </button>
-        <button class="flex flex-row rounded-[50px] -bg--lion-lightblue-300 px-3">
+        <button class="save-button flex flex-row rounded-[50px] -bg--lion-lightblue-300 px-3">
           <img class="py-2" src="./../assets/map/Icon/check.png" alt="저장" />
           <span class="py-3 -text--lion-label-small text-white">저장</span>
         </button>
@@ -323,6 +324,171 @@ function renderCoverChangeButton() {
   insertCoverChangeButton(headerInner);
 }
 
+function createEditReview({
+  photo,
+  year,
+  month,
+  day,
+  date,
+  content,
+  keyword,
+  title,
+  totalReview,
+  state,
+  town,
+}) {
+  const template = /* html */ `
+  <div class='review-card'>
+    <div class="relative parent mb-5">
+        <figure class="flex items-center">
+        <div class="mr-[6px] rounded-[50%] -bg--lion-lightblue-400 p-2">
+          <img src="./../assets/map/Icon/Group.png" alt="" />
+        </div>
+        <figcaption class="-text--lion-label-small -text--lion-lightblue-400">NO.${(i += 1)}</figcaption>
+          </figure>
+          <section class="relative mt-3 bg-white">
+        <img class="w-full h-[250px]" src=${photo} alt="가게 사진" />
+        <img class="delete-button absolute right-[-8px] top-[-6px] hidden" src="./../assets/map/Icon/close.png" alt="삭제 버튼" />
+        <div class="my-6 flex flex-col px-[38px] text-center">
+          <div class="flex flex-row justify-center">
+            <time
+              class="mr-[2px] -text--lion-label-small -text--lion-lightblue-400"
+              datetime="2022-11-04"
+            >
+              ${year.toString().slice(2)}.${month}.${day}${date.slice(2)}
+            </time>
+            <span
+              class="mb-2 rounded-[4px] border-[1px] border-solid -border--lion-lightblue-400 px-1 -text--lion-paragraph-small -text--lion-lightblue-400"
+              >방문</span
+            >
+          </div>
+          <p class="line-clamp-3 text-justify -text--lion-paragraph-small">
+            ${content}
+          </p>
+          <div class="mt-2 flex justify-center gap-1">
+            <figure class="flex rounded bg-gray-50 px-1 py-[2px]">
+              <img src="./../assets/map/Icon/clock.png" alt="시계" />
+              <figcaption
+                class="ml-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >
+                ${keyword[0]}
+              </figcaption>
+            </figure>
+            <span
+              class="rounded bg-gray-50 px-2 py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              >+${keyword.length - 1}</span
+            >
+          </div>
+        </div>
+        <div class="border-t border-dashed px-5 py-3 -text--lion-label-medium">
+          <h2>${title}</h2>
+          <span
+            class="-text--lion-label-small -text--lion-contents-content-secondary after:ml-1 after:content-['|']"
+            >리뷰 ${totalReview}</span
+          >
+          <span class="-text--lion-label-small -text--lion-contents-content-secondary"
+            >${state} ${town}</span
+          >
+        </div>
+          </section>
+    </div>
+    </div>
+    `;
+
+  // const deleteButton = getNodes('.deleteButton');
+  return template;
+}
+
+function insertEditReview(target, data) {
+  insertLast(target, createEditReview(data));
+}
+
+async function renderEditReview() {
+  const reviewCardInner = getNode('.review-card-inner');
+  const URL = 'http://localhost:3000/data';
+  const response = await tiger({url: URL});
+  const userData = response.data;
+  userData[0].visited.forEach(visitedPlace => {
+    const placeName = Object.keys(visitedPlace)[0];
+    if (visitedPlace[placeName].theme.toString() === userData[0].theme[0].title) {
+      const [photo, year, month, day, date, content, keyword, state, town] = [
+        visitedPlace[placeName].phto,
+        visitedPlace[placeName].visited.year,
+        visitedPlace[placeName].visited.month,
+        visitedPlace[placeName].visited.day,
+        visitedPlace[placeName].visited.date,
+        visitedPlace[placeName].reviews[0].content,
+        visitedPlace[placeName].reviews[0].keyword,
+        visitedPlace[placeName].location.region.state,
+        visitedPlace[placeName].location.region.town,
+      ];
+      const data = {
+        photo,
+        year,
+        month,
+        day,
+        date,
+        content,
+        keyword,
+        title: placeName,
+        totalReview: 5,
+        state,
+        town,
+      };
+      insertEditReview(reviewCardInner, data);
+    }
+  });
+}
+
+//*
+
+function createEditThemeHeader({title, description, url}) {
+  const template = /* html */ `
+    <section class="header-inner flex flex-col bg-[url('${url}')] bg-cover bg-center pb-8 -z-10">
+      <div class="flex flex-row justify-between px-[10px] py-[14px]">
+        <button>
+          <img src="./../assets/map/Icon/left.png" alt="뒤로가기" />
+        </button>
+        <button class="save-button flex flex-row rounded-[50px] -bg--lion-lightblue-300 px-3">
+          <img class="py-2" src="./../assets/map/Icon/check.png" alt="저장" />
+          <span class="py-3 -text--lion-label-small text-white">저장</span>
+        </button>
+      </div>
+      <div class="theme-summary flex flex-col">
+          <div class="theme-title flex flex-col">
+            <span class="ml-4 mt-[10px] -text--lion-label-xl text-white">${title}</span>
+            <h2 class="ml-4 mt-[30px] -text--lion-label-small text-white">${description}</h2>
+          </div>
+      </div>
+      <button
+      class="map-button mr-[22px] mt-[104px] flex gap-1 rounded-[50px] self-end border-[1px] border-white px-4 py-2">
+      <img class="my-[4px]" src="./../assets/map/Icon/subway.png" alt="지도" />
+      <span class="text-white">지도</span>
+    </button>
+    </section>
+    `;
+
+  return template;
+}
+
+//* 헤더 영역 DOM 삽입
+function insertEditThemeHeader(target, data) {
+  insertLast(target, createEditThemeHeader(data));
+}
+async function renderEditThemeHeader() {
+  const editThemeTitleInner = getNode('.edit-theme-title-inner');
+  const URL = 'http://localhost:3000/data';
+  const response = await tiger({url: URL});
+  const userData = response.data;
+  const [title, description, url] = [
+    userData[0].theme[0].title,
+    userData[0].theme[0].list,
+    userData[0].theme[0].coverimg,
+  ];
+  const data = {title, description, url};
+  insertEditThemeHeader(editThemeTitleInner, data);
+}
+
 //* 헤더 영역 렌더링
 async function renderThemeHeader() {
   const themeTitleInner = getNode('.theme-title-inner');
@@ -338,7 +504,6 @@ async function renderThemeHeader() {
   insertThemeHeader(themeTitleInner, data);
 
   const mapButton = getNode('.map-button');
-
   //* 지도 바로가기
   clickMapButton(mapButton);
 
@@ -385,15 +550,6 @@ async function renderThemeHeader() {
     insertLast(target, createThemeSummary());
   }
 
-  // function countTitle(titleInput, renderTitleLength) {
-  //   const titleLength = titleInput.value.length;
-  //   renderTitleLength.textContent = titleLength;
-  // }
-
-  // function countDescription(descriptionInput, renderDescriptionLength) {
-  //   const DescriptionLength = descriptionInput.value.length;
-  //   renderDescriptionLength.textContent = DescriptionLength;
-  // }
   //* input 태그 랜더링
   function renderThemeSummary() {
     const themeSummary = getNode('.theme-summary');
@@ -417,22 +573,37 @@ async function renderThemeHeader() {
     titleInput.addEventListener('input', countTitle);
     descriptionInput.addEventListener('input', countDescription);
   }
+
   editButton.addEventListener('click', renderThemeSummary);
+
+  // //* 저장 버튼 클릭시 페이지 다시 렌더링
+  const saveButton = getNode('.save-button');
+  saveButton.addEventListener('click', renderEditReview);
+  function renderUserProfile() {
+    const userProfile = getNode('.user-profile-area');
+    userProfile.style.display = 'flex';
+  }
+  function removeThemeTitleInner() {
+    themeTitleInner.style.display = 'none';
+  }
+
+  saveButton.addEventListener('click', renderUserProfile);
+  saveButton.addEventListener('click', removeThemeTitleInner);
+  saveButton.addEventListener('click', renderEditThemeHeader);
 }
 
 renderThemeHeader();
 
 //* 수정하기 버튼 삭제
 function removeEditButton() {
-  editButton.remove();
+  editButton.style.display = 'none';
 }
-
 clickEditButton(removeEditButton);
 
 //* 유저 프로필 영역 삭제
 function hideUserProfile() {
   const userProfile = getNode('.user-profile-area');
-  userProfile.remove();
+  userProfile.style.display = 'none';
 }
 
 clickEditButton(hideUserProfile);
@@ -465,6 +636,16 @@ function insertReviewNav(target, data) {
 function renderReviewNav() {
   const reviewDataInner = getNode('.review-nav-inner');
   insertReviewNav(reviewDataInner);
+  const saveButton = getNode('.save-button');
+  function removeReviewNav() {
+    reviewDataInner.style.display = 'none';
+  }
+  function displayEditButton() {
+    editButton.style.display = 'flex';
+  }
+  saveButton.addEventListener('click', removeReviewNav);
+  saveButton.addEventListener('click', displayEditButton);
+  saveButton.addEventListener('click', toggleDeleteButton);
 }
 
 clickEditButton(renderReviewNav);
@@ -477,3 +658,5 @@ function removeMap() {
 }
 
 clickEditButton(removeMap);
+
+// * 저장 버튼 클릭 시 렌더링
