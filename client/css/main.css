@@ -444,6 +444,10 @@ body.login .is--invalid + .error-message {
   display:block;
 }
 
+body.register .is--invalid + .error-message {
+  display:block;
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -745,6 +749,10 @@ body.login .is--invalid + .error-message {
 
 .text-center{
   text-align: center;
+}
+
+.text-right{
+  text-align: right;
 }
 
 .-text--lion-label-xl{
