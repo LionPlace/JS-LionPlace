@@ -1,8 +1,8 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css');
 
-/*
-! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
-*/
+/* @import 'tailwindcss/base'; */
+
+/* ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -440,6 +440,10 @@ html{
   font-family: Pretendard, sans-serif;
 }
 
+body.login .is--invalid + .error-message {
+  display: block;
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -574,6 +578,18 @@ html{
   }
 }
 
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .fixed{
   position: fixed;
 }
@@ -662,6 +678,10 @@ html{
   margin-bottom: 1.25rem;
 }
 
+.mb-\[28px\]{
+  margin-bottom: 28px;
+}
+
 .ml-1{
   margin-left: 0.25rem;
 }
@@ -690,12 +710,20 @@ html{
   margin-right: 6px;
 }
 
+.mt-16{
+  margin-top: 4rem;
+}
+
 .mt-2{
   margin-top: 0.5rem;
 }
 
 .mt-3{
   margin-top: 0.75rem;
+}
+
+.mt-\[100px\]{
+  margin-top: 100px;
 }
 
 .mt-\[104px\]{
@@ -712,6 +740,14 @@ html{
 
 .mt-\[18px\]{
   margin-top: 18px;
+}
+
+.mt-\[22px\]{
+  margin-top: 22px;
+}
+
+.mt-\[24px\]{
+  margin-top: 24px;
 }
 
 .mt-\[2px\]{
@@ -769,8 +805,24 @@ html{
   height: 400px;
 }
 
+.h-\[41px\]{
+  height: 41px;
+}
+
+.h-\[44px\]{
+  height: 44px;
+}
+
 .h-\[46px\]{
   height: 46px;
+}
+
+.h-auto{
+  height: auto;
+}
+
+.h-screen{
+  height: 100vh;
 }
 
 .w-1{
@@ -779,6 +831,18 @@ html{
 
 .w-\[100\%\]{
   width: 100%;
+}
+
+.w-\[103px\]{
+  width: 103px;
+}
+
+.w-\[182px\]{
+  width: 182px;
+}
+
+.w-\[250px\]{
+  width: 250px;
 }
 
 .w-\[30px\]{
@@ -797,6 +861,10 @@ html{
   width: 100%;
 }
 
+.min-w-\[320px\]{
+  min-width: 320px;
+}
+
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -811,6 +879,10 @@ html{
 
 .items-center{
   align-items: center;
+}
+
+.justify-end{
+  justify-content: flex-end;
 }
 
 .justify-center{
@@ -831,6 +903,14 @@ html{
 
 .gap-5{
   gap: 1.25rem;
+}
+
+.gap-\[12px\]{
+  gap: 12px;
+}
+
+.gap-\[174px\]{
+  gap: 174px;
 }
 
 .self-end{
@@ -870,6 +950,10 @@ html{
   border-top-right-radius: 0.75rem;
 }
 
+.border{
+  border-width: 1px;
+}
+
 .border-0{
   border-width: 0px;
 }
@@ -899,6 +983,11 @@ html{
   border-color: rgb(141 176 249 / var(--tw-border-opacity));
 }
 
+.-border--lion-white{
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
 .border-white{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -912,6 +1001,11 @@ html{
 .-bg--lion-lightblue-400{
   --tw-bg-opacity: 1;
   background-color: rgb(141 176 249 / var(--tw-bg-opacity));
+}
+
+.-bg--lion-primary{
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 31 49 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#F9F9F9\]{
@@ -1014,6 +1108,16 @@ html{
   padding-right: 10px;
 }
 
+.px-\[20px\]{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.px-\[36px\]{
+  padding-left: 36px;
+  padding-right: 36px;
+}
+
 .px-\[38px\]{
   padding-left: 38px;
   padding-right: 38px;
@@ -1029,9 +1133,19 @@ html{
   padding-bottom: 0.75rem;
 }
 
+.py-\[12px\]{
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
 .py-\[14px\]{
   padding-top: 14px;
   padding-bottom: 14px;
+}
+
+.py-\[18px\]{
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 .py-\[2px\]{
@@ -1039,12 +1153,28 @@ html{
   padding-bottom: 2px;
 }
 
+.pb-3{
+  padding-bottom: 0.75rem;
+}
+
 .pb-8{
   padding-bottom: 2rem;
 }
 
+.pl-5{
+  padding-left: 1.25rem;
+}
+
+.pr-5{
+  padding-right: 1.25rem;
+}
+
 .pt-1{
   padding-top: 0.25rem;
+}
+
+.pt-3{
+  padding-top: 0.75rem;
 }
 
 .pt-4{
@@ -1053,6 +1183,10 @@ html{
 
 .pt-5{
   padding-top: 1.25rem;
+}
+
+.pt-\[62px\]{
+  padding-top: 62px;
 }
 
 .text-center{
@@ -1092,6 +1226,11 @@ html{
   font-weight: 900;
 }
 
+.-text--lion-black{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .-text--lion-contents-content-secondary{
   --tw-text-opacity: 1;
   color: rgb(107 107 107 / var(--tw-text-opacity));
@@ -1112,14 +1251,14 @@ html{
   color: rgb(141 176 249 / var(--tw-text-opacity));
 }
 
+.-text--lion-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .text-black{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.text-indigo-500{
-  --tw-text-opacity: 1;
-  color: rgb(99 102 241 / var(--tw-text-opacity));
 }
 
 .text-transparent{
@@ -1151,12 +1290,38 @@ html{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.after\:mx-\[4px\]::after{
+  content: var(--tw-content);
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
 .after\:ml-1::after{
   content: var(--tw-content);
   margin-left: 0.25rem;
 }
 
+.after\:h-\[10px\]::after{
+  content: var(--tw-content);
+  height: 10px;
+}
+
+.after\:w-\[1px\]::after{
+  content: var(--tw-content);
+  width: 1px;
+}
+
+.after\:text-\[\#c2c2c275\]::after{
+  content: var(--tw-content);
+  color: #c2c2c275;
+}
+
 .after\:content-\[\'\|\'\]::after{
   --tw-content: '|';
   content: var(--tw-content);
+}
+
+.focus\:outline-none:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }

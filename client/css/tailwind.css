@@ -1,3 +1,4 @@
+/* @import 'tailwindcss/base'; */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css');
 
 @tailwind base;
@@ -7,5 +8,8 @@
 @layer base {
   html {
     @apply -font--lion-family;
+  }
+  body.login .is--invalid + .error-message {
+    display: block;
   }
 }
