@@ -104,7 +104,7 @@ function createReviewCard({
         <figcaption class="-text--lion-label-small -text--lion-lightblue-400">NO.${(i += 1)}</figcaption>
           </figure>
           <section class="relative mt-3 bg-white">
-        <img class="w-full  " src=${photo} alt="가게 사진" />
+        <img class="w-full h-[250px]" src=${photo} alt="가게 사진" />
         <img class="delete-button absolute right-[-8px] top-[-6px] hidden" src="./../assets/map/Icon/close.png" alt="삭제 버튼" />
         <div class="my-6 flex flex-col px-[38px] text-center">
           <div class="flex flex-row justify-center">
@@ -477,7 +477,3 @@ function removeMap() {
 }
 
 clickEditButton(removeMap);
-
-// console.log(user)
-// tiger.put('http://localhost:3000/data/1', {...userData, ...changeTheme});
-// console.log(userData);
