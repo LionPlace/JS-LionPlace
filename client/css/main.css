@@ -540,6 +540,40 @@ html{
   --tw-backdrop-sepia:  ;
 }
 
+.container{
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  .container{
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px;
+  }
+}
+
 .fixed{
   position: fixed;
 }
@@ -624,6 +658,10 @@ html{
   margin-bottom: 1rem;
 }
 
+.mb-5{
+  margin-bottom: 1.25rem;
+}
+
 .ml-1{
   margin-left: 0.25rem;
 }
@@ -684,12 +722,16 @@ html{
   margin-top: 82px;
 }
 
-.mt-\[88px\]{
-  margin-top: 88px;
+.mt-\[30px\]{
+  margin-top: 30px;
 }
 
-.mb-5{
-  margin-bottom: 1.25rem;
+.mt-\[100px\]{
+  margin-top: 100px;
+}
+
+.mt-\[104px\]{
+  margin-top: 104px;
 }
 
 .line-clamp-3{
@@ -731,6 +773,10 @@ html{
   height: 46px;
 }
 
+.h-\[250px\]{
+  height: 250px;
+}
+
 .w-1{
   width: 0.25rem;
 }
@@ -753,6 +799,10 @@ html{
 
 .w-full{
   width: 100%;
+}
+
+.transform{
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .flex-row{
@@ -878,6 +928,10 @@ html{
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+.bg-inherit{
+  background-color: inherit;
+}
+
 .bg-transparent{
   background-color: transparent;
 }
@@ -887,8 +941,12 @@ html{
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\.\/\.\.\/assets\/map\/reviewPost\.png\'\)\]{
-  background-image: url('./../assets/map/reviewPost.png');
+.bg-\[url\(\'\$\{url\}\'\)\]{
+  background-image: url('${url}');
+}
+
+.bg-\[url\(\'https\:\/\/cdn\.thescoop\.co\.kr\/news\/photo\/201909\/36658_48383_542\.jpg\'\)\]{
+  background-image: url('https://cdn.thescoop.co.kr/news/photo/201909/36658_48383_542.jpg');
 }
 
 .bg-gradient-to-r{
@@ -1056,6 +1114,11 @@ html{
 .-text--lion-lightblue-400{
   --tw-text-opacity: 1;
   color: rgb(141 176 249 / var(--tw-text-opacity));
+}
+
+.text-black{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-indigo-500{
