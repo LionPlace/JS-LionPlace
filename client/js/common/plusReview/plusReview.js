@@ -47,3 +47,23 @@ madeListInput.addEventListener('focusout', () => {
     listLabel.style.display = 'block';
   }
 }); // focus 빠졌을 때
+
+/* ------------------------------ input 글자 수 세기 ----------------------------- */
+
+const charCountTitle = getNode('#charCountTitle');
+const charCountlist = getNode('#charCountList');
+
+madeTitleInput.addEventListener('input', () => {
+  const inputTitle = madeTitleInput.value;
+  const charCount = inputTitle.length > 20 ? 20 : inputTitle.length;
+  charCountTitle.textContent = `${charCount}/20`;
+  madeTitleInput.value = inputTitle.slice(0, 20);
+});
+
+madeListInput.addEventListener('input', () => {
+  const inputList = madeListInput.value;
+  const charCount = inputList.length > 100 ? 100 : inputList.length;
+  charCountlist.textContent = `${charCount}/100`;
+  madeListInput.value = inputList.slice(0, 100);
+});
+
