@@ -66,9 +66,9 @@ idInput.addEventListener('input', handleId);
 // 비밀번호 입력할 때마다 정규식 검사
 function handlePw() {
   if (pwReg(pwInput.value)) {
-    pwInput.classList.remove('is--valid');
+    pwInput.classList.remove('is--invalid');
   } else {
-    pwInput.classList.add('is--valid');
+    pwInput.classList.add('is--invalid');
   }
 }
 
