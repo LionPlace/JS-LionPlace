@@ -79,8 +79,6 @@ function renderMap(userData) {
   renderMap(userData);
 })();
 
-//* themeEnroll 2page 랜더링
-
 //* 리뷰 카드 템플릿 생성 함수
 let i = 0;
 function createReviewCard({
@@ -187,6 +185,7 @@ function ClickDeleteButton(deleteButton) {
     button.addEventListener('click', deleteReview);
   });
 }
+
 //* 리뷰 순서 변경
 function editReviewCard() {
   const reviewCard = getNodes('.review-card');
@@ -205,7 +204,6 @@ function editReviewCard() {
   const URL = 'http://localhost:3000/data';
   const response = await tiger({url: URL});
   const userData = response.data;
-  //   console.log(userData.visited[0]);
   userData[0].visited.forEach(visitedPlace => {
     const placeName = Object.keys(visitedPlace)[0];
     if (visitedPlace[placeName].theme.toString() === userData[0].theme[0].title) {
@@ -251,11 +249,9 @@ function editReviewCard() {
   clickEditButton(editReviewCard);
 })();
 
-//* 리뷰카드 렌더링 렌더링 함수
+//* 헤더 영역 템플릿 생성함수
 
-//* 테마 제목 및 설명 템플릿 함수
-
-function createThemeTitle({title, description, url}) {
+function createThemeHeader({title, description, url}) {
   const template = /* html */ `
     <section class="header-inner flex flex-col bg-[url('${url}')] bg-cover bg-center pb-8 -z-10">
       <div class="flex flex-row justify-between px-[10px] py-[14px]">
@@ -284,69 +280,89 @@ function createThemeTitle({title, description, url}) {
   return template;
 }
 
-//* 테마 제목 및 설명 렌더링 함수
-function renderThemeTitle(target, data) {
-  insertLast(target, createThemeTitle(data));
+//* 헤더 영역 DOM 삽입
+function insertThemeHeader(target, data) {
+  insertLast(target, createThemeHeader(data));
 }
 
-const themeTitleInner = getNode('.theme-title-inner');
+//* 지도 바로가기
+function moveScrollBottom() {
+  window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+}
 
-async function renderTheme() {
+function clickMapButton(mapButton) {
+  mapButton.addEventListener('click', moveScrollBottom);
+}
+
+//* 지도 버튼 삭제
+function removeMapButton(mapButton) {
+  mapButton.remove();
+}
+
+//* 기존 제목, 설명 제거
+function removeThemeTitle(themeTitle) {
+  themeTitle.remove();
+}
+
+function createCoverChangeButton() {
+  const template = /* html */ `
+  <button class="mx-auto mt-[82px] flex rounded-[50px] border-[1px] bg-inherit border-white px-3 py-2 z-10">
+      <img src="./../assets/map/Icon/photo.png" alt="" />
+      <span class="ml-1 mt-[2px] text-white">커버변경</span>
+  </button>
+  `;
+
+  return template;
+}
+function insertCoverChangeButton(target) {
+  insertLast(target, createCoverChangeButton());
+}
+
+function renderCoverChangeButton() {
+  const headerInner = getNode('.header-inner');
+  insertCoverChangeButton(headerInner);
+}
+
+//* 헤더 영역 렌더링
+async function renderThemeHeader() {
+  const themeTitleInner = getNode('.theme-title-inner');
   const URL = 'http://localhost:3000/data';
   const response = await tiger({url: URL});
-  const themeData = response.data;
+  const userData = response.data;
   const [title, description, url] = [
-    themeData[0].theme[0].title,
-    themeData[0].theme[0].list,
-    themeData[0].theme[0].coverimg,
+    userData[0].theme[0].title,
+    userData[0].theme[0].list,
+    userData[0].theme[0].coverimg,
   ];
   const data = {title, description, url};
-  renderThemeTitle(themeTitleInner, data);
+  insertThemeHeader(themeTitleInner, data);
 
-  //* 지도 바로가기
   const mapButton = getNode('.map-button');
 
-  function moveScrollBottom() {
-    window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
+  //* 지도 바로가기
+  clickMapButton(mapButton);
+
+  //* 지도 버튼 삭제
+  function removeButton() {
+    removeMapButton(mapButton);
   }
 
-  mapButton.addEventListener('click', moveScrollBottom);
-
-  //* 맵 버튼 제거
-
-  function hideMapButton() {
-    mapButton.remove();
-  }
-  editButton.addEventListener('click', hideMapButton);
+  clickEditButton(removeButton);
 
   //* 커버 변경 버튼 렌더링
-  const headerInner = getNode('.header-inner');
-  function renderCoverChangeButton(target) {
-    const template = /* html */ `
-              <button class="mx-auto mt-[82px] flex rounded-[50px] border-[1px] bg-inherit border-white px-3 py-2 z-10">
-                  <img src="./../assets/map/Icon/photo.png" alt="" />
-                  <span class="ml-1 mt-[2px] text-white">커버변경</span>
-              </button>
-          `;
-    insertLast(target, template);
-  }
+  clickEditButton(renderCoverChangeButton);
 
-  function renderCoverChange() {
-    renderCoverChangeButton(headerInner);
-  }
-
-  editButton.addEventListener('click', renderCoverChange);
-  //* 제목, 설명 input 태그로 변경
   //* 기존 제목, 설명 제거
-  function removeThemeTitle() {
-    const ThemeTitle = getNode('.theme-title');
-    ThemeTitle.remove();
-  }
-  editButton.addEventListener('click', removeThemeTitle);
+  const themeTitle = getNode('.theme-title');
 
-  //* input 태그 넣기
-  const themeSummary = getNode('.theme-summary');
-  function createThemeSummary(target) {
+  function removeTitle() {
+    removeThemeTitle(themeTitle);
+  }
+
+  clickEditButton(removeTitle);
+
+  //* input 태그 템플릿 생성
+  function createThemeSummary() {
     const template = /* html */ `
                 <input
                     class="input-title bg-transparent mx-4 mt-[10px] -text--lion-label-xl text-white -placeholder--lion-white border-none outline-none"
@@ -361,11 +377,31 @@ async function renderTheme() {
                         class="mr-[22px] mt-3 self-end -text--lion-label-small text-black"><span
                             class="render-description-length -text--lion-label-small text-white">16</span> /100</span>
       `;
-    insertLast(target, template);
+    return template;
   }
+
+  //* input 태그 DOM 삽입
+  function insertThemeSummary(target) {
+    insertLast(target, createThemeSummary());
+  }
+
+  // function countTitle(titleInput, renderTitleLength) {
+  //   const titleLength = titleInput.value.length;
+  //   renderTitleLength.textContent = titleLength;
+  // }
+
+  // function countDescription(descriptionInput, renderDescriptionLength) {
+  //   const DescriptionLength = descriptionInput.value.length;
+  //   renderDescriptionLength.textContent = DescriptionLength;
+  // }
+  //* input 태그 랜더링
   function renderThemeSummary() {
-    createThemeSummary(themeSummary);
+    const themeSummary = getNode('.theme-summary');
+    insertThemeSummary(themeSummary);
+
     //* input 태그 글자수 세기
+
+    //* 글자수 세기
     const titleInput = getNode('.input-title');
     const renderTitleLength = getNode('.render-title-length');
     function countTitle() {
@@ -384,27 +420,25 @@ async function renderTheme() {
   editButton.addEventListener('click', renderThemeSummary);
 }
 
-renderTheme();
+renderThemeHeader();
 
-//* 수정하기 버튼 숨기기
-
-function hideButton() {
+//* 수정하기 버튼 삭제
+function removeEditButton() {
   editButton.remove();
 }
-editButton.addEventListener('click', hideButton);
 
-//* 유저 프로필 영역 숨기기
-const userProfile = getNode('.user-profile-area');
+clickEditButton(removeEditButton);
 
+//* 유저 프로필 영역 삭제
 function hideUserProfile() {
+  const userProfile = getNode('.user-profile-area');
   userProfile.remove();
 }
 
-editButton.addEventListener('click', hideUserProfile);
+clickEditButton(hideUserProfile);
 
-// * 리뷰 데이터 렌더링
-
-function createReviewData() {
+// * 리뷰 네비게이션 바 템플릿 생성
+function createReviewNav() {
   const template = /* html */ `
   <div class="ml-4 mr-7 mt-[18px] flex items-center justify-between">
     <div class="flex items-center gap-1 text-center">
@@ -422,25 +456,27 @@ function createReviewData() {
   return template;
 }
 
-function renderReviewData(target, data) {
-  insertLast(target, createReviewData(data));
+//* 리뷰 네비게이션 바 DOM 삽입
+function insertReviewNav(target, data) {
+  insertLast(target, createReviewNav(data));
 }
 
-function renderData() {
-  const reviewDataInner = getNode('.review-data-inner');
-  renderReviewData(reviewDataInner);
+//* 리뷰 네비게이션 바 렌더링
+function renderReviewNav() {
+  const reviewDataInner = getNode('.review-nav-inner');
+  insertReviewNav(reviewDataInner);
 }
 
-editButton.addEventListener('click', renderData);
+clickEditButton(renderReviewNav);
 
 //* 수정하기 클릭 시 지도 삭제
-const map = getNode('.map');
 
 function removeMap() {
+  const map = getNode('.map');
   map.remove();
 }
 
-editButton.addEventListener('click', removeMap);
+clickEditButton(removeMap);
 
 // console.log(user)
 // tiger.put('http://localhost:3000/data/1', {...userData, ...changeTheme});
