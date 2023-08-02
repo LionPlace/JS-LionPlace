@@ -140,11 +140,11 @@ renderInterestList();
 // 피드 렌더
 function feedTemplate(e) {
   const data = e[Object.keys(e)];
-
   const {visitedUser, visited, photo, reviews} = data;
 
   const userE = res.data.map(k => [k.userId, k.img]);
   const [user1, user2] = userE;
+  console.log(visitedUser);
 
   return /* html */ `
 <div class="px-[16px] py-[8px]">

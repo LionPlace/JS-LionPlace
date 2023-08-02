@@ -17,62 +17,94 @@
   <body class="-bg--lion-gray-700">
     <div>
       <!-- 리스트 타이틀 추가 영역 -->
-      <div class="plusReviewBox -text--lion-white relative pb-5">
-
-        <button class="beforePageBtn flex items-center pt-3 mb-9">
+      <div class="plusReviewBox relative pb-5 -text--lion-white">
+        <button class="beforePageBtn mb-9 flex items-center pt-3">
           <img src="./../assets/plusReview/left.png" alt="이전 페이지" />
         </button>
-        
+
         <div class="mx-4">
-
           <div class="relative mt-11">
-
-            <label for="madeTitle" class="titleLabel absolute top-0 left-0 -text--lion-label-xl" >
-              제목을 입력해 주세요 
-              <span class="-text--lion-contents-content-tertiary -text--lion-paragraph-small font-normal">필수</span>
+            <label for="madeTitle" class="titleLabel absolute left-0 top-0 -text--lion-label-xl">
+              제목을 입력해 주세요
+              <span
+                class="-text--lion-paragraph-small font-normal -text--lion-contents-content-tertiary"
+                >필수</span
+              >
             </label>
-            <input type="text" id="madeTitle" class="border-b bg-transparent border-gray-400 w-full mt-4" required maxlength="20"/>
-            <div class="charCountTitle -text--lion-paragraph-small absolute top-11 right-0">0<span class="-text--lion-contents-content-tertiary">/20</span></div>
+            <input
+              type="text"
+              id="madeTitle"
+              class="mt-4 w-full border-b border-gray-400 bg-transparent"
+              required
+              maxlength="20"
+            />
+            <div class="charCountTitle absolute right-0 top-11 -text--lion-paragraph-small">
+              0<span class="-text--lion-contents-content-tertiary">/20</span>
+            </div>
           </div>
-          
+
           <div class="relative mt-10">
-            <label for="madeList" class="listLabel absolute top-0 left-0 -text--lion-paragraph-small -text--lion-contents-content-tertiary">
+            <label
+              for="madeList"
+              class="listLabel absolute left-0 top-0 -text--lion-paragraph-small -text--lion-contents-content-tertiary"
+            >
               어떤 리스트인지 설명해 주세요
               <span class="ml-1">선택</span>
             </label>
-            
-            <input type="text" id="madeList" class="border-b bg-transparent border-gray-400 w-full" maxlength="100"/>
-            <div class="charCountList -text--lion-paragraph-small absolute top-7 right-0">
+
+            <input
+              type="text"
+              id="madeList"
+              class="w-full border-b border-gray-400 bg-transparent"
+              maxlength="100"
+            />
+            <div class="charCountList absolute right-0 top-7 -text--lion-paragraph-small">
               0
               <span class="-text--lion-contents-content-tertiary">/100</span>
             </div>
           </div>
-
         </div>
 
-        <div class="flex items-center justify-center mt-24">
-          <button class="changeCoverBtn flex items-center border -border--lion-white rounded-full p-2">
-            <span class="bg-cover-icon ml-2 mb-1 w-5 h-5 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/plusReview/photo.png');"></span>
-            <p class="ml-2 -text--lion-label-medium">커버변경<span class="-text--lion-paragraph-small -text--lion-contents-content-tertiary ml-1">필수</span></p>
+        <div class="mt-24 flex items-center justify-center">
+          <button
+            class="changeCoverBtn flex items-center rounded-full border -border--lion-white p-2"
+          >
+            <span
+              class="bg-cover-icon mb-1 ml-2 block h-5 w-5 bg-contain bg-center bg-no-repeat"
+              style="background-image: url('./../assets/plusReview/photo.png')"
+            ></span>
+            <p class="ml-2 -text--lion-label-medium">
+              커버변경<span
+                class="ml-1 -text--lion-paragraph-small -text--lion-contents-content-tertiary"
+                >필수</span
+              >
+            </p>
           </button>
         </div>
-        
-        <div class="absolute top-0 right-0 mt-2 mr-2">
-          <button class="plusReviewBtn flex items-center border -border--lion-white rounded-full p-2">
-            <span class="bg-cover-icon mb-1 w-5 h-5 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/plusReview/check.png');"></span>
-          <span class="mr-1 -text--lion-label-small">등록</span>
+
+        <div class="absolute right-0 top-0 mr-2 mt-2">
+          <button
+            class="plusReviewBtn flex items-center rounded-full border -border--lion-white p-2"
+          >
+            <span
+              class="bg-cover-icon mb-1 block h-5 w-5 bg-contain bg-center bg-no-repeat"
+              style="background-image: url('./../assets/plusReview/check.png')"
+            ></span>
+            <span class="mr-1 -text--lion-label-small">등록</span>
           </button>
         </div>
       </div>
 
       <!-- 리뷰 리스트 추가 영역 -->
-      <div class="relative h-screen -bg--lion-white rounded-t-lg p-4">
-        <div class="font-bold -text--lion-label-medium">
+      <div class="relative h-screen rounded-t-lg -bg--lion-white p-4">
+        <div class="-text--lion-label-medium font-bold">
           <span>리뷰</span>
-          <span class="-text--lion-contents-content-tertiary"><span class="-text--lion-info-error">0</span>/10</span>
+          <span class="-text--lion-contents-content-tertiary"
+            ><span class="-text--lion-info-error">0</span>/10</span
+          >
         </div>
 
-        <div class="absolute top-5 right-5">
+        <div class="absolute right-5 top-5">
           <ul class="flex -text--lion-label-small -text--lion-contents-content-tertiary">
             <li>임시저장</li>
             <li class="px-1">ㅣ</li>
@@ -82,19 +114,26 @@
           </ul>
         </div>
 
-        <div class="h-auto flex flex-col justify-center">
-          <div class="-text--lion-paragraph-small -text--lion-contents-content-tertiary text-center mt-28">
+        <div class="flex h-auto flex-col justify-center">
+          <div
+            class="mt-28 text-center -text--lion-paragraph-small -text--lion-contents-content-tertiary"
+          >
             <p>내가 작성한 리뷰를 추가해</p>
             <p>새로운 테마 리스트를 만들어 보세요.</p>
           </div>
-          <div class="flex justify-center mt-4">
-            <button class="flex items-center -bg--lion-lightblue-300 rounded-full px-4 py-2">
-              <span class="bg-cover-icon mb-0.5 mr-1 w-5 h-5 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/plusReview/plus.png');"></span>
+          <div class="mt-4 flex justify-center">
+            <button
+              onclick="location.href='./themeEnroll2.html'"
+              class="flex items-center rounded-full -bg--lion-lightblue-300 px-4 py-2"
+            >
+              <span
+                class="bg-cover-icon mb-0.5 mr-1 block h-5 w-5 bg-contain bg-center bg-no-repeat"
+                style="background-image: url('./../assets/plusReview/plus.png')"
+              ></span>
               <span class="-text--lion-label-small -text--lion-white">리뷰 추가하기</span>
             </button>
           </div>
         </div>
-
       </div>
     </div>
   </body>

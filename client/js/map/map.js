@@ -256,7 +256,7 @@ function createThemeHeader({title, description, url}) {
   const template = /* html */ `
     <section class="header-inner flex flex-col bg-[url('${url}')] bg-cover bg-center pb-8 -z-10">
       <div class="flex flex-row justify-between px-[10px] py-[14px]">
-        <button>
+        <button onclick="location.href='./themePage.html'">
           <img src="./../assets/map/Icon/left.png" alt="뒤로가기" />
         </button>
         <button class="save-button flex flex-row rounded-[50px] -bg--lion-lightblue-300 px-3">
