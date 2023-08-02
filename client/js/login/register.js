@@ -157,8 +157,4 @@ function handleRegister(e) {
   }
 }
 
-// 정보는 넘어가는데 로그인 창에서 로그인이 안됨
-// 회원가입 다시 하면 정보가 쌓이는게 아니라 하나가 계속 바뀜
-// data 파일에 정보 담아주기
-
 registerLoginBtn.addEventListener('click', handleRegister);
