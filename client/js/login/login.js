@@ -32,9 +32,6 @@ function pwReg(text) {
   return re.test(String(text).toLowerCase());
 }
 
-// 임의의 unique ID 값 설정
-localStorage.setItem('uniqueID', 'asdfQWERTY');
-
 // 입력한 값과 data 의 값 비교,
 async function handleLogin(e) {
   e.preventDefault();
@@ -46,7 +43,7 @@ async function handleLogin(e) {
   if (idInput.value === registerId && pwInput.value === registerPw) {
     const registerUnique = user.uniqueID;
     if (registerUnique === localStorage.getItem('uniqueID')) {
-      window.location.href = './views/start.html';
+      window.location.href = './views/feed.html';
     }
   }
 }

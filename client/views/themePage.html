@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+      type="image/xml+svg"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="./../js/common/themePage/themePage.js" type="module"></script>
+    <title>themePage</title>
+  </head>
+
+  <body>
+    <!-- <h2 class="text-indigo-500">themePage</h2> -->
+
+    <header class="-bg--lion-blue-900 pt-10 px-5 pb-2 relative">
+
+      <div class="grid grid-cols-5 grid-rows-3 gap-1 mb-5">
+        
+        <!-- img -->
+        <div class="row-span-2 col-span-1">
+          <div class="flex justify-center items-start h-full">
+            <span class="-text--lion-white -text--lion-label-small p-4 border-4 rounded-full">img</span>
+          </div>
+          <!-- pencil button -->
+          <button class="absolute top-[75px] left-14 -bg--lion-white rounded-full p-1">
+            <span class="bg-cover-icon w-4 h-4 block bg-no-repeat bg-center bg-contain" style="background-image: url(./../assets/themePage/Icon/blackpencil.png);"></span>
+          </button>
+        </div>
+
+        <!-- coolion -->
+        <div class="row-span-1 col-span-4 flex items-center ml-4">
+          <div class="-text--lion-white -text--lion-label-medium font-bold">COOLION</div>
+          <button class="bg-cover-icon mb-1.5 ml-1.5 w-5 h-5 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/themePage/Icon/share.png');"></button>
+        </div>
+
+        <!-- 팔로잉/팔로워 리스트 -->
+        <dl class="flex row-span-1 col-start-2 col-span-5 ml-4">
+          <div class="flex flex-col mr-4">
+            <dt class="-text--lion-white -text--lion-paragraph-small text-center ">리뷰</dt>
+            <dd class="-text--lion-white -text--lion-label-small text-center">17</dd>
+          </div>
+          <div class="flex flex-col mr-4 border-x border-gray-300 px-4">
+            <dt class="-text--lion-white -text--lion-paragraph-small text-center">사진</dt>
+            <dd class="-text--lion-white -text--lion-label-small text-center">19</dd>
+          </div>
+          <div class="flex flex-col mr-4 border-r border-gray-300 pr-4">
+            <dt class="-text--lion-white -text--lion-paragraph-small text-center ">팔로잉</dt>
+            <dd class="-text--lion-white -text--lion-label-small text-center">2</dd>
+          </div>
+          <div class="flex flex-col">
+            <dt class="-text--lion-white -text--lion-paragraph-small text-center">팔로워</dt>
+            <dd class="-text--lion-white -text--lion-label-small text-center">0</dd>
+          </div>  
+        </dl>
+
+        <!-- 리뷰 쓰기/미션 버튼 -->
+          <ul class="-text--lion-white -text--lion-label-small flex gap-2 row-span-1 col-start-1 col-span-5 pt-2">
+            <li>
+              <button class="bg-review -bg--lion-lightblue-800 w-52 h-8 rounded flex items-center">
+                <span class="bg-cover-icon mb-1 ml-16 w-5 h-5 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/themePage/Icon/pencil.png');"></span>
+                <span class="ml-2">리뷰 쓰기</span>
+              </button>
+            </li>
+            <li>
+              <button class="bg-mission -bg--lion-lightblue-800 w-16 h-8 rounded flex items-center">
+                <span class="bg-cover-icon mb-0.5 ml-1.5 w-5 h-5 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/themePage/Icon/mission.png');"></span>
+                <span class="ml-1">미션</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+          
+        <!-- 피드/방문/리뷰/예약 리스트 -->
+        <ul class="flex -text--lion-lightblue-300 -text--lion-label-medium row-span-1 col-span-3 mt-3 justify-between">
+          <li class="mr-4 opacity-70">피드</li>
+          <li class="mr-4 opacity-70">방문</li>
+          <li class="mr-4">리뷰</li>
+          <li class="opacity-70">예약&#183;주문</li>
+        </ul>
+        
+        <!-- 쿠폰 -->
+        <div>
+          <button class="-text--lion-white -text--lion-paragraph-small p-1 border border-white rounded absolute top-3 right-5">쿠폰</button>
+          <span class="absolute top-1 right-3 bg-white -text--lion-contents-content-primary -text--lion-paragraph-small rounded-full px-1.5">1</span>
+        </div>
+    </header>
+
+    <main class=" -text--lion-label-medium">
+      <!-- 테마 -->
+      <div class="-bg--lion-gray-100 max-w-screen-xl mx-auto px-2 pt-4 pb-7">
+        <h1 class="mb-2 font-bold">
+          테마
+          <span class="-text--lion-contents-content-secondary">1</span>
+        </h1>
+
+        <div class="flex gap-4">
+          <!-- 임시저장 -->
+          <div class="absolute top-0 left-0 w-full h-full rounded"></div>
+          <div class="relative">
+            <div>
+              <img src="./../assets/themePage/save.png" alt="임시저장" class="w-full h-full object-cover">
+              <div class="absolute top-0 left-0 w-full h-full rounded-xl" style="background-image: linear-gradient(to bottom, transparent 0%, white 60%);"></div>
+              <div class="absolute top-0 left-0 w-full h-full flex items-center pl-2 pb-4">
+                <p class="-text--lion-contents-content-primary -text--lion-label-medium font-bold">연남/합정 데이트</p>
+              </div>
+              <button class="absolute top-[94px] left-2 flex">
+                <p class="-text--lion-contents-content-primary -text--lion-label-small">장소 2</p>
+                <span class="absolute mt-0.5 ml-8 bg-cover-icon w-3 h-3 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/themePage/Icon/eye.png');"></span>
+                <p class="-text--lion-contents-content-primary -text--lion-label-small pl-4">7</p>
+              </button>
+            </div>
+            
+            <p class="absolute top-2 left-2 -text--lion-label-small -text--lion-contents-content-secondary -bg--lion-white bg-opacity-50 p-1 rounded-md">
+              임시저장
+            </p>
+
+            <div class="absolute bottom-3 left-2 -text--lion-black -text--lion-label-small font-bold flex overflow-hidden">
+              <p class="w-[42px] h-[42px] -bg--lion-gray-200 rounded-md flex items-center px-[10px]">img</p>
+              <p class="w-[42px] h-[42px] -bg--lion-gray-200 rounded-md ml-1 flex items-center px-[10px]">img</p>
+            </div>
+            
+          </div>
+
+          <div class="addReviewList relative w-[148px] h-[184px] -bg--lion-white rounded-lg">
+            <button class="absolute bottom-10 inset-0 flex items-center justify-center">
+              <!-- 원 스타일 -->
+              <span class="w-[46px] h-[46px] rounded-full -bg--lion-lightblue-900">
+                <!-- 가운데 + 모양 -->
+                <span class="w-4 h-0.5 bg-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                <span class="w-0.5 h-4 bg-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+              </span>
+            </button>
+
+            <div class="absolute top-16 inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <p class="-text--lion-label-small -text--lion-contents-content-tertiary">내 리뷰만 모아</p>
+                <p class="-text--lion-label-small -text--lion-contents-content-tertiary">테마 만들기</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+      <div class="mx-3">
+        <!-- 전체/사진 버튼 -->
+        <div class="flex items-center mt-2 mb-2 -text--lion-label-small -text--lion-black">
+          <button class="flex items-center py-2 rounded-lg">
+            <span class="bg-all-icon mb-0.5 w-4 h-4 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/themePage/Icon/hamburger.png');"></span>
+            <span class="mx-2 -text--lion-contents-content-secondary">전체</span>
+          </button>
+          <button class="flex items-center py-2 rounded-lg">
+            <span class="bg-all-icon mb-0.5 w-4 h-4 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/themePage/Icon/photo.png');"></span>
+            <span class="mx-2 font-bold">사진</span>
+          </button>
+          <button class="flex items-center py-2 rounded-lg ml-auto">
+            <span>최신순</span>
+            <span class="bg-all-icon mb-0.5 ml-1 w-4 h-4 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/themePage/Icon/up.png');"></span>
+          </button>
+        </div>
+
+        <!-- 사진 모음 -->
+        <div class="grid grid-cols-2 gap-2">
+
+          <div class="rounded-lg">
+              <button class="relative">
+                <img src="./../assets/themePage/ImagefieldFeed-7.png" alt="서울시 서교동  조블라
+                " />
+                <span class="absolute top-2 right-3 bg-cover-icon w-5 h-5 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/themePage/Icon/bookmark.png');"></span>
+                <span class="absolute bottom-2 left-2 -text--lion-white text-left flex flex-col">
+                  <span class="-text--lion-label-small">서울시 서교동</span>
+                  <span class="-text--lion-label-medium">조블라</span>
+                </span>
+              </button>
+          </div>
+
+          <div class="rounded-lg">
+              <button class="relative">
+                <img src="./../assets/themePage/ImagefieldFeed-6.png" alt="서울시 서교동 후타츠 홍대점" />
+                <span class="absolute top-2 right-3 bg-cover-icon w-5 h-5 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/themePage/Icon/bookmark.png');"></span>
+                <span class="absolute bottom-2 left-2 -text--lion-white text-left flex flex-col">
+                  <span class="-text--lion-label-small">서울시 서교동</span>
+                  <span class="-text--lion-label-medium">후타츠 홍대점</span>
+                </span>
+              </button>
+          </div>
+
+          <div class="rounded-lg">
+              <button class="relative">
+                <img src="./../assets/themePage/ImagefieldFeed-5.png" alt="서울시 응암동 기린 작업실" />
+                <span class="absolute top-2 right-3 bg-cover-icon w-5 h-5 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/themePage/Icon/bookmark.png');"></span>
+                <span class="absolute bottom-2 left-2 -text--lion-white text-left flex flex-col">
+                  <span class="-text--lion-label-small">서울시 응암동</span>
+                  <span class="-text--lion-label-medium">기린 작업실</span>
+                </span>
+              </button>
+          </div>
+
+          <div class="rounded-lg">
+              <button class="relative">
+                <img src="./../assets/themePage/ImagefieldFeed-4.png" alt="서울시 서교동 마포곱창타운" />
+                <span class="absolute top-2 right-3 bg-cover-icon w-5 h-5 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/themePage/Icon/bookmark.png');"></span>
+                <span class="absolute bottom-2 left-2 -text--lion-white text-left flex flex-col">
+                  <span class="-text--lion-label-small">서울시 서교동</span>
+                  <span class="-text--lion-label-medium">마포곱창타운</span>
+                </span>
+              </button>
+          </div>
+
+          <div class="rounded-lg">
+              <button class="relative">
+                <img src="./../assets/themePage/ImagefieldFeed-1.png" alt="서울시 연남동 뉴오더클럽" />
+                <span class="absolute top-2 right-3 bg-cover-icon w-5 h-5 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/themePage/Icon/bookmark.png');"></span>
+                <span class="absolute bottom-2 left-2 -text--lion-white text-left flex flex-col">
+                  <span class="-text--lion-label-small">서울시 연남동</span>
+                  <span class="-text--lion-label-medium">뉴오더클럽</span>
+                </span>
+              </button>
+          </div>
+
+          <div class="rounded-lg">
+              <button class="relative">
+                <img src="./../assets/themePage/ImagefieldFeed.png" alt="서울시 망원동 코락" />
+                <span class="absolute top-2 right-3 bg-cover-icon w-5 h-5 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/themePage/Icon/bookmark.png');"></span>
+                <span class="absolute bottom-2 left-2 -text--lion-white text-left flex flex-col">
+                  <span class="-text--lion-label-small">서울시 망원동</span>
+                  <span class="-text--lion-label-medium">코락</span>
+                </span>
+              </button>
+          </div>
+
+          <div class="rounded-lg relative">
+              <button>
+                <img src="./../assets/themePage/ImagefieldFeed-3.png" alt="서울시 동교동 바다회사랑회" />
+                <span class="absolute top-2 right-3 bg-cover-icon w-5 h-5 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/themePage/Icon/bookmark.png');"></span>
+                <span class="absolute bottom-2 left-2 -text--lion-white text-left flex flex-col">
+                  <span class="-text--lion-label-small">서울시 동교동</span>
+                  <span class="-text--lion-label-medium">바다회사랑회</span>
+                </span>
+              </button>
+          </div>
+
+          <div class="rounded-lg">
+              <button class="relative">
+                <img src="./../assets/themePage/ImagefieldFeed-2.png" alt="서울시 서교동 삼쭈삼 홍대점" />
+                <span class="absolute top-2 right-3 bg-cover-icon w-5 h-5 block bg-no-repeat bg-center bg-contain" style="background-image: url('./../assets/themePage/Icon/bookmark.png');"></span>
+                <span class="absolute bottom-2 left-2 -text--lion-white text-left flex flex-col">
+                  <span class="-text--lion-label-small">서울시 서교동</span>
+                  <span class="-text--lion-label-medium">삼쭈삼 홍대...</span>
+                </span>
+              </button>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      
+    </footer>
+  </body>
+</html>

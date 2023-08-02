@@ -3,7 +3,7 @@
     {
       "id": 1,
       "userId": "lion1",
-      "email": "lion@email.com",
+      "email": "lion1@email.com",
       "password": "lion123!@#",
       "uniqueID": "asdfQWERTY",
       "img": "https://cdn.inflearn.com/public/users/thumbnails/170506/fc3d4883-71b8-4c64-8647-7f79a4499461",
@@ -11,8 +11,6 @@
       "visited": [
         {
           "HOT MESS": {
-            "visitedUser": "lion",
-            "visitedId": 1,
             "location": {
               "latitude": 37.56257523917533,
               "longitude": 126.92282822957732,
@@ -94,8 +92,6 @@
         },
         {
           "허밍벨라": {
-            "visitedUser": "lion",
-            "visitedId": 2,
             "location": {
               "latitude": 37.561503649820686,
               "longitude": 26.92374611306943,
@@ -175,8 +171,6 @@
         },
         {
           "스시노백쉐프": {
-            "visitedUser": "lion",
-            "visitedId": 3,
             "location": {
               "latitude": 37.56137805739259,
               "longitude": 126.924997937203,
@@ -213,8 +207,6 @@
         },
         {
           "하이디라오": {
-            "visitedUser": "lion",
-            "visitedId": 4,
             "location": {
               "latitude": 37.55711206891357,
               "longitude": 126.92496156998747,
@@ -247,8 +239,6 @@
         },
         {
           "야키토리 나루토": {
-            "visitedUser": "lion",
-            "visitedId": 5,
             "location": {
               "latitude": 37.55711206891357,
               "longitude": 126.92496156998747,

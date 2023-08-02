@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  content: ['./client/**/*.html'],
+  content: ['./client/**/*.{html,js}'],
   theme: {
     extend: {
       colors: {
@@ -42,7 +42,7 @@ module.exports = {
         '--lion-contents-content-tertiary': '#a6a6a6',
       },
       fontSize: {
-        '--lion-heading-medium': ['160px', '140%,', '700'],
+        '--lion-heading-medium': ['16px', '140%,', '700'],
         '--lion-heading-large': ['21.33px', '140%,', '700'],
         '--lion-heading-xl': ['28.43px', '140%,', '700'],
         '--lion-heading-xxl': ['37.9px', '140%,', '700'],
@@ -67,6 +67,10 @@ module.exports = {
         '--lion-below-high-box-shadow': '0px 16px 48px 0px rgba(0, 0, 0, 0.3)',
         '--lion-below-medium-box-shadow': '0px 8px 36px 0px rgba(0, 0, 0, 0.2)',
         '--lion-below-low-box-shadow': '0px 4px 24px 0px rgba(0, 0, 0, 0.1)',
+      },
+      backgroundImage: {
+        'custom-gradient':
+          'linear-gradient(90.97deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 40.625%)',
       },
     },
   },
