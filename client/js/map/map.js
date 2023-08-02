@@ -2,6 +2,15 @@ import {getNode, getNodes, insertLast, tiger, toggleClass} from '../../lib/index
 
 const editButton = getNode('.edit-button');
 
+async function fetching1() {
+  const user = tiger.get('http://localhost:3000/data');
+  const res = await user;
+  const authUser = res.data.filter(e => e.userId === 'lion1')[0];
+
+  return authUser;
+}
+
+const authUser = await fetching1();
 // * 카카오 지도 API
 function renderOverlay(map, userData) {
   userData[0].visited.forEach(visitedPlace => {
@@ -95,6 +104,7 @@ function createReviewCard({
   totalReview,
   state,
   town,
+  id,
 }) {
   const trueKeyword = [];
   for (let i = 0; i < keyword.length; i += 1) {
@@ -111,7 +121,7 @@ function createReviewCard({
         </div>
         <figcaption class="-text--lion-label-small -text--lion-lightblue-400">NO.${(j += 1)}</figcaption>
           </figure>
-          <section class="relative mt-3 bg-white">
+          <section class="visitedId-${id} relative mt-3 bg-white">
         <img class="w-full h-[250px]" src=${photo} alt="가게 사진" />
         <img class="delete-button absolute right-[-8px] top-[-6px] hidden" src="./../assets/map/Icon/close.png" alt="삭제 버튼" />
         <div class="my-6 flex flex-col px-[38px] text-center">
@@ -159,7 +169,6 @@ function createReviewCard({
     </div>
     `;
 
-  // const deleteButton = getNodes('.deleteButton');
   return template;
 }
 
@@ -214,7 +223,7 @@ async function renderReviewCard() {
   userData[0].visited.forEach(visitedPlace => {
     const placeName = Object.keys(visitedPlace)[0];
     if (visitedPlace[placeName].theme.toString() === userData[0].theme[0].title) {
-      const [photo, year, month, day, date, content, keyword, state, town] = [
+      const [photo, year, month, day, date, content, keyword, state, town, id] = [
         visitedPlace[placeName].photo,
         visitedPlace[placeName].visited.year,
         visitedPlace[placeName].visited.month,
@@ -224,6 +233,7 @@ async function renderReviewCard() {
         visitedPlace[placeName].reviews[0].keyword,
         visitedPlace[placeName].location.region.state,
         visitedPlace[placeName].location.region.town,
+        visitedPlace[placeName].visitedId,
       ];
       const data = {
         photo,
@@ -237,11 +247,25 @@ async function renderReviewCard() {
         totalReview: 5,
         state,
         town,
+        id,
       };
       insertReviewCard(reviewCardInner, data);
     }
   });
   const deleteButton = getNodes('.delete-button');
+  const postReviewState = {...authUser};
+  function removeReview() {
+    deleteButton.forEach(button => {
+      button.addEventListener('click', function () {
+        const classList = button.parentElement.classList;
+        const reviewId = Number(classList[0].slice(-1));
+        const deleteId = Object.values(postReviewState.visited[reviewId - 1])[0].visitedId - 1;
+        Object.values(postReviewState.visited[deleteId])[0].theme = [];
+        tiger.put('http://localhost:3000/data/1', {...authUser, ...postReviewState});
+      });
+    });
+  }
+  editButton.addEventListener('click', removeReview);
 
   function toggleButton() {
     toggleDeleteButton(deleteButton);
@@ -331,6 +355,7 @@ function renderCoverChangeButton() {
   insertCoverChangeButton(headerInner);
 }
 
+let k = 0;
 function createEditReview({
   photo,
   year,
@@ -344,6 +369,12 @@ function createEditReview({
   state,
   town,
 }) {
+  const trueKeyword = [];
+  for (let i = 0; i < keyword.length; i += 1) {
+    if (Object.values(keyword[i]).toString() === 'true') {
+      trueKeyword.push(keyword[i]);
+    }
+  }
   const template = /* html */ `
   <div class='review-card'>
     <div class="relative parent mb-5">
@@ -351,7 +382,7 @@ function createEditReview({
         <div class="mr-[6px] rounded-[50%] -bg--lion-lightblue-400 p-2">
           <img src="./../assets/map/Icon/Group.png" alt="" />
         </div>
-        <figcaption class="-text--lion-label-small -text--lion-lightblue-400">NO.${(i += 1)}</figcaption>
+        <figcaption class="-text--lion-label-small -text--lion-lightblue-400">NO.${(k += 1)}</figcaption>
           </figure>
           <section class="relative mt-3 bg-white">
         <img class="w-full h-[250px]" src=${photo} alt="가게 사진" />
@@ -378,12 +409,12 @@ function createEditReview({
               <figcaption
                 class="ml-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
               >
-                ${keyword[0]}
+                ${Object.keys(trueKeyword[0])}
               </figcaption>
             </figure>
             <span
               class="rounded bg-gray-50 px-2 py-[2px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
-              >+${keyword.length - 1}</span
+              >+${trueKeyword.length - 1}</span
             >
           </div>
         </div>
@@ -688,5 +719,3 @@ function removeMap() {
 }
 
 clickEditButton(removeMap);
-
-// * 저장 버튼 클릭 시 렌더링
