@@ -1,4 +1,5 @@
 /* @import 'tailwindcss/base'; */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css');
 
 @tailwind base;
 @tailwind components;
@@ -7,5 +8,66 @@
 @layer components {
   html {
     @apply -font--lion-family;
+  }
+  .feed-nav .is-active {
+    position: relative;
+  }
+  .feed-nav .is-active::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--lightblue-300, #aac4fa);
+    bottom: -4px;
+    left: 0;
+  }
+  .location .is-active {
+    background: var(--primary, #171f31);
+    color: var(--white, #fff);
+  }
+  .feedtheme .is-active {
+    background: var(--contents-content-secondary, #6b6b6b);
+    color: var(--white, #fff);
+  }
+  .overflow-scroll {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .overflow-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+  .feedSort .is-active {
+    opacity: 1;
+  }
+  .keyword button.is-active {
+    background: var(--primary, #171f31);
+    color: #fff;
+  }
+  .keyword button:not(.is-active) {
+    background: var(--white, #fff);
+    color: var(--contents-content-secondary, #6b6b6b);
+  }
+
+  .is-invalid {
+    background: rgb(164, 58, 58) !important;
+  }
+  .warningText.is-invalid {
+    border-radius: 8px;
+    color: #fff;
+    padding: 20px 12px;
+    font-size: 16px;
+    width: 280px;
+    text-align: center;
+  }
+  .interest li {
+    @apply bg-gray-100;
+  }
+  .interest .is-active {
+    color: #fff;
+    @apply -bg--lion-blue-900;
+  }
+  .body.login .is--invalid + .error-message {
+    display: block;
   }
 }

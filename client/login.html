@@ -11,10 +11,74 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
     <script src="./js/main.js" type="module"></script>
+    <script src="./js/login/login.js" type="module"></script>
     <title>project</title>
   </head>
 
-  <body>
-    <h2 class="text-indigo-500">login</h2>
+  <body class="login flex h-screen min-w-[320px] justify-center -bg--lion-primary">
+    <div class="login-wrapper flex flex-col items-center justify-center px-[36px] pt-[62px]">
+      <div class="items-center">
+        <img
+          class="h-auto w-[103px]"
+          src="./assets/login/lion-place.png"
+          alt="라이언 플레이스 로고"
+        />
+      </div>
+
+      <h1 class="mt-[100px] block w-full -text--lion-label-xl -text--lion-white">로그인</h1>
+      <form action="#" method="POST">
+        <fieldset>
+          <div class="login-form-container mt-[24px] flex flex-col gap-[12px]">
+            <label for="user-id" class="sr-only">아이디</label>
+            <input
+              class="login-id-input rounded border border-solid -border--lion-white bg-transparent px-[20px] py-[12px] -text--lion-white focus:outline-none"
+              type="text"
+              id="user-id"
+              placeholder="아이디를 입력해주세요"
+              minlength="3"
+              autocomplete="off"
+            />
+            <span class="error-message hidden -text--lion-paragraph-small -text--lion-info-error"
+              >아이디는 숫자를 포함한 최소 3글자의 영문입니다.</span
+            >
+
+            <label for="user-pw" class="sr-only">비밀번호</label>
+            <input
+              class="login-pw-input rounded border border-solid -border--lion-white bg-transparent px-[20px] py-[12px] -text--lion-white focus:outline-none"
+              type="password"
+              id="user-pw"
+              placeholder="비밀번호를 입력해주세요"
+              minlength="8"
+            />
+            <span class="error-message hidden -text--lion-paragraph-small -text--lion-info-error"
+              >비밀번호는 특수문자 포함 최소 8자이어야 합니다.</span
+            >
+
+            <div
+              class="find-wrapper mb-[28px] flex justify-end -text--lion-paragraph-small -text--lion-white"
+            >
+              <div
+                class="find-id after:mx-[4px] after:h-[10px] after:w-[1px] after:text-[#c2c2c275] after:content-['|']"
+              >
+                <a href="#">아이디 찾기</a>
+              </div>
+              <div class="find-pw"><a href="#">비밀번호 찾기</a></div>
+            </div>
+
+            <button
+              class="login-btn rounded bg-white py-[18px] -text--lion-paragraph-small"
+              type="submit"
+            >
+              로그인
+            </button>
+            <a
+              class="block rounded border bg-transparent py-[18px] text-center -text--lion-paragraph-small -text--lion-white"
+              href="./views/register.html"
+              >회원가입</a
+            >
+          </div>
+        </fieldset>
+      </form>
+    </div>
   </body>
 </html>
