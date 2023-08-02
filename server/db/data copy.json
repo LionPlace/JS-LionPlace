@@ -124,10 +124,10 @@
                 "content": "홍대에서 카페 어디갈까 찾는 사람들에게 추천해 주고 싶은 카페였다.",
                 "keyword": [
                   {
-                    "💚 원하는 스타일로 잘해줘요": true
+                    "💚 원하는 스타일로 잘해줘요": false
                   },
                   {
-                    "💇‍♀️ 스타일 추천을 잘해줘요": true
+                    "💇‍♀️ 스타일 추천을 잘해줘요": false
                   },
                   {
                     "🌹 고급스러워요": true
@@ -197,8 +197,51 @@
                 "price": 59500
               }
             ],
-            "reviews": [],
-            "theme": [],
+            "reviews": [
+              {
+                "like": false,
+                "content": "홍대에서 카페 어디갈까 찾는 사람들에게 추천해 주고 싶은 카페였다.",
+                "keyword": [
+                  {
+                    "💚 원하는 스타일로 잘해줘요": false
+                  },
+                  {
+                    "💇‍♀️ 스타일 추천을 잘해줘요": false
+                  },
+                  {
+                    "🌹 고급스러워요": false
+                  },
+                  {
+                    "😎 트랜디해요": true
+                  },
+                  {
+                    "🔍 시술이 꼼꼼해요": true
+                  },
+                  {
+                    "💆‍♀️ 관리법을 잘 알려줘요": true
+                  },
+                  {
+                    "💆‍♀️ 관리법을 잘 알려줘요": false
+                  },
+                  {
+                    "😀 친절해요": true
+                  },
+                  {
+                    "💰 가격이 합리적이에요": true
+                  },
+                  {
+                    "💵 비싼 만큼 가치가 있어요": false
+                  },
+                  {
+                    "👍 좋은 제품을 사용해요": true
+                  },
+                  {
+                    "🚗 주차하기 편해요": false
+                  }
+                ]
+              }
+            ],
+            "theme": ["맛집 목록"],
             "photo": [
               "https://mblogthumb-phinf.pstatic.net/MjAyMDAyMThfMjI3/MDAxNTgyMDI5MjcyOTkw.ZeIA3SaspJ6JWpakDAKZx0AliWLXKo3e91AkjHCSJ0Yg.XV7L-hBAPiJlkJYCu3lVJJqZ86G_g70lfuZchDyH09Qg.JPEG.nahe0904/DSC04856.JPG?type=w800"
             ],
@@ -263,8 +306,51 @@
                 "price": 21800
               }
             ],
-            "reviews": [],
-            "theme": [],
+            "reviews": [
+              {
+                "like": false,
+                "content": "홍대에서 카페 어디갈까 찾는 사람들에게 추천해 주고 싶은 카페였다.",
+                "keyword": [
+                  {
+                    "💚 원하는 스타일로 잘해줘요": false
+                  },
+                  {
+                    "💇‍♀️ 스타일 추천을 잘해줘요": false
+                  },
+                  {
+                    "🌹 고급스러워요": true
+                  },
+                  {
+                    "😎 트랜디해요": true
+                  },
+                  {
+                    "🔍 시술이 꼼꼼해요": true
+                  },
+                  {
+                    "💆‍♀️ 관리법을 잘 알려줘요": true
+                  },
+                  {
+                    "💆‍♀️ 관리법을 잘 알려줘요": false
+                  },
+                  {
+                    "😀 친절해요": true
+                  },
+                  {
+                    "💰 가격이 합리적이에요": true
+                  },
+                  {
+                    "💵 비싼 만큼 가치가 있어요": false
+                  },
+                  {
+                    "👍 좋은 제품을 사용해요": true
+                  },
+                  {
+                    "🚗 주차하기 편해요": false
+                  }
+                ]
+              }
+            ],
+            "theme": ["맛집 목록"],
             "photo": ["https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Fmystore%2FDFE2D897D61C406F9F1F5F03949EDD48"],
             "product": "야키토리",
             "visited": {
