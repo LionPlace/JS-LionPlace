@@ -70,4 +70,7 @@
   .body.login .is--invalid + .error-message {
     display: block;
   }
+  body.register .is--invalid + .error-message {
+    display: block;
+  }
 }

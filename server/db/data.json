@@ -2,22 +2,16 @@
   "data": [
     {
       "id": 1,
-      "userId": "lion1",
+      "userId": "lion",
       "email": "lion@email.com",
       "password": "lion123!@#",
       "uniqueID": "asdfQWERTY",
       "img": "https://cdn.inflearn.com/public/users/thumbnails/170506/fc3d4883-71b8-4c64-8647-7f79a4499461",
-      "theme": [
-        {
-          "title": "맛집 목록",
-          "list": "맛있는!!!!!",
-          "coverimg": "https://cdn.thescoop.co.kr/news/photo/201909/36658_48383_542.jpg"
-        }
-      ],
+      "theme": [],
       "visited": [
         {
           "HOT MESS": {
-            "visitedUser": "lion1",
+            "visitedUser": "lion",
             "visitedId": 1,
             "location": {
               "latitude": 37.56257523917533,
@@ -83,7 +77,7 @@
                 ]
               }
             ],
-            "theme": ["맛집 목록"],
+            "theme": ["연남 합정 데이트"],
             "photo": ["https://gangseotongsin.com/site/wp-content/uploads/2023/01/img_0287.jpg"],
             "product": "커피, 디저트",
             "visited": {
@@ -96,11 +90,11 @@
         },
         {
           "허밍벨라": {
-            "visitedUser": "lion1",
+            "visitedUser": "lion",
             "visitedId": 2,
             "location": {
               "latitude": 37.561503649820686,
-              "longitude": 126.92374611306943,
+              "longitude": 26.92374611306943,
               "region": {
                 "state": "서울시",
                 "country": "마포구",
@@ -162,7 +156,7 @@
                 ]
               }
             ],
-            "theme": ["맛집 목록"],
+            "theme": [],
             "photo": ["https://blog.kakaocdn.net/dn/o8RGr/btqDDvWT77F/wjg8suieH6VOYnZdHfCS21/img.jpg"],
             "product": "커피, 디저트",
             "visited": {
@@ -175,7 +169,7 @@
         },
         {
           "스시노백쉐프": {
-            "visitedUser": "lion1",
+            "visitedUser": "lion",
             "visitedId": 3,
             "location": {
               "latitude": 37.56137805739259,
@@ -213,7 +207,7 @@
         },
         {
           "하이디라오": {
-            "visitedUser": "lion1",
+            "visitedUser": "lion",
             "visitedId": 4,
             "location": {
               "latitude": 37.55711206891357,
@@ -245,7 +239,7 @@
         },
         {
           "야키토리 나루토": {
-            "visitedUser": "lion1",
+            "visitedUser": "lion",
             "visitedId": 5,
             "location": {
               "latitude": 37.55711206891357,

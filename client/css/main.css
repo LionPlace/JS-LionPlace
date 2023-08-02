@@ -653,6 +653,10 @@ html{
   display: block;
 }
 
+body.register .is--invalid + .error-message {
+  display: block;
+}
+
 .sr-only{
   position: absolute;
   width: 1px;
