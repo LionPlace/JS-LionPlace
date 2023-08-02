@@ -26,6 +26,7 @@ let idPass = false;
 let pwPass = false;
 let pwConfirmPass = false;
 let emailPass = false;
+let multiplePass = false;
 
 // 아이디 정규식 - 영문 대소문자와 숫자 0-9만 허용하는 최소3글자 이상 16글자 이하 id
 function idReg(text) {
@@ -105,11 +106,12 @@ async function multipleIdCheck() {
   data.forEach(item => {
     if (item.userId === idInput.value) {
       alert('이미 사용중인 아이디입니다.');
+      multiplePass = false;
+    } else {
+      multiplePass = true;
     }
   });
 }
-
-idInput.addEventListener('input', multipleIdCheck);
 
 // 유니크 아이디 생성
 function getUniqueId() {
@@ -142,7 +144,7 @@ function handleRegister(e) {
   pwConfrim();
   emailValidation();
   multipleIdCheck();
-  if (idPass && pwPass && pwConfirmPass && emailPass) {
+  if (idPass && pwPass && pwConfirmPass && emailPass && multiplePass) {
     getUniqueId();
     sendInfo(uniqueKey);
     tiger.post('http://localhost:3000/data', {
