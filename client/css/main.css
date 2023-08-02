@@ -436,6 +436,18 @@ video {
   display: none;
 }
 
+html{
+  font-family: Pretendard, sans-serif;
+}
+
+body.login .is--invalid + .error-message {
+  display:block;
+}
+
+body.register .is--invalid + .error-message {
+  display:block;
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
