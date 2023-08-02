@@ -83,8 +83,10 @@
                 ]
               }
             ],
-            "theme": ["맛집 목록"],
-            "photo": ["https://gangseotongsin.com/site/wp-content/uploads/2023/01/img_0287.jpg"],
+            "theme": [],
+            "photo": [
+              "https://gangseotongsin.com/site/wp-content/uploads/2023/01/img_0287.jpg"
+            ],
             "product": "커피, 디저트",
             "visited": {
               "year": 2023,
@@ -162,8 +164,10 @@
                 ]
               }
             ],
-            "theme": ["맛집 목록"],
-            "photo": ["https://blog.kakaocdn.net/dn/o8RGr/btqDDvWT77F/wjg8suieH6VOYnZdHfCS21/img.jpg"],
+            "theme": [],
+            "photo": [
+              "https://blog.kakaocdn.net/dn/o8RGr/btqDDvWT77F/wjg8suieH6VOYnZdHfCS21/img.jpg"
+            ],
             "product": "커피, 디저트",
             "visited": {
               "year": 2023,
@@ -233,7 +237,9 @@
             ],
             "reviews": [],
             "theme": [],
-            "photo": ["https://blog.kakaocdn.net/dn/th2CL/btrHpEQeFm2/aUB1k7TsSwzSdKxy3TsL91/img.jpg"],
+            "photo": [
+              "https://blog.kakaocdn.net/dn/th2CL/btrHpEQeFm2/aUB1k7TsSwzSdKxy3TsL91/img.jpg"
+            ],
             "product": "훠궈",
             "visited": {
               "year": 2023,
@@ -265,7 +271,9 @@
             ],
             "reviews": [],
             "theme": [],
-            "photo": ["https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Fmystore%2FDFE2D897D61C406F9F1F5F03949EDD48"],
+            "photo": [
+              "https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Fmystore%2FDFE2D897D61C406F9F1F5F03949EDD48"
+            ],
             "product": "야키토리",
             "visited": {
               "year": 2023,
@@ -361,8 +369,12 @@
                 ]
               }
             ],
-            "theme": ["맛집 목록"],
-            "photo": ["https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flocal%2FkakaomapPhoto%2Freview%2F0fef38c8c20b7505d7998b1b5c11c505f068ac17%3Foriginal"],
+            "theme": [
+              "맛집 목록"
+            ],
+            "photo": [
+              "https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flocal%2FkakaomapPhoto%2Freview%2F0fef38c8c20b7505d7998b1b5c11c505f068ac17%3Foriginal"
+            ],
             "product": "커피, 디저트",
             "visited": {
               "year": 2023,
@@ -437,8 +449,12 @@
                 ]
               }
             ],
-            "theme": ["맛집 목록"],
-            "photo": ["https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Fmystore%2F92DF565BB79048F29620A9A2FCCC016C"],
+            "theme": [
+              "맛집 목록"
+            ],
+            "photo": [
+              "https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Fmystore%2F92DF565BB79048F29620A9A2FCCC016C"
+            ],
             "product": "커피, 디저트",
             "visited": {
               "year": 2023,
