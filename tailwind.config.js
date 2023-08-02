@@ -68,6 +68,10 @@ module.exports = {
         '--lion-below-medium-box-shadow': '0px 8px 36px 0px rgba(0, 0, 0, 0.2)',
         '--lion-below-low-box-shadow': '0px 4px 24px 0px rgba(0, 0, 0, 0.1)',
       },
+      backgroundImage: {
+        'custom-gradient':
+          'linear-gradient(90.97deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 40.625%)',
+      },
     },
   },
   plugins: [],

@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://tailwindui.com/img/logos/mark.png?color=indigo&shade=500"
+      type="image/xml+svg"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <!-- <script src="../js/main.js" type="module"></script> -->
+    <script src="../js/setting/addReviews.js" type="module"></script>
+    <title>feedMain</title>
+  </head>
+  <body class="mb-[80px]">
+    <section class="visitedLoaction">
+      <h1 class="sr-only">방문한 장소</h1>
+      <div class="border-b-[0.3px] p-[14px]">
+        <div class="flex justify-between">
+          <span class="clickedReviewLocal -text--lion-label-small"></span>
+          <button>
+            <img
+              src="../assets/feed/icon-close.png"
+              alt="닫기"
+              onclick="location.href='./visited.html'"
+            />
+          </button>
+        </div>
+        <div>
+          <span
+            class="clickedReviewDate -text--lion-paragraph-small -text--lion-contents-content-tertiary"
+          ></span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sr-only">좋아요</h2>
+      <div
+        class="recommendPeople flex flex-col items-center justify-center gap-[8px] px-[74px] py-[40px]"
+      >
+        <div>
+          <span class="-text--lion-label-medium font-semibold">이 곳이 마음에 든다면,</span>
+        </div>
+        <div class="text-center">
+          <span class="-text--lion-paragraph-small -text--lion-contents-content-tertiary"
+            >'좋아요' 누르고 취향이 비슷한 사람을 추천받으세요.</span
+          >
+        </div>
+        <div>
+          <button
+            class="likeBtn rounded-[4px] -bg--lion-primary px-[20px] py-[10px] -text--lion-paragraph-small font-semibold text-white"
+          >
+            ❤️ 이런 곳 좋아요!
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="keyword -bg--lion-gray-50">
+      <h2 class="sr-only">좋았던 키워드</h2>
+      <div class="flex flex-col items-center justify-center gap-[8px] px-[60px] py-[24px]">
+        <p class="-text--lion-label-medium font-semibold">어떤 점이 좋았나요? (1개~5개)</p>
+        <span class="warningText -text--lion-paragraph-small -text--lion-contents-content-tertiary"
+          >이 장소에 어울리는 키워드를 골라주세요.</span
+        >
+      </div>
+      <div class="likeKeywordContainer overflow-scroll">
+        <!-- <div class="flex w-[660px]">
+          <div class="flex flex-col gap-[8px] px-[20px] py-[4px]">
+            <div>
+              <button
+                class="is-active rounded-[4px] px-[18px] py-[10px] -text--lion-label-small -shadow--lion-below-low-box-shadow"
+              >
+                💚 원하는 스타일로 잘해줘요
+              </button>
+            </div>
+            <div>
+              <button
+                class="is-active rounded-[4px] px-[18px] py-[10px] -text--lion-label-small -shadow--lion-below-low-box-shadow"
+              >
+                💇‍♀️ 스타일 추천을 잘해줘요
+              </button>
+            </div>
+            <div>
+              <button
+                class="is-active rounded-[4px] px-[18px] py-[10px] -text--lion-label-small -shadow--lion-below-low-box-shadow"
+              >
+                🌹 고급스러워요
+              </button>
+            </div>
+            <div>
+              <button
+                class="rounded-[4px] px-[18px] py-[10px] -text--lion-label-small -shadow--lion-below-low-box-shadow"
+              >
+                😎 트랜디해요
+              </button>
+            </div>
+          </div>
+          <div class="flex flex-col gap-[8px] px-[20px] py-[4px]">
+            <div>
+              <button
+                class="is-active rounded-[4px] px-[18px] py-[10px] -text--lion-label-small -shadow--lion-below-low-box-shadow"
+              >
+                🔍 시술이 꼼꼼해요
+              </button>
+            </div>
+            <div>
+              <button
+                class="is-active rounded-[4px] px-[18px] py-[10px] -text--lion-label-small -shadow--lion-below-low-box-shadow"
+              >
+                💆‍♀️ 관리법을 잘 알려줘요
+              </button>
+            </div>
+            <div>
+              <button
+                class="is-active rounded-[4px] px-[18px] py-[10px] -text--lion-label-small -shadow--lion-below-low-box-shadow"
+              >
+                🤲 손이 빨라요
+              </button>
+            </div>
+            <div>
+              <button
+                class="rounded-[4px] px-[18px] py-[10px] -text--lion-label-small -shadow--lion-below-low-box-shadow"
+              >
+                😀 친절해요
+              </button>
+            </div>
+          </div>
+          <div class="flex flex-col gap-[8px] px-[20px] py-[4px]">
+            <div>
+              <button
+                class="is-active rounded-[4px] px-[18px] py-[10px] -text--lion-label-small -shadow--lion-below-low-box-shadow"
+              >
+                💰 가격이 합리적이에요
+              </button>
+            </div>
+            <div>
+              <button
+                class="is-active rounded-[4px] px-[18px] py-[10px] -text--lion-label-small -shadow--lion-below-low-box-shadow"
+              >
+                💵 비싼 만큼 가치가 있어요
+              </button>
+            </div>
+            <div>
+              <button
+                class="is-active rounded-[4px] px-[18px] py-[10px] -text--lion-label-small -shadow--lion-below-low-box-shadow"
+              >
+                👍 좋은 제품을 사용해요
+              </button>
+            </div>
+            <div>
+              <button
+                class="rounded-[4px] px-[18px] py-[10px] -text--lion-label-small -shadow--lion-below-low-box-shadow"
+              >
+                🚗 주차하기 편해요
+              </button>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <div class="flex w-full justify-center">
+        <button class="h-[36px] w-[36px]">
+          <img class="-bg--lion-gray-50" src="../assets/feed/icon-down.png" alt="더보기" />
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sr-only">리뷰 작성</h2>
+      <form action="#">
+        <div class="flex flex-col items-center gap-[16px] px-[26px] py-[16px]">
+          <div>
+            <p class="-text--lion-label-medium font-semibold">리뷰를 남겨주세요</p>
+          </div>
+          <div class="reviewBg flex w-full items-center justify-center bg-cover bg-center">
+            <button
+              class="flex h-[45px] items-center gap-[4px] rounded-[4px] border-[0.5px] -border--lion-contents-content-primary bg-white p-[12px] -text--lion-label-small font-semibold"
+              type="button"
+            >
+              <img class="" src="../assets/feed/icon-photo.png" alt="사진" />
+              <span>사진 추가 최대</span>
+              <span class="-text--lion-contents-content-tertiary">20장</span>
+            </button>
+          </div>
+          <div class="relative">
+            <label for="review"></label>
+            <textarea
+              class="h-[110px] w-[288px] rounded-[8px] -bg--lion-gray-50 px-[12px] py-[24px] -text--lion-paragraph-small -text--lion-contents-content-secondary"
+              name="review"
+              id="review"
+              cols="40"
+              rows="10"
+              maxlength="400"
+              placeholder="리뷰 작성하기"
+            ></textarea>
+            <p
+              class="absolute bottom-[10px] right-[10px] -text--lion-paragraph-small -text--lion-contents-content-tertiary"
+            >
+              <span class="textLength">0</span>/<span>400</span>
+            </p>
+          </div>
+          <div class="flex w-full items-center justify-between">
+            <a class="-text--lion-paragraph-small underline" href="#">리뷰 작성 유의사항</a>
+            <button
+              class="is-invalid submitReview rounded-[4px] -bg--lion-primary px-[28px] py-[12px] -text--lion-paragraph-small font-semibold text-white"
+              type="button"
+            >
+              등록하기
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <nav class="feed-tabbar fixed bottom-0 w-full bg-white">
+      <ul class="flex justify-center">
+        <li class="px-[12px] py-[8px]">
+          <a href="#" class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-group.png" alt="지도" /><span
+              class="-text--lion-paragraph-small"
+              >지도</span
+            >
+          </a>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <a href="#" class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-save.png" alt="저장" /><span
+              class="-text--lion-paragraph-small"
+              >저장</span
+            >
+          </a>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <a href="#" class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-subway.png" alt="대중교통" /><span
+              class="-text--lion-paragraph-small"
+              >대중교통</span
+            >
+          </a>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <a href="#" class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-car.png" alt="내비게이션" /><span
+              class="-text--lion-paragraph-small"
+              >내비게이션</span
+            >
+          </a>
+        </li>
+        <li class="px-[12px] py-[8px]">
+          <a href="#" class="flex flex-col items-center">
+            <img class="h-[24px]" src="../assets/feed/icon-my.png" alt="내정보" /><span
+              class="-text--lion-paragraph-small"
+              >내정보</span
+            >
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

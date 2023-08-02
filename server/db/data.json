@@ -83,8 +83,10 @@
                 ]
               }
             ],
-            "theme": ["맛집 목록"],
-            "photo": ["https://gangseotongsin.com/site/wp-content/uploads/2023/01/img_0287.jpg"],
+            "theme": [],
+            "photo": [
+              "https://gangseotongsin.com/site/wp-content/uploads/2023/01/img_0287.jpg"
+            ],
             "product": "커피, 디저트",
             "visited": {
               "year": 2023,
@@ -162,8 +164,10 @@
                 ]
               }
             ],
-            "theme": ["맛집 목록"],
-            "photo": ["https://blog.kakaocdn.net/dn/o8RGr/btqDDvWT77F/wjg8suieH6VOYnZdHfCS21/img.jpg"],
+            "theme": [],
+            "photo": [
+              "https://blog.kakaocdn.net/dn/o8RGr/btqDDvWT77F/wjg8suieH6VOYnZdHfCS21/img.jpg"
+            ],
             "product": "커피, 디저트",
             "visited": {
               "year": 2023,
@@ -241,7 +245,9 @@
                 ]
               }
             ],
-            "theme": ["맛집 목록"],
+            "theme": [
+              "맛집 목록"
+            ],
             "photo": [
               "https://mblogthumb-phinf.pstatic.net/MjAyMDAyMThfMjI3/MDAxNTgyMDI5MjcyOTkw.ZeIA3SaspJ6JWpakDAKZx0AliWLXKo3e91AkjHCSJ0Yg.XV7L-hBAPiJlkJYCu3lVJJqZ86G_g70lfuZchDyH09Qg.JPEG.nahe0904/DSC04856.JPG?type=w800"
             ],
@@ -276,7 +282,9 @@
             ],
             "reviews": [],
             "theme": [],
-            "photo": ["https://blog.kakaocdn.net/dn/th2CL/btrHpEQeFm2/aUB1k7TsSwzSdKxy3TsL91/img.jpg"],
+            "photo": [
+              "https://blog.kakaocdn.net/dn/th2CL/btrHpEQeFm2/aUB1k7TsSwzSdKxy3TsL91/img.jpg"
+            ],
             "product": "훠궈",
             "visited": {
               "year": 2023,
@@ -350,8 +358,12 @@
                 ]
               }
             ],
-            "theme": ["맛집 목록"],
-            "photo": ["https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Fmystore%2FDFE2D897D61C406F9F1F5F03949EDD48"],
+            "theme": [
+              "맛집 목록"
+            ],
+            "photo": [
+              "https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Fmystore%2FDFE2D897D61C406F9F1F5F03949EDD48"
+            ],
             "product": "야키토리",
             "visited": {
               "year": 2023,
@@ -447,8 +459,12 @@
                 ]
               }
             ],
-            "theme": ["맛집 목록"],
-            "photo": ["https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flocal%2FkakaomapPhoto%2Freview%2F0fef38c8c20b7505d7998b1b5c11c505f068ac17%3Foriginal"],
+            "theme": [
+              "맛집 목록"
+            ],
+            "photo": [
+              "https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flocal%2FkakaomapPhoto%2Freview%2F0fef38c8c20b7505d7998b1b5c11c505f068ac17%3Foriginal"
+            ],
             "product": "커피, 디저트",
             "visited": {
               "year": 2023,
@@ -523,8 +539,12 @@
                 ]
               }
             ],
-            "theme": ["맛집 목록"],
-            "photo": ["https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Fmystore%2F92DF565BB79048F29620A9A2FCCC016C"],
+            "theme": [
+              "맛집 목록"
+            ],
+            "photo": [
+              "https://img1.kakaocdn.net/cthumb/local/R0x420/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Fmystore%2F92DF565BB79048F29620A9A2FCCC016C"
+            ],
             "product": "커피, 디저트",
             "visited": {
               "year": 2023,
@@ -535,6 +555,76 @@
           }
         }
       ]
+    },
+    {
+      "userId": "erere1",
+      "email": "erere1@naver.com",
+      "password": "ajttk123!",
+      "uniqueID": "udqdWJAGxi",
+      "id": 3
+    },
+    {
+      "userId": "erre1",
+      "email": "erwr2@naver.com",
+      "password": "ajttk123!",
+      "uniqueID": "kzcSWAgCGn",
+      "id": 4
+    },
+    {
+      "userId": "erer13",
+      "email": "qwer@naver.com",
+      "password": "asasqw12!",
+      "uniqueID": "keSGkwFuyL",
+      "id": 5
+    },
+    {
+      "userId": "erer1",
+      "email": "erer1@naver.com",
+      "password": "asasqw121@",
+      "uniqueID": "XzuFaFynSp",
+      "id": 6
+    },
+    {
+      "userId": "lion1",
+      "email": "wweer@naver.com",
+      "password": "asasqw12!",
+      "uniqueID": "bqvckaBsAS",
+      "id": 7
+    },
+    {
+      "userId": "lion1",
+      "email": "wr2@naver.com",
+      "password": "asasqw121@",
+      "uniqueID": "FaIkfuUFvr",
+      "id": 8
+    },
+    {
+      "userId": "lion1",
+      "email": "erer@naver.com",
+      "password": "rlawhddbs1@",
+      "uniqueID": "XZjCVIYnVz",
+      "id": 9
+    },
+    {
+      "userId": "lion1",
+      "email": "er@naver.com",
+      "password": "rlawhddbs9@",
+      "uniqueID": "flFFrECNgu",
+      "id": 10
+    },
+    {
+      "userId": "lion1",
+      "email": "err2r@naver.com",
+      "password": "rlawhddbs9@",
+      "uniqueID": "xBGLezbMMR",
+      "id": 11
+    },
+    {
+      "userId": "lion1",
+      "email": "ere@naver.com",
+      "password": "rlawhddbs9@",
+      "uniqueID": "KurfVtzJTc",
+      "id": 12
     }
   ]
 }
