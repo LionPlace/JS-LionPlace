@@ -10,7 +10,7 @@
       unique ID 만드는 법 : a-z 배열만들기, math.Random 이용해 배열 index 번호 10개 뽑아오기, 조건처리 : 중복 값 처리 ( 결과값 겹치지 않게 )
 메인 페이지로 이동
 
-포스트 통신으로 유니크 아이디 집어넣어주기
+포스트 통신으로 유니크 아이디를 포함한 회원정보 집어넣어주기
 
 */
 
@@ -147,7 +147,13 @@ function handleRegister(e) {
   if (idPass && pwPass && pwConfirmPass && emailPass) {
     getUniqueId();
     sendInfo(uniqueKey);
-    window.location.href = './../login.html';
+    tiger.post('http://localhost:3000/data', {
+      userId: idInput.value,
+      email: emailInput.value,
+      password: pwInput.value,
+      uniqueID: uniqueKey,
+    });
+    window.location.href = './login.html';
   }
 }
 
