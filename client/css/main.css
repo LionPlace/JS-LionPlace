@@ -751,10 +751,6 @@ body.register .is--invalid + .error-message {
   text-align: center;
 }
 
-.text-right{
-  text-align: right;
-}
-
 .-text--lion-label-xl{
   font-size: 28.43px;
   line-height: 150%,;
