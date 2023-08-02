@@ -102,7 +102,7 @@ emailInput.addEventListener('input', emailValidation);
 async function multipleIdCheck() {
   const response = await tiger.get('http://localhost:3000/data');
   const data = response.data;
-  data.forEach((item) => {
+  data.forEach(item => {
     if (item.userId === idInput.value) {
       alert('이미 사용중인 아이디입니다.');
     }
@@ -135,8 +135,6 @@ function sendInfo(id) {
   localStorage.setItem('userInfo', JSON.stringify(userInfo));
 }
 
-// 실행한 결과값을 변수에 담은 다음에 그 변수이름응ㄹ sendinfo 에 넣어주기
-
 function handleRegister(e) {
   e.preventDefault();
   idValidation();
@@ -153,7 +151,7 @@ function handleRegister(e) {
       password: pwInput.value,
       uniqueID: uniqueKey,
     });
-    window.location.href = './login.html';
+    window.location.href = './feed.html';
   }
 }
 
