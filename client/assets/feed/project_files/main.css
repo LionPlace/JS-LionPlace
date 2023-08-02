@@ -649,10 +649,6 @@ html{
   background-color: rgb(0 20 51 / var(--tw-bg-opacity));
 }
 
-.body.login .is--invalid + .error-message {
-  display: block;
-}
-
 .sr-only{
   position: absolute;
   width: 1px;
@@ -1973,6 +1969,10 @@ html{
 
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.body.login .is--invalid + .error-message {
+  display: block;
 }
 
 .after\:mx-\[4px\]::after{

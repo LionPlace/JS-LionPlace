@@ -5,7 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+@layer components {
   html {
     @apply -font--lion-family;
   }
@@ -66,5 +66,8 @@
   .interest .is-active {
     color: #fff;
     @apply -bg--lion-blue-900;
+  }
+  .body.login .is--invalid + .error-message {
+    display: block;
   }
 }

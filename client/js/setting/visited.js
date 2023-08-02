@@ -6,13 +6,13 @@ import {
   insertLast,
   saveStorage,
   tiger,
-} from '../../../lib/index.js';
+} from '../../lib/index.js';
 
 // ---------- 방문 페이지 ----------
 async function fetching() {
   const user = tiger.get('http://localhost:3000/data/');
   const res = await user;
-  const authUser = res.data.filter(e => e.userId === 'lion')[0];
+  const authUser = res.data.filter(e => e.userId === 'lion1')[0];
 
   return authUser;
 }

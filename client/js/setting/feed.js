@@ -6,7 +6,7 @@ import {
   insertLast,
   saveStorage,
   tiger,
-} from '../../../lib/index.js';
+} from '../../lib/index.js';
 
 // ---------- 방문 페이지 ----------
 const user = tiger.get('http://localhost:3000/data/');
@@ -14,7 +14,7 @@ const res = await user;
 async function fetching() {
   const userF = tiger.get('http://localhost:3000/data/');
   const resF = await userF;
-  const authUser = resF.data.filter(e => e.userId === 'lion')[0];
+  const authUser = resF.data.filter(e => e.userId === 'lion1')[0];
 
   return authUser;
 }
@@ -152,7 +152,7 @@ function feedTemplate(e) {
     <a href="#" onclick="location.href='./anotherUserFeed.html'" class="flex items-center gap-[5px] text-left">
       <div>
         <img class="h-[30px] w-[30px] rounded-full" src=${
-          visitedUser === 'lion' ? user1[1] : user2[1]
+          visitedUser === 'lion1' ? user1[1] : user2[1]
         } alt="user" />
       </div>
       <div>
