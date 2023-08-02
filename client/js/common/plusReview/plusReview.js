@@ -4,6 +4,7 @@ import {
   deleteStorage,
   getNode,
   getNodes,
+  getRandom,
   insertFirst,
   insertLast,
   loadStorage,
@@ -22,7 +23,7 @@ beforePageBtn.addEventListener('click', () => {
 /* --------------------------- input 입력 시 label 제거 -------------------------- */
 // 제목 입력
 const madeTitleInput = getNode('#madeTitle');
-const titleLabel = getNode('#titleLabel');
+const titleLabel = getNode('.titleLabel');
 
 madeTitleInput.addEventListener('focusin', () => {
   titleLabel.style.display = 'none';
@@ -36,7 +37,7 @@ madeTitleInput.addEventListener('focusout', () => {
 
 // 리스트 설명
 const madeListInput = getNode('#madeList');
-const listLabel = getNode('#listLabel');
+const listLabel = getNode('.listLabel');
 
 madeListInput.addEventListener('focusin', () => {
   listLabel.style.display = 'none';
@@ -50,8 +51,8 @@ madeListInput.addEventListener('focusout', () => {
 
 /* ------------------------------ input 글자 수 세기 ----------------------------- */
 
-const charCountTitle = getNode('#charCountTitle');
-const charCountlist = getNode('#charCountList');
+const charCountTitle = getNode('.charCountTitle');
+const charCountlist = getNode('.charCountList');
 
 madeTitleInput.addEventListener('input', () => {
   const inputTitle = madeTitleInput.value;
@@ -67,3 +68,61 @@ madeListInput.addEventListener('input', () => {
   madeListInput.value = inputList.slice(0, 100);
 });
 
+/* --------------------------------- 랜덤 이미지 --------------------------------- */
+
+const randomImg = [
+  'https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/3789885/pexels-photo-3789885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/1586942/pexels-photo-1586942.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/2679501/pexels-photo-2679501.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+  'https://images.pexels.com/photos/4047217/pexels-photo-4047217.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1,',
+  'https://images.pexels.com/photos/10607993/pexels-photo-10607993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+];
+
+const changeCoverBtn = getNode('.changeCoverBtn');
+const plusReviewBox = getNode('.plusReviewBox');
+
+let num = 0;
+
+changeCoverBtn.addEventListener('click', () => {
+  num = getRandom(randomImg.length - 1);
+
+  const randomCover = randomImg[num];
+
+  plusReviewBox.style.backgroundImage = `url('${randomCover}')`;
+});
+
+/* ------------------------------- data 보내기 ------------------------------ */
+const user = tiger.get('http://localhost:3000/data');
+const res = await user;
+
+const plusReviewBtn = getNode('.plusReviewBtn');
+
+// console.log(plusReviewBtn);
+const plusTheme = {
+  'title': '',
+  'list': '',
+  'coverimg': '',
+};
+
+const currentLion = {...res.data[0]};
+// console.log(currentLion.theme);
+
+plusReviewBtn.addEventListener('click', () => {
+  const inputTitle = madeTitleInput.value;
+  const inputList = madeListInput.value;
+  const imgUrl = randomImg[num];
+  // const plusReviewBox = getNode('.plusReviewBox');
+
+  if (!inputTitle || !attr(plusReviewBox, 'style')) {
+    alert('제목과 커버는 필수로 변경해 주세요!');
+    return;
+  }
+
+  plusTheme.title = inputTitle;
+  plusTheme.list = inputList;
+  plusTheme.coverimg = imgUrl;
+
+  currentLion.theme.push(plusTheme);
+  tiger.put('http://localhost:3000/data/1', currentLion);
+});
